@@ -13,20 +13,20 @@ Before discussing more on creation of controller class there arise many aspects 
  
 # Controller Types 
 
-### Basic Controller:
+## Basic Controller:
 Basic controller includes methods which are get, post, put, patch and delete. It is made when you want basic operation to be performed without additional complexity.
 
-### Domain Controller:
-When you have much of business logic to be written in your basic operations it indicates that the complexity of the controller is high i.e , A Domain controller is made.
+## Domain Controller:
+When you have much of business logic to be written in your basic operations it indicates that the complexity of the controller is high i.e ,A Domain controller is made.
 
-### Lookup Controller:
+## Lookup Controller:
 When you want the data of entity to be bind as a dropdown on the client side, A lookup controller is made. 
 
-### Search Controller:
+## Search Controller:
 When you want to return a resultResult based upon your search stored procedure for a specific module, A search controller is made.
 
-### Child Controller:
+## Child Controller:
 Whenever there is a parent controller involved in the data interaction of the required controller, It is made as a child controller.
 
-### Search Lookup Controller:
+## Search Lookup Controller:
 While accessing dropdowns on client side whenever search operation is done on the source, a search lookup controller is required.

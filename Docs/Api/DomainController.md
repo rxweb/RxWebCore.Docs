@@ -39,9 +39,13 @@ In the above command by writing --domain indicates its complexity high, Products
     [ApiController]
     [Route("api/[controller]")]
 	public class ProductsController : BaseDomainController<Product>
-
     {
         public ProductsController(IProductDomain domain):base(domain) {}
-
     }
+```
+
+The refered `IProductDomain` interface will be created  in  `ProductsDomain.cs` in the Domain folder of the project where the business logic code will use methods of `Uow`.
+
+```js
+  *** Example Domain File ***
 ```

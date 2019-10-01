@@ -12,11 +12,11 @@ The controller must be inherited from the class `BaseLookupController`. The cont
 
 To create a lookup controller, open the `Package Manager Console` and run the following command.
 
-> rxweb
+> rxweb --controller --lookup --main <Controller_Name> --uow <Module_Name>
 
 Lets consider a scenario where you want to create a `OrderLookupsController` in the `OrdersModule`, you have to write:
 
-> rxweb
+> rxweb --controller --lookup --main OrderLookup --uow Order
 
 `OrderLookups` is the controller name and `Orders` is the module name. It will create a controller `OrderLookupsController` in lookup folder of api in the project
 
