@@ -16,11 +16,11 @@ The controller will have a predefined route which include the controller name. F
 
 To create a lookup controller, open the `Package Manager Console` and run the following command.
 
-> rxweb
+>  rxweb --controller --search --main <Controller_Name> --uow <Module_Name>
 
 Lets consider a scenario where you want to create a `ProductsSearchController` in the `OrdersModule`, you have to write:
 
-> rxweb
+> rxweb --controller --search --main ProductsSearch --uow Order
 
 `ProductsSearch` is the controller name and `Orders` is the module name. It will create a controller `ProductsSearchController` in search folder of api in the project
 
@@ -33,6 +33,8 @@ Lets consider a scenario where you want to create a `ProductsSearchController` i
 
 
 # Example
+In this example  `MainSqlDbContext` is the context of `OrdersModule` which contains the `spSearchProducts`
+which is executing while fetching the search result which are retrieved by passing searchParams as dictionary object in the post method.
 
 ```js
     [ApiController]
@@ -50,7 +52,7 @@ Lets consider a scenario where you want to create a `ProductsSearchController` i
             var spParameters = new object[2];
             spParameters[0] = new SqlParameter() { ParameterName = "Query", Value = searchParams["query"] };
             spParameters[1] = new SqlParameter() { ParameterName = "UserId", Value = UserClaim.UserId };
-            var result = await DbContextManager.SqlQueryAsync<StoreProcResult>("EXEC  @Query, @UserId", spParameters);
+            var result = await DbContextManager.SqlQueryAsync<StoreProcResult>("EXEC [dbo].spSearchProducts @Query, @UserId", spParameters);
             return Ok(result.SingleOrDefault()?.Result);
         }
     }
