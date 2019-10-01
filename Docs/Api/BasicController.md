@@ -1,4 +1,4 @@
-    ---
+---
 title: Basic Controller
 author: rxcontributortwo
 category: rxweb core
