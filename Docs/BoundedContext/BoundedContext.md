@@ -22,7 +22,7 @@ Let's consider a real time case study of `Shopping Application` where we mainly 
 
 Consider a shopping application have models like Product, Customer, Purchase, Invoice, Delivery, Category, Supplier, Catalog and Stock. Based on the model's basic fields and work, let us divide then in the moldule:
  
- <ul>
+<ul>
     <li>OrderModule => Product, Customer, Purchase, Invoice and Delivery</li>
     <li>InventoryModule => Product, Supplier, Category, Catalog and Stock</li>
 </ul>
