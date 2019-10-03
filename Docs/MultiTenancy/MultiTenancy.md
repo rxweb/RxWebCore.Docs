@@ -79,4 +79,3 @@ Here is a sample Customers table.
 | 3 | 2 | Customer3 |
 | 4 | 2 | Customer4 |
 
-For example: If you track `Orders` table for example, every tenant's order would be located in "dbo.Orders". Customer's data is separated by a `ClientId`, that shows the main tenant of the entry.
