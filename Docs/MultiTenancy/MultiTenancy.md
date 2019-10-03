@@ -56,19 +56,27 @@ While authorizing the user's action ( i.e. can view or update the record), the u
 
 # Identification of tenants in same database
 
-Another starategy for multi-tenancy is that `Shared Database` is used by all the tenants, that means we keep all the tenant's data in a single database. In this case, there are two ways by which we can isolate tenant's data. 
+Another approach for multi-tenancy is `Shared Database` between all the tenants, that means we keep all the tenant's data in a single database. In that case operational cost reduces as it is in the same database and do not depend on the number of clients. Maintainability becomes quite easier as in this approach isolating data is the main case study we need to think about. 
 
-<ul>
-    <li>Different Schema</li>
-    <li>Same Schema</li>
-</ul>
+In this situation, each tenant's data is in the same tables. To isolate tenant's data we can add a discriminator column (for example: you can take `ClientId`) to every table which will be tenant specific and make sure that all the queries or commands will differentiate or filter the data out of it.
 
-**Different Schema**
+Let's consider a case study for shopping application where we have two tables in the same database which is `Clients` and `Customers`. 
 
-In this situation, each tenant his own different schema, and their data is in their own tables. Restoring can be more time consuming, since everyone is in the same database, you can't just restore the database to an earlier backup (it would roll back every tenants' data). An option is to restore it to a new database and then merge/copy only the 1 tenants' data.
+Here is a sample Clients table
 
-**Same Schema**
 
-In this situation, each tenant's data is in the same tables. To isolate tenant's data we can add a discriminator (i.e. `tenantId`) to every table which will be tenant specific and will make sure that all the queries or commands will differentiate or filter the data out of it.
+| ClientId | ClientName |
+| ----------- | ----------- |
+| 1 | Abc Corp |
+| 2 | Xyz Corp |
 
-For example: If you track `Orders` table for example, every tenant's order would be located in "dbo.Orders". Tenant's data is separated by a `TenantId`, that shows the main tenant of the entry.
+Here is a sample Customers table.
+
+| CustomerId | ClientId | CustomerName |
+| ----------- | ----------- | ----------- |
+| 1 | 1 | Customer1 |
+| 2 | 1 | Customer2 |
+| 3 | 2 | Customer3 |
+| 4 | 2 | Customer4 |
+
+For example: If you track `Orders` table for example, every tenant's order would be located in "dbo.Orders". Customer's data is separated by a `ClientId`, that shows the main tenant of the entry.
