@@ -4,53 +4,18 @@ author: rxcontributortwo
 category: rxweb core
 ---
 
-`Multi Tenancy` is a software architecture in which a single logical instance of a software application server runs on a single server but serves multiple clients. Each client represent a `Tenant`. The tenents can be a representation of a single client or an organization. This multitenant application are known as `Shared Resources`. Applications designed in such manner provides every tenant a dedicated instance with mechanism to provide them overall data privacy. 
+Multitenancy means multiple organization or client can use a single software. `Multi Tenant` application means a software application which serves multiple clients from the same server. Here `tenent` word represent the client. Tenant can be a single client or an organization. Each tenant’s data is isolated and is not accessible to each other. A good example would be Github where each user or organization has their separate work area. Multi-tenancy is used while developing software that runs for different organizations.
 
-> Application Data is shared logically among users but not with other users.
+# Multiple Database
 
-In a multi-tenant application, you must consider users as different tenants where users of same organization belong to a single tenant. 
+In this approach, every tenant uses it's own database. Therefore, each client's data can be easily differentiated. Every tenant has their own set of customers. Now, whenever any user login with their credential, the most important step is to identify from which tenant the request is made.
 
-# Identification of tenants in multiple database
-
-First step that needs to be done is to identify the tenant from where the request is made based on the location. This is a very important aspect for all the tenants also as they will have their own set of users and there is no chance of mixing any user data within the tenants. So, security is one of the major aspect which needs to be taken care of. Each tenant must be allowed full access of only that data which belongs to that particular tenant
-
-**Authentication**. 
-
-Before the applicaton can be used by our clients(i.e. tenants), there must be a way to generate a `tenantId` that identifies the tenant for the application. Whenever any user login with their credential, that tenantId  is generated and on the basis of that application will get the connection string of database of that particular tenant.
+Before the applicaton can be used by our clients, there must be a way to generate a `tenantId` that identifies the tenant for the application. Here, tenantId is generated based on the `hostUri`.
+ Whenever any user will login with their credential, that tenantId will be generated and on the basis of that application will get the connection string of database of that particular tenant.
 
 ```js
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        var isTenant = ServerSetting.Get<bool>("multiTenant");
-        if (isTenant)
-            optionsBuilder.UseSqlServer(AdminSqlDbContext.Database.GetDbConnection());
-        else
-            optionsBuilder.UseSqlServer(MainSqlDbContext.Database.GetDbConnection());
-        base.OnConfiguring(optionsBuilder);
-    }
+    
 ```
-
-Based on that connection string, with the help of `LoginContext` you can finally get the connection of that database.
-
-```js
-    public DbConnection GetConnection(string keyName)
-    {
-        var dbConnectionString = ServerSetting.Get<string>(string.Join(".", new string[] { "dbConnection", keyName.ToLower() }));
-        if (!string.IsNullOrEmpty(dbConnectionString))
-        {
-            SqlDbConnection = new SqlConnection(dbConnectionString);
-            return SqlDbConnection;
-        }
-        else
-        {
-            var tenantDbConnectionString = string.Format(ConnectionString, UserClaim.DbServer, string.Join(string.Empty, UserClaim.CompanyName, keyName, "Db"), string.Join(UserClaim.CompanyName, "User"), string.Join(UserClaim.CompanyName, ""));
-            SqlDbConnection = new SqlConnection(tenantDbConnectionString);
-            return SqlDbConnection;
-        }
-    }
-```
-
-**Authorization**
 
 While authorizing the user's action ( i.e. can view or update the record), the user's tenant must be taken care by the application. Based on that, user must be assigned their respective role and the respective role permission. 
 
@@ -58,24 +23,41 @@ While authorizing the user's action ( i.e. can view or update the record), the u
 
 Another approach for multi-tenancy is `Shared Database` between all the tenants, that means we keep all the tenant's data in a single database. In that case operational cost reduces as it is in the same database and do not depend on the number of clients. Maintainability becomes quite easier as in this approach isolating data is the main case study we need to think about. 
 
-In this situation, each tenant's data is in the same tables. To isolate tenant's data we can add a discriminator column (for example: you can take `ClientId`) to every table which will be tenant specific and make sure that all the queries or commands will differentiate or filter the data out of it.
+In this situation, each tenant's data is in the same tables. To isolate tenant's data we can add a discriminator column (for example: you can take `ClientId`) to respective table.
 
 Let's consider a case study for shopping application where we have two tables in the same database which is `Clients` and `Customers`. 
 
 Here is a sample Clients table
 
-
 | ClientId | ClientName |
 | ----------- | ----------- |
-| 1 | Abc Corp |
-| 2 | Xyz Corp |
+| 1 | IBM |
+| 2 | Oracle |
 
 Here is a sample Customers table.
 
 | CustomerId | ClientId | CustomerName |
 | ----------- | ----------- | ----------- |
-| 1 | 1 | Customer1 |
-| 2 | 1 | Customer2 |
-| 3 | 2 | Customer3 |
-| 4 | 2 | Customer4 |
+| 1 | 1 | John |
+| 2 | 1 | Maria |
+| 3 | 2 | Tony |
+| 4 | 2 | Steve |
 
+For example: If you track `Customers` table for example, every tenant's order would be located in "dbo.Customers". Here, tenant's data is separated by a `ClientId`, that shows the main tenant of the entry. 
+
+For using this approach, you need to set `SingleTenantColumn: "ClientId"` in the config.json and add `[TenantFilterQuery]` annotation for the Clients and Customers model. 
+
+```js
+    "SingleTenantColumn": "ClientId"
+```
+
+While login, applications will check the credentials and return ClientId. With the help of `GetTenantId` in the `BaseContext`, it will identify that customer belongs which client or tenant.
+
+For example: If I consider Client 1
+
+```js
+    new Claim(ClaimTypes.NameIdentifier, (1).ToString()),
+    new Claim(CustomClaims.SingleTenantValue,"1")
+```
+
+Here, `"1"` is the ClientId, so it will give the data of Cutomer1 or Customer2 based on the credentials.
