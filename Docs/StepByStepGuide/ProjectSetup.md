@@ -25,7 +25,7 @@ This will create a blank solution named as `SampleProject` at your desired locat
 
 <ol>
     <li>Select `Tools` > NuGet Package Manager > Package Manager Console.</li>
-    <li>Run the command : `dotnet install rxweb`</li>
+    <li>Run the command : `dotnet install tool -g rxweb`</li>
 </ol>
 
 This will install rxweb tool in your `project solution`. Now, you can access all commands of rxweb tool.
@@ -34,11 +34,11 @@ This will install rxweb tool in your `project solution`. Now, you can access all
 
 Open the `Package Manager Console` and run the following command:
 
-> rxweb --add project <Project_Name>
+> rxwebcore --add project <Project_Name>
 
 For example if you want to create a project with the name `SampleProject`, then write:
 
-> rxweb --add project SampleProject
+> rxwebcore --add project SampleProject
 
 This will create a create a project of name SampleProject with the following folder structure:
 
@@ -48,7 +48,7 @@ This will create a create a project of name SampleProject with the following fol
             <li>SampleProject.Api</li>
         </ul>
     </li>
-    <li>Framework
+    <li>Core
         <ul>
             <li>SampleProject.Infrastructure</li>
         </ul>
@@ -57,16 +57,11 @@ This will create a create a project of name SampleProject with the following fol
         <ul>
             <li>SampleProject.BoundedContext</li>
             <li>SampleProject.Domain</li>
-        </ul>
-    </li>
-    <li>Uow
-        <ul>
             <li>SampleProject.UnitOfWork</li>
         </ul>
     </li>
     <li>Models
         <ul>
-            <li>SampleProject.DbEntities</li>
             <li>SampleProject.Models</li>
         </ul>
     </li>
@@ -74,7 +69,7 @@ This will create a create a project of name SampleProject with the following fol
 
 # Configuration
 
-After the project is created, you need to initially set connection string in `config.json`. 
+After the project is created, you need to initially set connection string in `appsettings.json`. 
 
 > If you haven't created any database, you can create a blank database for now and set its connection string here.
 
@@ -83,7 +78,7 @@ After the project is created, you need to initially set connection string in `co
         "<Database_Name>": "<Connection_String>"
     }
 ```
-
+ 
 For example: If you want to set connection string of `SampleDb` for SampleProject, then you will write:
 
 ```js
@@ -98,40 +93,49 @@ For generating an effective database, you need to have proper case study of curr
 
 # Model Generation
 
+For model generation, you must have `config.json` file in `rxweb-tool` folder. For generating config.json file, you need to run the following command:
+
+> **rxwebcore --init**
+
 If you have properly analyzed and created all the required tables and views, you can create POCO (Plain Old CLR Object) models for all the required tables and views. 
 
 > POCO model is a class that doesn't depend on any framework-specific base class. 
 
 For generating their models in the application, open the `Package Manager Console` and run the following command:
 
-> **rxweb --models --main**
+> **rxwebcore --models --main**
 
-This will generate models for all the tables and views in the `DbEntities` folder inside the `Models` section of the project.
+This will generate models for all the tables and views in the `Models` folder inside the `Models` section of the project.
 
 # Project Definition
 
-> **API**
+## Api
 
 `Api` project is a `.Net Core 3` based Web API which has a target framework of `.Net Framework 4.6.1`. It includes controllers, views and other configuration files related to your project.
 
-> **Domain**
+## Domain
 
 `Domain` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It consist of your complex business logic based on your project modules.
 
-> **Bounded Context**
+## Bounded Context
 
 `Bounded Context` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It consist of some default context files as well as your custom bounded context files for the project's main modules.
 
-> **UOW**
+## UOW
 
 `UnitOfWork` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It consists of some default uow as well as your custom uow files which sets the context repositories for the respective context files.
 
-> **Infrastructure**
+## Infrastructure
 
 `Infrastructure` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It includes all the default and custom filters required in your project as well as other authorization, cryptography and other security token provider files used in the project.
 
-> **Models**
+## Models
 
-`Models` folder consists of two different class libraries based on same target framework of `.Net Framework 4.6.1`. One is for DbEntities which will includes database models for all the tables and views. Other one is for extended models and other custom models required in your project.
+`Models` folder is also a class library based on same target framework of `.Net Framework 4.6.1`. It consists various subfolders like `DbEntities`, `Models` and `ViewModels`. 
 
-By completing all these steps, you can easily run the project without any error.
+<ul>
+    <li>DbEntities folder contains the database table models</li>
+    <li>Models folder contains the custom models which are not present in the database table models but is required as per the project.</li>
+    <li>ViewModels folder contains all the `views` which you made in your database(including lookup view and record view)</li>
+</ul>
+<!--  By completing all these steps, you can easily run the project without any error. -->
