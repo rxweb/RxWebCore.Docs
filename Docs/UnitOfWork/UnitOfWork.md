@@ -1,7 +1,7 @@
 ---
 title: UnitOfWork
 author: rxcontributorone
-category: rxweb core
+category: rxwebcore core
 ---
 
 For applications having multiple number of domains, it is preferable to follow repository pattern for encapsulating the logic applied to data objects. Unit of work creates an abstraction layer for communication with data access layer and domain business logic, The purpose of doing this is to isolate the domain from the data access layer logic. 
@@ -24,7 +24,7 @@ Let's consider a scenario where you have a `applicant` module and you want to pe
 
 As per the below code, the domain will have a reference of the `IApplicantUow` which is the object refrence to the repository interface. The benefit of doing this is that it will execute operations without revealing the details behind it which will create single dependency of the domain and data objects which leads to easy automated unit testing or [TDD](https://en.wikipedia.org/wiki/Test-driven_development).
 
-Rxweb Uow works provides methods that are used for performing data operations that are :
+rxwebcore Uow works provides methods that are used for performing data operations that are :
 
 # RegisterNewAsync
 When you want to `add` applicant it is done using RegisterNewAsync method. It will change state of the object and after `commit` method is executed it will add the object to database. 

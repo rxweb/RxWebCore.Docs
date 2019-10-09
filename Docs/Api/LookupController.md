@@ -1,7 +1,7 @@
 ---
 title: LookupController
 author: rxcontributorone
-category: rxweb core
+category: rxwebcore core
 ---
 
 Large modules have entities which need to be bind as a dropdown, In such cases a lookup controller is made for the module which accesses Uow to manipulate data based upon the entity and display the data of module entities in a dropdown.  
@@ -12,11 +12,11 @@ The controller must be inherited from the class `BaseLookupController`. The cont
 
 To create a lookup controller, open the `Package Manager Console` and run the following command.
 
-> rxweb --controller --lookup --main <Controller_Name> --uow <Module_Name>
+> rxwebcore --controller --lookup --main <Controller_Name> --uow <Module_Name>
 
 Lets consider a scenario where you want to create a `OrderLookupsController` in the `OrdersModule`, you have to write:
 
-> rxweb --controller --lookup --main OrderLookup --uow Order
+> rxwebcore --controller --lookup --main OrderLookup --uow Order
 
 `OrderLookups` is the controller name and `Orders` is the module name. It will create a controller `OrderLookupsController` in lookup folder of api in the project
 

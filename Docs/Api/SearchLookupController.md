@@ -1,7 +1,7 @@
 ---
 title: Search Lookup Controller
 author: rxcontributortwo
-category: rxweb core
+category: rxwebcore core
 ---
 
 When you want to perform a search operation in a lookup data( for example: dropdown ), in that case `SearchLookup Controller` is made. In SearchLookup Controller, parameters are passed in `querystring` in the form of `Dictionary<string, string>` object. Lookup type need to be passed to the controller which is.
@@ -14,11 +14,11 @@ The controller must be inherited from the class `ControllerBase`. The controller
 
 To Create a searchLookup controller, open the `Package Manager Console` and run the following command:
 
-> rxweb --controller --search --main <Controller_Name> --uow <Module_Name>
+> rxwebcore --controller --search --main <Controller_Name> --uow <Module_Name>
 
 Let's consider a scenario where you want a `CitySearchController` in the `MasterModule`, you have to write:
 
-> rxweb --controller --search --main CitySearch --uow Master
+> rxwebcore --controller --search --main CitySearch --uow Master
 
 In the above command, `search` is the type of controller, `CitySearch` is the name of the controller and `Master` is the name of the module. This command will create a separate folder named as "Master" and add a searchLookup controller named as "CitySearchController" under the Api section of the project. 
 

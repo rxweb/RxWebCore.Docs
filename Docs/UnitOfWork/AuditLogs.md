@@ -1,7 +1,7 @@
 ---
 title: AuditLogs
 author: rxcontributorone
-category: rxweb core
+category: rxwebcore core
 ---
 
 # AuditRequest
