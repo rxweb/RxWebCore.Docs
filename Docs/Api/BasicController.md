@@ -1,7 +1,7 @@
 ---
 title: Basic Controller
 author: rxcontributortwo
-category: rxweb core
+category: rxwebcore core
 ---
 
 When you want basic data operations without any complexity and need to modify any of the custom business logic, basic controller is made. It includes methods which are used for simple CRUD operations.
@@ -14,11 +14,11 @@ The controller must be inherited from the class `BaseController` in which  `Mode
 
 To Create a basic controller, open the `Package Manager Console` and run the following command:
 
-> rxweb --controller --basic --main <Controller_Name> --uow <Module_Name>
+> rxwebcore --controller --basic --main <Controller_Name> --uow <Module_Name>
 
 Let's consider a scenario where you want a `CustomerController` in the `OrderModule`, you have to write:
 
-> rxweb --controller --basic --main Customer --uow Order
+> rxwebcore --controller --basic --main Customer --uow Order
 
 In the above command, `basic` is the type of controller, `Customer` is the name of the controller and `Order` is the name of the module. This command will create a separate folder named as "Order" and add a basic controller named as "CustomerController" under the Api section of the project. 
 

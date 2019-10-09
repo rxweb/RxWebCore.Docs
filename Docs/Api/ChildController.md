@@ -1,7 +1,7 @@
 ---
 title: Child Controller
 author: rxcontributortwo
-category: rxweb core
+category: rxwebcore core
 ---
 
 When in case there is any reliancy of a parent controller while performing data operations, child controller is made. Parent and child controller are related to each other by a shared key 
@@ -14,11 +14,11 @@ The controller must be inherited from the class `BaseChildController` in which  
 
 To Create a child controller, open the `Package Manager Console` and run the following command:
 
-> rxweb --controller --child --main <Child_Controller_Name> --parent <Parent_Controller_Name> --uow <Module_Name>
+> rxwebcore --controller --child --main <Child_Controller_Name> --parent <Parent_Controller_Name> --uow <Module_Name>
 
 Let's consider a scenario where you want a `CustomerContactController` as a child controller and `CustomerController` as the parent Controller in the `OrderModule`, you have to write:
 
-> rxweb --controller --child --main CustomerContact --parent Customer --uow Order
+> rxwebcore --controller --child --main CustomerContact --parent Customer --uow Order
 
 In the above command, `child` is the type of controller, `CustomerContact` is the name of the child controller, `Customer` is the name of the parent controller and the last parameter `Order` is the name of the module. This command will create a child controller named as "CustomerContactController" under the Api section of the project inside the same "Order" module folder. 
 

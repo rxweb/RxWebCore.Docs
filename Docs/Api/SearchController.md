@@ -1,7 +1,7 @@
 ---
 title: SearchController
 author: rxcontributorone
-category: rxweb core
+category: rxwebcore core
 ---
 
 Displaying list of the data tuples in the user interface requires a `search` operation when there is large number of records retrieved.
@@ -16,11 +16,11 @@ The controller will have a predefined route which include the controller name. F
 
 To create a lookup controller, open the `Package Manager Console` and run the following command.
 
->  rxweb --controller --search --main <Controller_Name> --uow <Module_Name>
+>  rxwebcore --controller --search --main <Controller_Name> --uow <Module_Name>
 
 Lets consider a scenario where you want to create a `ProductsSearchController` in the `OrdersModule`, you have to write:
 
-> rxweb --controller --search --main ProductsSearch --uow Order
+> rxwebcore --controller --search --main ProductsSearch --uow Order
 
 `ProductsSearch` is the controller name and `Orders` is the module name. It will create a controller `ProductsSearchController` in search folder of api in the project
 
@@ -29,7 +29,6 @@ Lets consider a scenario where you want to create a `ProductsSearchController` i
 | Method | Return Type | Request Params | Request Body | Response|
 | ----------- | ----------- | ----------- | ----------- | ----------- | 
 | Post |IActionResult | - | searchParams | search result |
-
 
 
 # Example
