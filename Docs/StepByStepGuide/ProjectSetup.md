@@ -138,4 +138,3 @@ This will generate models for all the tables and views in the `Models` folder in
     <li>Models folder contains the custom models which are not present in the database table models but is required as per the project.</li>
     <li>ViewModels folder contains all the `views` which you made in your database(including lookup view and record view)</li>
 </ul>
-<!--  By completing all these steps, you can easily run the project without any error. -->

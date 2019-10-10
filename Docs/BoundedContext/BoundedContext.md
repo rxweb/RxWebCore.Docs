@@ -20,11 +20,11 @@ Let's consider a real time case study of `Shopping Application` where we mainly 
 
 > **Step 1: Deciding the primary models for the shopping application and analyze the domain**
 
-Consider a shopping application have models like Product, Customer, Purchase, Invoice, Delivery, Category, Supplier, Catalog and Stock. Based on the model's basic fields and work, let us divide then in the moldule:
+Consider a shopping application have models like Product, Customer, Purchase, Invoice, Category, Supplier and Catalog. Based on the model's basic fields and work, let us divide then in the moldule:
  
 <ul>
-    <li>OrderModule => Product, Customer, Purchase, Invoice and Delivery</li>
-    <li>InventoryModule => Product, Supplier, Category, Catalog and Stock</li>
+    <li>OrderModule => Product, Customer, Purchase and Invoice</li>
+    <li>InventoryModule => Product, Supplier, Category and Catalog</li>
 </ul>
 
 Now, here the main modules `OrderModule` and `InventoryModule` have their separate work but are interrelated with each other by the Product model.
@@ -49,17 +49,17 @@ This command will also `OrderUow` an `InventoryUow` in the `Uow` folder of the `
 
 > **Step 3: Adding reference of the respective models inside the context**
 
-Now, it's time to use model reference inside the bounded context. OrderContext will contain reference of  Product, Customer, Purchase, Invoice and Delivery model and InventoryContext will have a reference of Product, Supplier, Category, Catalog and Stock model. To add model reference in the context, you have to run the following command: 
+Now, it's time to use model reference inside the bounded context. OrderContext will contain reference of  Product, Customer, Purchase and Invoice model and InventoryContext will have a reference of Product, Supplier, Category and Catalog model. To add model reference in the context, you have to run the following command: 
 
 > rxwebcore --context --main <Context_Name> --add-models <Table_Name>
 
 You can also add multiple models by writing Comma separted model names. For example, if you want to add reference in OrderContext, you can write:
 
-> rxwebcore --context --main Order --add-models "Product", "Customer", "Purchase", "Invoice", "Delivery"
+> rxwebcore --context --main Order --add-models "Product", "Customer", "Purchase", "Invoice"
 
 If you want to add reference in InventoryContext, you can write:
 
-> rxwebcore --context --main Inventory --add-models "Product", "Supplier", "Category", "Catalog", "Stock"
+> rxwebcore --context --main Inventory --add-models "Product", "Supplier", "Category", "Catalog"
 
 This will add reference of the respective tables in their specific context.
 
@@ -68,5 +68,20 @@ This will add reference of the respective tables in their specific context.
 Here is the complete example of the OrderContext we have created:
 
 ```js
+    public class OrderContext : BaseBoundedDbContext, IOrderContext
+    {
+        public OrderContext(MainSqlDbContext sqlDbContext,  IOptions<DatabaseConfig> databaseConfig, IHttpContextAccessor contextAccessor): base(sqlDbContext, databaseConfig.Value, contextAccessor){ }
 
+            #region DbSets
+            		public DbSet<Product> Products { get; set; }
+            		public DbSet<Customer> Customers { get; set; }
+                    public DbSet<Purchase> Purchases { get; set; }
+                    public DbSet<Invoice> Invoices { get; set; }
+            #endregion DbSets
+
+    }
+
+    public interface IOrderContext : IDbContext
+    {
+    }
 ```
