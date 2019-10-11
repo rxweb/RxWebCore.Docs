@@ -47,5 +47,57 @@ In the above command by writing --domain indicates its complexity high, Products
 The refered `IProductDomain` interface will be created  in  `ProductsDomain.cs` in the Domain folder of the project where the business logic code will use methods of `Uow`.
 
 ```js
-  *** Example Domain File ***
+    public class ProductDomain : IProductDomain
+    {
+        public ProductDomain(IMasterUow uow) {
+            this.Uow = uow;
+        }
+
+        public Task<object> GetAsync(Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Product> GetBy(Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
+        
+
+        public HashSet<string> AddValidation(Product entity)
+        {
+            return ValidationMessages;
+        }
+
+        public async Task AddAsync(Product entity)
+        {
+            await Uow.RegisterNewAsync(entity);
+            await Uow.CommitAsync();
+        }
+
+        public HashSet<string> UpdateValidation(Product entity)
+        {
+            return ValidationMessages;
+        }
+
+        public async Task UpdateAsync(Product entity)
+        {
+            await Uow.RegisterDirtyAsync(entity);
+            await Uow.CommitAsync();
+        }
+
+        public HashSet<string> DeleteValidation(Dictionary<string, object> parameters)
+        {
+            return ValidationMessages;
+        }
+
+        public Task DeleteAsync(Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IMasterUow Uow { get; set; }
+
+        private HashSet<string> ValidationMessages { get; set; } = new HashSet<string>();
+    }
 ```

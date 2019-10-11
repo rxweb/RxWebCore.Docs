@@ -1,1 +1,1 @@
-# RxWebCoreDocs
+# rxwebcoreCoreDocs

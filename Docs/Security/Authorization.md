@@ -19,7 +19,7 @@ Roles Table:
 RolePermissions Table:
 
 | RolePermissionId | RoleId | ApplicationModuleId | CanView | CanAdd | CanEdit | CanDelete |
-| ----------- | ----------- | ----------- |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 1 | 1 | 1 | True | True | True | True |
 | 2 | 2 | 1 | True | False | False | False |
 
@@ -80,7 +80,3 @@ As per the below scenario it will allow any user to access this `Post` method an
         public UserController(IRegisterUow uow):base(uow) {}
     }
 ```
-
-To allow anoymous in a controller, the following command is used:
-
-> -- rxwebcore --controller --basic --main User --uow --Register --AllowAnonymous 
