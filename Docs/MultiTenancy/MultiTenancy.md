@@ -10,11 +10,15 @@ Multitenancy means multiple organization or client can use a single software. `M
 
 In this approach, every tenant uses it's own database. Therefore, each client's data can be easily differentiated. Every tenant has their own set of customers. Now, whenever any user login with their credential, the most important step is to identify from which tenant the request is made.
 
-Before the applicaton can be used by our clients, there must be a way to generate a `tenantId` that identifies the tenant for the application. Here, tenantId is generated based on the `hostUri`.
- Whenever any user will login with their credential, that tenantId will be generated and on the basis of that application will get the connection string of database of that particular tenant.
+Before the applicaton can be used by our clients, there must be a way to generate a `tenantId` that identifies the tenant for the application. Here, tenantId is generated based on the `hostUri`. Whenever any user will login with their credential, that tenantId will be generated and on the basis of that application will get the connection string of database of that particular tenant.
 
 ```js
-    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var tenantId = GetTenantId();
+            if (tenantId != 0)
+                modelBuilder.AddTenantFilter<int>(tenantId);
+        }
 ```
 
 While authorizing the user's action ( i.e. can view or update the record), the user's tenant must be taken care by the application. Based on that, user must be assigned their respective role and the respective role permission. 

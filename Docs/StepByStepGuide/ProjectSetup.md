@@ -93,7 +93,7 @@ For generating an effective database, you need to have proper case study of curr
 
 # Model Generation
 
-For model generation, you must have `config.json` file in `rxweb-tool` folder. For generating config.json file, you need to run the following command:
+For model generation, you must have `config.json` file in `rxweb-tool` folder which consist all the folder paths and connection string path and other required configurations. For generating config.json file, you need to run the following command in Package Manager Console:
 
 > **rxwebcore --init**
 
