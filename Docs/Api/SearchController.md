@@ -16,7 +16,7 @@ The controller will have a predefined route which include the controller name. F
 
 To create a lookup controller, open the `Package Manager Console` and run the following command.
 
->  rxwebcore --controller --search --main <Controller_Name> --uow <Module_Name>
+> rxwebcore --controller --search --main <Controller_Name> --uow <Module_Name>
 
 Lets consider a scenario where you want to create a `ProductsSearchController` in the `OrdersModule`, you have to write:
 

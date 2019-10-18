@@ -25,7 +25,7 @@ This will create a blank solution named as `SampleProject` at your desired locat
 
 <ol>
     <li>Select `Tools` > NuGet Package Manager > Package Manager Console.</li>
-    <li>Run the command : `dotnet install tool -g rxweb`</li>
+    <li>Run the command : `dotnet install tool -g rxwebcore`</li>
 </ol>
 
 This will install rxweb tool in your `project solution`. Now, you can access all commands of rxweb tool.
