@@ -1,7 +1,7 @@
 ---
 title: Bounded Context
 author: rxcontributortwo
-category: rxweb core
+category: boundedContext
 ---
 
 There are some scenarios when you have to deal with too many tables, then it becomes difficult to manage those tables. For such problems `Bounded context design pattern` or `Domain-Driven Design` can be a solution.

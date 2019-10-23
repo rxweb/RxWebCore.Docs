@@ -1,7 +1,7 @@
 ---
 title: Multilingual
 author: rxcontributortwo
-category: rxweb core
+category: rxwebcore
 ---
 
 In today's global world, most of the software applications are not restricted to their local area. These large scale application can be widely used in any country. Such application must be made Multi-Lingual so that it can be used by every user in whichever language they want to. As the name describes, multi-lingual means expressing your application content in more than 1 language. 
@@ -18,11 +18,12 @@ For developing multilingual software application using rxwebcore, let's consider
 
 Let me share you a sample data for ApplicationObjectTypes:
 
-| ApplicationObjectTypeId | ApplicationObjectTypeName | IsActive | 
-| ----------- | ----------- | ----------- |
-| 2 | ContentType | 1 |
-| 3 | Status | 1 |
-| 4 | DataAction | 1 |
+<table class="table table-bordered">
+<tr><th>ApplicationObjectTypeId</th><th>ApplicationObjectTypeName</th><th>IsActive</th></tr>
+<tr><td>2</td><td>ContentType</td><td> 1 </td></tr>
+<tr><td>3</td><td>Status</td><td> 1 </td></tr>
+<tr><td>4</td><td>DataAction</td><td> 1 </td></tr>
+</table>
 
 Above `ApplicationObjectTypeId` will be passed as the foreign key reference in `ApplicationObjects` table.
 
@@ -38,14 +39,15 @@ Above `ApplicationObjectTypeId` will be passed as the foreign key reference in `
 
 Here is a sample ApplicationObjects table data:
 
-| ApplicationObjectId | ApplicationObjectTypeId | ApplicationObjectTypeName | IsActive | 
-| ----------- | ----------- | ----------- | ----------- |
-| 15 | 2 | ValidationMessages | 1 |
-| 16 | 2 | Text | 1 |
-| 17 | 2 | Placeholder | 1 |
-| 18 | 2 | ToolTip | 1 |
-| 22 | 4 | List | 1 |
-| 23 | 4 | Add | 1 |
+<table class="table table-bordered">
+<tr><th>ApplicationObjectId</th><th>ApplicationObjectTypeId</th><th>ApplicationObjectName</th><th>IsActive</th></tr>
+<tr><td>15</td><td>2</td><td>ValidationMessages</td><td> 1 </td></tr>
+<tr><td>16</td><td>2</td><td>Text</td><td> 1 </td></tr>
+<tr><td>17</td><td>2</td><td>Placeholder</td><td> 1 </td></tr>
+<tr><td>18</td><td>2</td><td>ValidationMessages</td><td> 1 </td></tr>
+<tr><td>22</td><td>3</td><td>List</td><td> 1 </td></tr>
+<tr><td>23</td><td>3</td><td>Add</td><td> 1 </td></tr>
+</table>
 
 ## LanguageContentKeys
 
@@ -53,10 +55,11 @@ Here is a sample ApplicationObjects table data:
 
 Below is a sample example of LanguageContentKeys data.
 
-| LanguageContentKeyId | KeyName |
-| ----------- | ----------- |
-| 6 | Required |
-| 7 | Unique |
+<table class="table table-bordered">
+<tr><th>LanguageContentKeyId</th><th>KeyName</th></tr>
+<tr><td>6</td><td>Required</td></tr>
+<tr><td>7</td><td>Unique</td></tr>
+</table>
 
 The above `LanguageContentKeyId` from LanguageContentKeys table will be set reference with the `LanguageContents` table. 
 
@@ -66,10 +69,11 @@ The above `LanguageContentKeyId` from LanguageContentKeys table will be set refe
 
 Below is the sample LanguageContents table data:
 
-| LanguageContentId | LanguageContentKeyId | ContentTypeId | En | Fr |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| 8 | 6 | 15 | This field is required | Ce champ est requis |
-| 10 | 7 | 15 | This Field Should be Unique | Ce champ devrait être unique |
+<table class="table table-bordered">
+<tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentTypeId</th><th>En</th><th>Fr</th></tr>
+<tr><td>8</td><td>6</td><td>15</td><td>This field is required</td><td>Ce champ est requis</td></tr>
+<tr><td>10</td><td>7</td><td>15</td><td>This Field Should be Unique</td><td>Ce champ devrait être unique</td></tr>
+</table>
 
 Here, `6 as LanguageContentKeyId` and `15 as ContentTypeId` denotes that it is a validation message for Required KeyName and `7 as LanguageContentKeyId` and `15 as ContentTypeId` denotes that it is a validation message for Unique KeyName.
 
@@ -79,9 +83,10 @@ Here, `6 as LanguageContentKeyId` and `15 as ContentTypeId` denotes that it is a
 
 Sample ModuleContents table data is shown below:
 
-| ModuleContentId | ApplicationModuleId | LanguageContentId | DataActionId | En | Fr |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 1 | 2 | 8 | 22 | UserName | Nom d'utilisateur |
-| 2 | 3 | 10 | 23 | Enter First Name | Entrez votre prénom |
+<table class="table table-bordered">
+<tr><th>ModuleContentId</th><th>ApplicationModuleId</th><th>LanguageContentId</th><th>DataActionId</th><th>En</th><th>Fr</th></tr>
+<tr><td>1</td><td>2</td><td>8</td><td>22</td><td>UserName</td><td>Nom d'utilisateur</td></tr>
+<tr><td>2</td><td>3</td><td>10</td><td>23</td><td>Enter First Name</td><td>Entrez votre prénom</td></tr>
+</table>
 
 By following all these steps, you can easily update your application database to multilingual database with respect to the Application Modules and Language Contents. 

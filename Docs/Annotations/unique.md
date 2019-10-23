@@ -1,7 +1,7 @@
 ---
 title: Unique
 author: rxcontributortwo
-category: rxweb core
+category: annotation
 ---
 
 `Unique` validation annotation lets you enter a unique value in an array based model property. 

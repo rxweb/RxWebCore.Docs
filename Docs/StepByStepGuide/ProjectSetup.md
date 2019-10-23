@@ -1,7 +1,7 @@
 ---
 title: Project Setup
 author: rxcontributortwo
-category: rxweb core
+category: stepByStep
 ---
 
 # Prerequisites

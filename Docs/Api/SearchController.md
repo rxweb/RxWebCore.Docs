@@ -1,7 +1,7 @@
 ---
 title: SearchController
 author: rxcontributorone
-category: rxwebcore core
+category: api
 ---
 
 Displaying list of the data tuples in the user interface requires a `search` operation when there is large number of records retrieved.
@@ -26,10 +26,10 @@ Lets consider a scenario where you want to create a `ProductsSearchController` i
 
 # Methods
 
-| Method | Return Type | Request Params | Request Body | Response|
-| ----------- | ----------- | ----------- | ----------- | ----------- | 
-| Post |IActionResult | - | searchParams | search result |
-
+<table class="table table-bordered">
+<tr><th>Method</th><th>Return Type</th><th>Request Params</th><th>Request Body</th><th>Response</th></tr>
+<tr><td>Post</td><td>IActionResult</td><td> - </td><td>searchParams</td><td>search result</td></tr>
+</table>
 
 # Example
 In this example  `MainSqlDbContext` is the context of `OrdersModule` which contains the `spSearchProducts`

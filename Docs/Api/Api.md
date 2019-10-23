@@ -1,7 +1,7 @@
 ﻿---
 title: Api
 author: rxcontributorone
-category: rxwebcore core
+category: api
 ---
 
 # Introduction

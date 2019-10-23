@@ -1,7 +1,7 @@
 ---
 title: Search Lookup Controller
 author: rxcontributortwo
-category: rxwebcore core
+category: api
 ---
 
 When you want to perform a search operation in a lookup data( for example: dropdown ), in that case `SearchLookup Controller` is made. In SearchLookup Controller, parameters are passed in `querystring` in the form of `Dictionary<string, string>` object. Lookup type need to be passed to the controller which is.
@@ -28,14 +28,15 @@ In the above command, `search` is the type of controller, `CitySearch` is the na
 
 There are mainly 6 methods used for the SearchLookup Controller which needs to be there in the BaseController which are as follows: 
 
-| Method | Return Type | Request Params | Request Body | Response|
-| ----------- | ----------- | ----------- | ----------- | ----------- | 
-| Get | IActionResult | - | - | complete list of that entity |
-| GetById | IActionResult | Id of that entity which you want to get | - | Single entity based on the id |
-| Post | IActionResult | - | New Entity object which you want to add | Ok() |
-| Put | IActionResult | Id of that entity which you want to update | Complete entity object with the specific change which you want to update | NoContent() |
-| Patch | IActionResult | Id of that entity which you want to update | entity object only with the specific change which you want to update in the form of `JsonPatchDocument` | NoContent() |
-| Delete | IActionResult | Id of that entity which you want to delete | - | NoContent() |
+<table class="table table-bordered">
+<tr><th>Method</th><th>Return Type</th><th>Request Params</th><th>Request Body</th><th>Response</th></tr>
+<tr><td>Get</td><td>IActionResult</td><td> - </td><td> - </td><td>complete list of that entity</td></tr>
+<tr><td>GetById</td><td>IActionResult</td><td>Id of that entity which you want to get</td><td> - </td><td>Single entity based on the id</td></tr>
+<tr><td>Post</td><td>IActionResult</td><td> - </td><td>New Entity object which you want to add</td><td>Ok()</td></tr>
+<tr><td>Put</td><td>IActionResult</td><td>Id of that entity which you want to update</td><td>Complete entity object with the specific change which you want to update</td><td>NoContent()</td></tr>
+<tr><td>Patch</td><td>IActionResult</td><td>Id of that entity which you want to update</td><td>entity object only with the specific change which you want to update in the form of `JsonPatchDocument`</td><td>NoContent()</td></tr>
+<tr><td>Delete</td><td>IActionResult</td><td>Id of that entity which you want to delete</td><td> - </td><td>NoContent()</td></tr>
+</table>
 
 # Complete Example of SearchLookup Controller 
 
