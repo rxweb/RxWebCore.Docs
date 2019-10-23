@@ -63,7 +63,7 @@ In this command `Customer` is the controller name, `Order` is the module and 1 i
 
 The user can check whether which controller are having authorization and which are by-pass.
 
-> --rxwebcore Security
+> --rxwebcore security
 
 ## AllowAnonymous
 
