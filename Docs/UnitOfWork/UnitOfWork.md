@@ -1,7 +1,7 @@
 ---
 title: UnitOfWork
 author: rxcontributorone
-category: rxwebcore core
+category: unitOfWork
 ---
 
 For applications having multiple number of domains, it is preferable to follow repository pattern for encapsulating the logic applied to data objects. Unit of work creates an abstraction layer for communication with data access layer and domain business logic, The purpose of doing this is to isolate the domain from the data access layer logic. 

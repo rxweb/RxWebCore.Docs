@@ -1,7 +1,7 @@
 ---
 title: IDbContextManager
 author: rxcontributorone
-category: rxwebcore core
+category: unitOfWork
 ---
 
 Uow interacts with data objects to execute various operations with entity framework core, but when stored procedures are used for execution of data operations It is managed with the help of `IDbContextManager`. 

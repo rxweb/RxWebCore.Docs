@@ -1,7 +1,7 @@
 ---
 title: Required
 author: rxcontributortwo
-category: rxweb core
+category: annotation
 ---
 
 `Required` annotation can be used when you don't want a model property to be null. 

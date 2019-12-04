@@ -1,7 +1,7 @@
 ---
 title: Authentication
 author: rxcontributorone
-category: rxwebcore core
+category: security
 ---
 
 Authentication is the process of ascertaining who a user is. Authentication may create one or more identities for the current user based upon which user is `Authorized`. When it comes to authenticating lightweighted single page applications it should be token based. rxwebcore uses JWT web token for doing the same.    

@@ -1,7 +1,7 @@
 ---
 title: Authorization
 author: rxcontributorone
-category: rxwebcore core
+category: security
 ---
 
 `Authorization` is a method of adjudging which user is able to do what. It uses `authentication` for identifying the user, It is done using role based authorization mechanism through which the access modules of the user is determined based upon role where rules are maintained in the database.
@@ -11,36 +11,38 @@ Role based authorization is a mechanism through which we determine that which us
 
 Roles Table:
 
-| RoleId | RoleName |
-| ----------- | ----------- |
-| 1 | Admin |
-| 2 | Customer |
+<table>
+<tr><th>RoleId</th><th>RoleName</th></tr>
+<tr><td>1</td><td>Admin</td></tr>
+<tr><td>2</td><td>Customer</td></tr>
+</table>
 
 RolePermissions Table:
 
-| RolePermissionId | RoleId | ApplicationModuleId | CanView | CanAdd | CanEdit | CanDelete |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 1 | 1 | 1 | True | True | True | True |
-| 2 | 2 | 1 | True | False | False | False |
-
+<table>
+<tr><th>RolePermissionId</th><th>RoleId</th><th>ApplicationModuleId</th><th>CanView</th><th>CanAdd</th><th>CanEdit</th><th>CanDelete</th></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>True</td><td>True</td><td>True</td><td>True</td></tr>
+<tr><td>2</td><td>2</td><td>1</td><td>True</td><td>False</td><td>False</td><td>False</td></tr>
+</table>
 
 Based upon the RoleId and ApplicationModuleId it will retrieve the information about which user has how much access of which module based upon the role defined in Roles Table. 
 The application module in `RolePermissions` table is a FK reference from `ApplicationModules` table
 
 ApplicationModules Table:
 
-| ApplicationModuleId | ModuleMasterId | ParentApplicationModuleId |
-| ----------- | ----------- | ----------- |
-| 1 | 1 | 1 |
+<table>
+<tr><th>ApplicationModuleId</th><th>ModuleMasterId</th><th>ParentApplicationModuleId</th></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+</table>
 
 The Module is defined in `ModuleMasters` Table
 
 ModuleMasters Table: 
 
-| ModuleMasterId | ModuleMasterName | StatusId |
-| ----------- | ----------- | ----------- |
-| 1 | Registration | 1 |
-
+<table>
+<tr><th>ModuleMasterId</th><th>ModuleMasterName</th><th>StatusId</th></tr>
+<tr><td>1</td><td>Registration</td><td>1</td></tr>
+</table>
 
 ## Access
 It is done using `Access` in which id of the application module is passed. Through which it will execute authorization based upon which the user rights are determined.

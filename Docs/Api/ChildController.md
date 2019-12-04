@@ -1,7 +1,7 @@
 ---
 title: Child Controller
 author: rxcontributortwo
-category: rxwebcore core
+category: api
 ---
 
 When in case there is any reliancy of a parent controller while performing data operations, child controller is made. Parent and child controller are related to each other by a shared key 
@@ -28,14 +28,15 @@ In the above command, `child` is the type of controller, `CustomerContact` is th
 
 There are mainly 6 methods used for the Child Controller which needs to be there in the BaseChildController which are as follows: 
 
-| Method | Return Type | Request Params | Request Body | Response|
-| ----------- | ----------- | ----------- | ----------- | ----------- | 
-| Get | IActionResult | - | - | complete list of that entity which binds the shared key of parent and child entity |
-| GetById | IActionResult | Id of that entity which you want to get | - | Single entity based on the id |
-| Post | IActionResult | - | New Entity object which you want to add | Ok() |
-| Put | IActionResult | Id of that entity which you want to update | Complete entity object with the specific change which you want to update | NoContent() |
-| Patch | IActionResult | Id of that entity which you want to update | entity object only with the specific change which you want to update in the form of `JsonPatchDocument` | NoContent() |
-| Delete | IActionResult | Id of that entity which you want to delete | - | NoContent() |
+<table class="table table-bordered">
+<tr><th>Method</th><th>Return Type</th><th>Request Params</th><th>Request Body</th><th>Response</th></tr>
+<tr><td>Get</td><td>IActionResult</td><td> - </td><td> - </td><td>complete list of that entity which binds the shared key of parent and child entity</td></tr>
+<tr><td>GetById</td><td>IActionResult</td><td>Id of that entity which you want to get</td><td> - </td><td>Single entity based on the id</td></tr>
+<tr><td>Post</td><td>IActionResult</td><td> - </td><td>New Entity object which you want to add</td><td>Ok()</td></tr>
+<tr><td>Put</td><td>IActionResult</td><td>Id of that entity which you want to update</td><td>Complete entity object with the specific change which you want to update</td><td>NoContent()</td></tr>
+<tr><td>Patch</td><td>IActionResult</td><td>Id of that entity which you want to update</td><td>entity object only with the specific change which you want to update in the form of `JsonPatchDocument`</td><td>NoContent()</td></tr>
+<tr><td>Delete</td><td>IActionResult</td><td>Id of that entity which you want to delete</td><td> - </td><td>NoContent()</td></tr>
+</table>
 
 # Complete Example of Child Controller
 

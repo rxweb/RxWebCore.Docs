@@ -1,7 +1,7 @@
 ---
 title: rxweb core commands
 author: rxcontributorone
-category: rxwebcore core 
+category: rxwebcore 
 ---
 
 # rxwebcore command line interface(CLI) commands:

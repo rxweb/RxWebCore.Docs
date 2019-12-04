@@ -1,7 +1,7 @@
 ---
 title: Multi Tenancy
 author: rxcontributortwo
-category: rxweb core
+category: rxwebcore
 ---
 
 Multitenancy means multiple organization or client can use a single software. `Multi Tenant` application means a software application which serves multiple clients from the same server. Here `tenent` word represent the client. Tenant can be a single client or an organization. Each tenant’s data is isolated and is not accessible to each other. A good example would be Github where each user or organization has their separate work area. Multi-tenancy is used while developing software that runs for different organizations.
@@ -33,19 +33,21 @@ Let's consider a case study for shopping application where we have two tables in
 
 Here is a sample Clients table
 
-| ClientId | ClientName |
-| ----------- | ----------- |
-| 1 | IBM |
-| 2 | Oracle |
+<table class="table table-bordered">
+<tr><th>ClientId</th><th>ClientName</th></tr>
+<tr><td>1</td><td>IBM</td></tr>
+<tr><td>2</td><td>Oracle</td></tr>
+</table>
 
 Here is a sample Customers table.
 
-| CustomerId | ClientId | CustomerName |
-| ----------- | ----------- | ----------- |
-| 1 | 1 | John |
-| 2 | 1 | Maria |
-| 3 | 2 | Tony |
-| 4 | 2 | Steve |
+<table class="table table-bordered">
+<tr><th>CustomerId</th><th>ClientId</th><th>CustomerName</th></tr>
+<tr><td>1</td><td>1</td><td>John</td></tr>
+<tr><td>2</td><td>1</td><td>Maria</td></tr>
+<tr><td>3</td><td>2</td><td>Tony</td></tr>
+<tr><td>4</td><td>2</td><td>Steve</td></tr>
+</table>
 
 For example: If you track `Customers` table for example, every tenant's order would be located in "dbo.Customers". Here, tenant's data is separated by a `ClientId`, that shows the main tenant of the entry. 
 
