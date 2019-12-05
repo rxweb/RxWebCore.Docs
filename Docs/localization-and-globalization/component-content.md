@@ -1,13 +1,9 @@
 ---
-title: Validation Message
+title: Component Contents
 author: rxcontributorone
 category: localization-and-globalization
----
-
-For applications having big range of audiences, there is a possibility of having users acessing it from different regions. In such cases it is important that your application renders the whole Ui in the user specific language, other than this the validation messages should also be shown in the user sepcific language and dropdown should also bind respectively.
-
-For showing validation messages in different languages, the first step is to add the validation messages in different languages. 
-
+--- 
+For component wise data like label, textbox of the particular component. It is configured as follows.
 ## LanguageContentKeys Table
 
 <table class="table table-bordered">
@@ -22,10 +18,21 @@ For showing validation messages in different languages, the first step is to add
 <tr><td>1</td><td>1</td><td>g</td><td>This field is required</td><td>{0} is required</td></tr>
 </table>
 
+## ComponentLanguageContents
+
+<table class="table table-bordered table-striped">
+<tr><th>Column</th><th>DataType</th><th>Description</th></tr>
+<tr><td>ComponentLanguageContentId</td><td>int</td><td>PK</td></tr>
+<tr><td>ComponentKeyId</td><td>int</td><td>FK(LanguageContentKeys)</td></tr>
+<tr><td>LanguageContentId</td><td>int</td><td>FK(LangaugeContents)</td></tr> 
+<tr><td>En</td><td>varchar(max)</td><td>English value of the content</td></tr> 
+<tr><td>Fr</td><td>varchar(max)</td><td>French value of the content</td></tr> 
+</table>
+
 The second step is to run the command : 
 
 ```js
-rxwebcore --localization
+rxwebcore --localization --main 
 ```
 
 This will create `.json` file with en and fr json in wwwroot folder of the languagecontents.

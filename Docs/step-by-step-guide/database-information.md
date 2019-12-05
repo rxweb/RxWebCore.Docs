@@ -6,7 +6,8 @@ category: step-by-step-guide
 
 # Database Tables
 
-1)  Main Database
+**Main Database**
+
 The main database contains all the default tables which are necessary for fulfuling the basic functionalties like authorization and authentication, application objects, localization and globalization etc.. 
 
 ## Application Modules and Objects
@@ -25,6 +26,8 @@ Contains information about application's master modules.
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
+Inserted data of ModuleMasters: 
+
 <table class="table table-bordered">
 <tr><th>ModuleMasterId</th><th>ModuleMasterName</th><th>StatusId</th></tr>
 <tr><td>1</td><td>Management</td><td>1</td></tr>
@@ -41,6 +44,8 @@ Contains information about all the modules used in the application.
 <tr><td>ParentApplicationModuleId</td><td>int</td><td>Id of parent application module in case of entering a child module</td></tr>
 </table>
 
+Inserted data of ApplicationModules: 
+
 <table class="table table-bordered">
 <tr><th>ApplicationModuleId</th><th>ModuleMasterId</th><th>ParentApplicationModuleId</th></tr>
 <tr><td>1</td><td>1</td><td>NULL</td></tr>
@@ -56,6 +61,8 @@ Contains type of Application Objects like status, gender etc.
 <tr><td>ApplicationObjectTypeName</td><td>varchar(100)</td><td>Name of the application Object Type.</td></tr> 
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
+
+Inserted data of ApplicationObjectTypes: 
 
 <table class="table table-bordered">
 <tr><th>ApplicationObjectTypeId</th><th>ApplicationObjectTypeName</th><th>StatusId</th></tr>
@@ -75,6 +82,8 @@ Contains application objects based upon its type.
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
+Inserted data of ApplicationObjects: 
+
 <table class="table table-bordered">
 <tr><th>ApplicationObjectId</th><th>ApplicationObjectTypeId</th><th>ApplicationObjectName</th><th>StatusId</th></tr>
 <tr><td>1</td><td>1</td><td>Active</td><td>1</td></tr>
@@ -83,11 +92,12 @@ Contains application objects based upon its type.
 </table>
 
 ## Localization and Globalization
-For an application to efficiently work in different regions, it is necessary to maintain its timezones and locales used. A multilingual application includes returning server validation messages, change the whole UI based upon the selected language and bind the dropdowns based upon it.  
+For an application to efficiently work in different regions, it is necessary to maintain its timezones and locales used. A multilingual application includes returning server validation messages, change the whole UI text based upon the selected language. For more information, Please refer [localization-and-globalization]
 
 **5. ApplicationTimeZones**
 
-It has details of different timezones of the world. For more detail about timezones Please refer <a href="https://www.iana.org/time-zones">IANA</a>.
+It has inserted values of different timezones of the world from the IANA Database. Please refer 
+<a href="https://www.iana.org/time-zones">IANA</a>.
 
 <table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
@@ -96,6 +106,8 @@ It has details of different timezones of the world. For more detail about timezo
 <tr><td>Comment</td><td>nvarchar(200)</td><td>Information related to Timezone</td></tr> 
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
+
+Inserted data of ApplicationTimeZones: 
 
 <table class="table table-bordered">
 <tr><th>ApplicationTimeZoneId</th><th>ApplicationTimeZoneName</th><th>Comment</th><th>StatusId</th></tr>
@@ -114,6 +126,8 @@ It has details of standard locales used in the world.
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
+Inserted data of ApplicationLocales: 
+
 <table class="table table-bordered">
 <tr><th>ApplicationLocaleId</th><th>LocaleCode</th><th>LocaleName</th><th>StatusId</th></tr>
 <tr><td>241</td><td>en-US</td><td>English(United States)</td><td>1</td></tr>
@@ -129,6 +143,8 @@ Stores language content key based upon which the multilingual data is entered. e
 <tr><td>KeyName</td><td>varchar(50)</td><td>Key/type of the language content</td></tr>
 <tr><td>IsComponent</td><td>bit(300)</td><td>1 if the key is a component</td></tr> 
 </table>
+
+Inserted data of LanguageContentKeys: 
 
 <table class="table table-bordered">
 <tr><th>LanguageContentKeyId</th><th>KeyName</th><th>IsComponent</th></tr>
@@ -148,6 +164,8 @@ Stores language contents of different languages which are required in your appli
 <tr><td>Fr</td><td>varchar(max)</td><td>French value of the content</td></tr> 
 </table>
 
+Inserted data of LanguageContents: 
+
 <table class="table table-bordered">
 <tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
 <tr><td>1</td><td>1</td><td>g</td><td>Invalid Credentails</td><td>NULL</td></tr>
@@ -165,6 +183,8 @@ Stores multilingual language content component wise.
 <tr><td>En</td><td>varchar(max)</td><td>English value of the content</td></tr> 
 <tr><td>Fr</td><td>varchar(max)</td><td>French value of the content</td></tr> 
 </table>
+
+Inserted data of ComponentLanguageContents: 
 
 <table class="table table-bordered">
 <tr><th>ComponentLanguageContentId</th><th>ComponentKeyId</th><th>LanguageContentId</th><th>En</th><th>Fr</th></tr>
@@ -189,6 +209,8 @@ Stores information of web token which are generated when any request is made on 
 <tr><td>CreatedDateTime</td><td>datetimeoffset(50)</td><td>created date and time of the web token</td></tr> 
 </table>
 
+Inserted data of ApplicationUsersToken: 
+
 <table class="table table-bordered">
 <tr><th>ApplicationUsersTokenId</th><th>UserId</th><th>SecurityKey</th><th>JwtToken</th><th>AudienceType</th><th>CreatedDateTime</th></tr>
 <tr><td>1</td><td>1</td><td>0x2271A2EDF169C5B75291C06D9FC66A6....</td><td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ..</td><td>NULL</td><td>2019-06-28 06:13:52.327</td></tr>
@@ -211,6 +233,8 @@ Stores information about users of the application.
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr> 
 </table>
 
+Inserted data of Users: 
+
 <table class="table table-bordered">
 <tr><th>UserId</th><th>ApplicationLocaleId</th><th>ApplicationTimeZoneId</th><th>LanguageCode</th><th>UserName</th><th>Password</th><th>Salt</th><th>LoginBlocked</th><th>StatusId</th></tr>
 <tr><td>1</td><td>1</td><td>en</td><td>admin</td><td>0x01A508148A63F34..</td><td>0x454353354200...</td><td>0</td><td>1</td></tr>
@@ -226,6 +250,8 @@ Stores different roles used in the application
 <tr><td>RoleName</td><td>varchar(50)</td><td>Name of the role</td></tr>
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
+
+Inserted data of Roles: 
 
 <table class="table table-bordered">
 <tr><th>RoleId</th><th>RoleName</th></tr>
@@ -247,6 +273,8 @@ Stores access and rights based upon the role to the application modules.
 <tr><td>CanDelete</td><td>bit</td><td>Rights to delete</td></tr>
 </table>
 
+Inserted data of RolePermissions: 
+
 <table class="table table-bordered">
 <tr><th>RolePermissionId</th><th>RoleId</th><th>ApplicationModuleId</th><th>CanView</th><th>CanAdd</th><th>CanEdit</th><th>CanDelete</th></tr>
 <tr><td>1</td><td>1</td><td><td>1</td></td><td>True</td><td>True</td><td>True</td><td>True</td></tr>
@@ -263,6 +291,8 @@ Stores users and their respective roles.
 <tr><td>UserId</td><td>int</td><td>FK(Users)</td></tr>
 <tr><td>RoleId</td><td>int</td><td>FK(Roles)</td></tr>
 </table>
+
+Inserted data of UserRoles: 
 
 <table class="table table-bordered">
 <tr><th>UserRoleId</th><th>UserId</th><th>RoleId</th></tr>

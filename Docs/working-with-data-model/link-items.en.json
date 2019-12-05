@@ -26,18 +26,23 @@
         "href": "/generating-data-models"
     },
     {
+        "path":"advance",
         "title": "Advance"
     },
     {
+        "path":"data-operations",
         "title": "Data Operations"
     },
     {
+        "path":"database-approach",
         "title": "Database Approach"
     },
     {
+        "path":"database-transactions",
         "title": "Database Transactions"
     },
     {
+        "path":"multitenancy",
         "title": "Multitenancy"
     }
 ]
