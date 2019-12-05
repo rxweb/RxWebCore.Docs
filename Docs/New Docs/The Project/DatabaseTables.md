@@ -1,7 +1,7 @@
 ---
-title: Database Information
+title: Database Tables
 author: rxcontributorone
-category: step-by-step-guide
+category: newrxwebcore  
 ---
 
 # Database Tables
@@ -14,7 +14,7 @@ To effectively manage functionalities of a large enterprise application, we need
 
 Some objects need to be stored in the database which are often used in application and its value is limited upto some number based upon the entity. For example, the HRManagementSystem is going to work in regions where the organization has its branch, if it works in two countries(For example : India and US), their values will be stored in ApplicationObjects as below and making a seperate table for storing the values of countries is not preferable in this case.  
 
-**1. ModuleMasters**
+1. ModuleMasters
 
 Contains information about application's master modules.
 
@@ -30,7 +30,7 @@ Contains information about application's master modules.
 <tr><td>1</td><td>Management</td><td>1</td></tr>
 </table>
 
-**2. ApplicationModules**
+2. ApplicationModules
 
 Contains information about all the modules used in the application.
 
@@ -46,7 +46,7 @@ Contains information about all the modules used in the application.
 <tr><td>1</td><td>1</td><td>NULL</td></tr>
 </table>
 
-**3. ApplicationObjectTypes**
+3. ApplicationObjectTypes
 
 Contains type of Application Objects like status, gender etc.
 
@@ -63,7 +63,7 @@ Contains type of Application Objects like status, gender etc.
 <tr><td>2</td><td>Country</td><td>1</td></tr>
 </table>
 
-**4. ApplicationObjects**
+4. ApplicationObjects
 
 Contains application objects based upon its type.
 
@@ -85,7 +85,7 @@ Contains application objects based upon its type.
 ## Localization and Globalization
 For an application to efficiently work in different regions, it is necessary to maintain its timezones and locales used. A multilingual application includes returning server validation messages, change the whole UI based upon the selected language and bind the dropdowns based upon it.  
 
-**5. ApplicationTimeZones**
+5. ApplicationTimeZones
 
 It has details of different timezones of the world. For more detail about timezones Please refer <a href="https://www.iana.org/time-zones">IANA</a>.
 
@@ -102,7 +102,7 @@ It has details of different timezones of the world. For more detail about timezo
 <tr><td>1</td><td>America/Mexico_city</td><td>Central Time</td><td>1</td></tr>
 </table>
 
-**6. ApplicationLocales** 
+6. ApplicationLocales 
 
 It has details of standard locales used in the world.
 
@@ -119,7 +119,7 @@ It has details of standard locales used in the world.
 <tr><td>241</td><td>en-US</td><td>English(United States)</td><td>1</td></tr>
 </table>
 
-**7. LanguageContentKeys**
+7. LanguageContentKeys
 
 Stores language content key based upon which the multilingual data is entered. e.g:exceptionMessage
 
@@ -135,7 +135,7 @@ Stores language content key based upon which the multilingual data is entered. e
 <tr><td>241</td><td>exceptionMessage</td><td>0</td></tr>
 </table>
 
-**8. LanguageContents**
+8. LanguageContents
 
 Stores language contents of different languages which are required in your application based upon the key.
 
@@ -153,7 +153,7 @@ Stores language contents of different languages which are required in your appli
 <tr><td>1</td><td>1</td><td>g</td><td>Invalid Credentails</td><td>NULL</td></tr>
 </table>
 
-**9. ComponentLanguageContents**
+9. ComponentLanguageContents
 
 Stores multilingual language content component wise.
 
@@ -175,7 +175,7 @@ Stores multilingual language content component wise.
 
 Information of JWT web token, users and its roles for performing authorization and authentication. Whenever a new request is made at the time of login the jwt web token is stored and authorization will require information which will be retrieved from the database.
 
-**10. ApplicationUsersToken** 
+10. ApplicationUsersToken 
 
 Stores information of web token which are generated when any request is made on login method.
 
@@ -194,7 +194,7 @@ Stores information of web token which are generated when any request is made on 
 <tr><td>1</td><td>1</td><td>0x2271A2EDF169C5B75291C06D9FC66A6....</td><td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ..</td><td>NULL</td><td>2019-06-28 06:13:52.327</td></tr>
 </table>
 
-**11. Users**
+11. Users
 
 Stores information about users of the application.
 
@@ -216,7 +216,7 @@ Stores information about users of the application.
 <tr><td>1</td><td>1</td><td>en</td><td>admin</td><td>0x01A508148A63F34..</td><td>0x454353354200...</td><td>0</td><td>1</td></tr>
 </table>
 
-**12. Roles**
+12. Roles
 
 Stores different roles used in the application
 
@@ -232,7 +232,7 @@ Stores different roles used in the application
 <tr><td>1</td><td>Admin</td></tr>
 </table>
 
-**13. RolePermissions**
+13. RolePermissions
 
 Stores access and rights based upon the role to the application modules.
 
@@ -253,7 +253,7 @@ Stores access and rights based upon the role to the application modules.
 <tr><td>2</td><td>2</td><td><td>1</td></td><td>True</td><td>False</td><td>False</td><td>False</td></tr>
 </table>
 
-**14. UserRoles**
+14. UserRoles
 
 Stores users and their respective roles.
 
