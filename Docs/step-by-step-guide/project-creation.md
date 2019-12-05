@@ -14,7 +14,7 @@ The prerequisites which are required before creating new project using `rxwebcor
 </ul>
 
 # Install rxweb tool
-The first step towards creating an application is to install the [`rxwebcore`](https://www.nuget.org/packages/RxWebCore/) tool globally using below command in command prompt.
+The first step towards creating an application is to install the <a href="https://www.nuget.org/packages/RxWebCore/">`rxwebcore`</a> tool globally using below command in command prompt.
 
 ```js
  `dotnet install tool -g rxwebcore`
