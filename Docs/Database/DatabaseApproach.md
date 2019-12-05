@@ -1,7 +1,7 @@
 ---
 title: Database Approach
 author: rxcontributortwo
-category: database
+category: rxwebcore
 ---
 
 The core part of any software application is the `database designing`. It is a process of organizing data in a proper structural way. Before working on the business logic part in the application, we must decide what data is to be stored and which elements will be interrelated to each other. With all these information, you can start creating the database and its entities with respect to that application.
@@ -10,7 +10,7 @@ The core part of any software application is the `database designing`. It is a p
 Tables have data of entities in database and as every entity have multiples records, the table name should be created with name in plural for eg: [dbo].Persons and their coloumn should be in pascal case  
 For example 
 
-```js
+```
 CREATE TABLE dbo.Persons  
 (  
     PurchaseOrderID int NOT NULL  
@@ -24,7 +24,7 @@ CREATE TABLE dbo.Persons
 View are virtual tables used for retrieving of records based on join queries and table coloumns. It is created based upon name of the entity and the reference table  
 For eg: [dbo].vPersons 
 
-```js
+```
 CREATE VIEW [dbo].[vPersons]
 AS
 SELECT        PersonId, FullName
@@ -36,7 +36,7 @@ FROM            dbo.Persons
 Record Views are made to retrieve data from the entity that you want to display in user interface 
 For eg: [dbo].vPersonRecords
 
-```js
+```
 CREATE VIEW [dbo].[vPersonRecords]
 AS
 SELECT        PersonId, FullName

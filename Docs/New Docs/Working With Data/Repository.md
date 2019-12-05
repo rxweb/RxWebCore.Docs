@@ -1,7 +1,7 @@
 ---
 title: Repository
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 The repository methods works on single responsibilty principle that states that objects should have only one responsibilty. In our case the Repository methods are mainly used for performing read operations which allows us to seperate the load of read and write operations which results into high speed and performance.

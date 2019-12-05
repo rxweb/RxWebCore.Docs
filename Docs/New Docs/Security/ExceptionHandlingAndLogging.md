@@ -1,7 +1,7 @@
 ---
 title: ExpectionHandlingAndLogging
 author: rxcontributorone
-category: rxwebcore 
+category: newrxwebcore 
 ---
 
 Exception handling and logging keeps a trace of all the exceptions that occur whenever any request is made to the APIs. `IExceptionHandlerFeature` of Microsoft.AspNetCore.Diagnostics gives information about the error occured and the path. The error object of the same contains information of message, source, stacktrace and targetsite which provides the necessary information to detect the cause of the exception. Further the `LogAsync` method of `RxWeb.Core.Logging` will log the exception details in the database based upon the exception and the context.

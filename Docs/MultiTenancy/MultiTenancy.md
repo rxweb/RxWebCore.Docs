@@ -6,24 +6,7 @@ category: rxwebcore
 
 Multitenancy means multiple organization or client can use a single software. `Multi Tenant` application means a software application which serves multiple clients from the same server. Here `tenent` word represent the client. Tenant can be a single client or an organization. Each tenant’s data is isolated and is not accessible to each other. A good example would be Github where each user or organization has their separate work area. Multi-tenancy is used while developing software that runs for different organizations.
 
-# Multiple Database
-
-In this approach, every tenant uses it's own database. Therefore, each client's data can be easily differentiated. Every tenant has their own set of customers. Now, whenever any user login with their credential, the most important step is to identify from which tenant the request is made.
-
-Before the applicaton can be used by our clients, there must be a way to generate a `tenantId` that identifies the tenant for the application. Here, tenantId is generated based on the `hostUri`. Whenever any user will login with their credential, that tenantId will be generated and on the basis of that application will get the connection string of database of that particular tenant.
-
-```js
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            var tenantId = GetTenantId();
-            if (tenantId != 0)
-                modelBuilder.AddTenantFilter<int>(tenantId);
-        }
-```
-
-While authorizing the user's action ( i.e. can view or update the record), the user's tenant must be taken care by the application. Based on that, user must be assigned their respective role and the respective role permission. 
-
-# Identification of tenants in same database
+# Single Database
 
 Another approach for multi-tenancy is `Shared Database` between all the tenants, that means we keep all the tenant's data in a single database. In that case operational cost reduces as it is in the same database and do not depend on the number of clients. Maintainability becomes quite easier as in this approach isolating data is the main case study we need to think about. 
 
@@ -53,7 +36,7 @@ For example: If you track `Customers` table for example, every tenant's order wo
 
 For using this approach, you need to set `SingleTenantColumn: "ClientId"` in the config.json and add `[TenantFilterQuery]` annotation for the Clients and Customers model. 
 
-```js
+```
     "SingleTenantColumn": "ClientId"
 ```
 
@@ -61,9 +44,26 @@ While login, applications will check the credentials and return ClientId. With t
 
 For example: If I consider Client 1
 
-```js
+```
     new Claim(ClaimTypes.NameIdentifier, (1).ToString()),
     new Claim(CustomClaims.SingleTenantValue,"1")
 ```
 
 Here, `"1"` is the ClientId, so it will give the data of Cutomer1 or Customer2 based on the credentials.
+
+# Multiple Database
+
+In this approach, every tenant uses it's own database. Therefore, each client's data can be easily differentiated. Every tenant has their own set of customers. Now, whenever any user login with their credential, the most important step is to identify from which tenant the request is made.
+
+Before the applicaton can be used by our clients, there must be a way to generate a `tenantId` that identifies the tenant for the application. Here, tenantId is generated based on the `hostUri`. Whenever any user will login with their credential, that tenantId will be generated and on the basis of that application will get the connection string of database of that particular tenant.
+
+```
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var tenantId = GetTenantId();
+            if (tenantId != 0)
+                modelBuilder.AddTenantFilter<int>(tenantId);
+        }
+```
+
+While authorizing the user's action ( i.e. can view or update the record), the user's tenant must be taken care by the application. Based on that, user must be assigned their respective role and the respective role permission. 

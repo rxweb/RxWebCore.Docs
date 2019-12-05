@@ -1,7 +1,7 @@
 ---
 title: MaxLength
 author: rxcontributortwo
-category: annotation
+category: rxwebcore
 ---
 
 You can use `MaxLength` annotation if you want to limit maximum length of any model property.
@@ -10,7 +10,7 @@ You can use `MaxLength` annotation if you want to limit maximum length of any mo
 
 If you want to limit `ContactNumber` property to maximum 10 digit then you just have to set: 
 
-```js
+```
 [MaxLength(10)]
 public string ContactNumber { get; set; }
 ```
@@ -28,7 +28,7 @@ public string ContactNumber { get; set; }
 
 **Custom Validation Function**
 
-```js
+```
     public partial class User {
 
         public string Email { get; set; }
@@ -44,7 +44,7 @@ public string ContactNumber { get; set; }
 
 **Set MaxLength annotation**
 
-```js
+```
     [MaxLength( `conditionalExpressionName`: nameof( `User.ContactConditionalExpression` ))]
     public string EmailAddress { get; set; }
 ```
@@ -56,7 +56,7 @@ If you want to set any validation property at runtime, then `dynamicConfigExpres
 For example, if you want to set messageKey of any model property at run time:
 Here is the dynamic expression function.
 
-```js
+```
     public partial class User {
 
         public Dictionary<string, object> AddressDynamicExpression(object parentEntity = null) {
@@ -70,7 +70,7 @@ Here is the dynamic expression function.
 ```
 **Set MaxLength annotation dynamically**
 
-```js
+```
     [MaxLength( `dynamicConfigExpressionName`: nameof(`AddressDynamicExpression`))]
     public string Address { get; set; }
 ```

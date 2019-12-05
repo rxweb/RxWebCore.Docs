@@ -18,7 +18,7 @@ Sending Email uses the `SendAsync` method.
 # Standard Email
 For sending email using standard email, you need to set EmailType as standard and set the configuration in email which are 
 
-```js
+```
     "EmailType":"Standard"
 ```
 
@@ -51,7 +51,7 @@ Sending email using sendgrid requires ApiKey which is provided by sendgrid. For 
 [SendGrid Api Key](https://sendgrid.com/docs/api-reference/)
 For sending email using sendgrid, you need to set EmailType as SendGrid and set the configuration in email which are 
 
-```js
+```
     "EmailType":"SendGrid"
 ```
 
@@ -64,7 +64,7 @@ For sending email using MailKit, you need to set EmailType as MailKit and set th
 
 For more information, Please refer [MailKit](http://www.mimekit.net/docs/html/N_MailKit_Net_Smtp.htm)
 
-```js
+```
     "EmailType":"MailKit"
 ```
 1) Host

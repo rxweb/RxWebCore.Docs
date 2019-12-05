@@ -1,7 +1,7 @@
 ---
 title: Shared Controller
 author: rxcontributortwo
-category: rxwebcore 
+category: newrxwebcore 
 ---
 
 To manage data which are to be used in multiple data entity operations, A shared controller is made. For example, If you want to perform delete operation of multiple objects at one call.

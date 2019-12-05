@@ -1,7 +1,7 @@
 ---
 title: Authentication
 author: rxcontributorone
-category: rxwebcore core
+category: newrxwebcore
 ---
 Developing any enterprise application, authentication is the primary criteria, like we are developing RESTfull API which requires some sort of authentication mechanism. We will implement it using Token based authentication through JSON Web Token. For more information about JWT Token, Please refer this [docs](https://tools.ietf.org/html/rfc7519).
 Now a days this is very popular and more reliable. 

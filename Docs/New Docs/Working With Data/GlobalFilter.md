@@ -1,7 +1,7 @@
 ---
 title: Global Filter
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 Global filters 

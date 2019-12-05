@@ -1,7 +1,7 @@
 ---
 title: Required
 author: rxcontributortwo
-category: annotation
+category: rxwebcore
 ---
 
 `Required` annotation can be used when you don't want a model property to be null. 
@@ -10,7 +10,7 @@ category: annotation
 
 If you want to set EmailId to be required then you just have to write:
 
-```js
+```
 [Required]
 public string EmailId { get; set; }
 ```
@@ -28,7 +28,7 @@ public string EmailId { get; set; }
 
 **Custom Validation Function**
 
-```js
+```
     public partial class User {
 
         public bool EmailConditionalExpression(object parentEntity = null) {
@@ -39,7 +39,7 @@ public string EmailId { get; set; }
 ```
 **Set Required annotation**
 
-```js
+```
     [Required( `conditionalExpressionName`: nameof( `User.EmailConditionalExpression` ))]
     public string EmailAddress { get; set; }
 ```
@@ -51,7 +51,7 @@ If you want to set any validation property at runtime, then `dynamicConfigExpres
 For example, if you want to set messageKey of any model property at run time:
 Here is the dynamic expression function.
 
-```js
+```
     public partial class Hobby {
 
         public Dictionary<string, object> EmailDynamicExpression(object parentEntity = null) {
@@ -65,7 +65,7 @@ Here is the dynamic expression function.
 ```
 **Set Required annotation dynamically**
 
-```js
+```
     [Required( `dynamicConfigExpressionName`: nameof(`EmailDynamicExpression`))]
     public string EmailAddress { get; set; }
 ```

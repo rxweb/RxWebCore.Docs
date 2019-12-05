@@ -1,7 +1,7 @@
 ---
 title: Basic Controller
 author: rxcontributortwo
-category: api
+category: rxwebcore
 ---
 
 When you want basic data operations without any complexity and need to modify any of the custom business logic, basic controller is made. It includes methods which are used for simple CRUD operations.
@@ -42,11 +42,11 @@ There are mainly 6 methods used for the Basic Controller which needs to be there
 
 Here is an example of a basic controller.
 
-```js
+```
 
     [ApiController]
     [Route("api/[controller]")]
-	public class CustomerController : BaseController<Customer,vCustomer,vCustomerRecord>
+    public class CustomerController : BaseController<Customer,vCustomer,vCustomerRecord>
     {
         public CustomerController(IOrderUow uow):base(uow) {}
     }

@@ -1,7 +1,7 @@
 ---
 title: DomainController
 author: rxcontributorone
-category: rxwebcore core
+category: newrxwebcore
 ---
 
 Some entities may involve complex logic while implementation of the methods in the API, When there is a lot of custom business logic required while executing the data objects a `DomainController` is made. When a domain controller is made it indicates that the complexity of the controller is high and it generates a seperate domain class where the logic is written and  it is refered in the controller class.
@@ -25,16 +25,18 @@ Lets consider a scenario where you want to create a `UsersController` with high 
 In the above command by writing --domain indicates its complexity high, Users is the controller name and User is the Module name. It will create a controller `UsersController` in `UsersModule` in Api folder of the project and `UsersDomain.cs` in the Domain folder of the project.
 
 # Methods   
-| Method | Return Type | Request Params | Request Body | Response|
-| ----------- | ----------- | ----------- | ----------- | ----------- | 
-| GetAsync | object | - | - | complete list of that entity |
-| GetById | Entity_Name | Id of that entity which you want to get | - | Single entity based on the id |
-| AddValidation | string | - | entity object |-| Added Validation |
-| UpdateValidation | string | entity object | - | NoContent() |
-| AddAsync | void | entity object | - | NoContent() |
-| UpdateAsync | void | entity object | - | NoContent() |
-| DeleteValidation | void | entity object | - | NoContent() |
-| DeleteAsync | void | entity object | - | NoContent() |
+
+<table class="table table-bordered">
+<tr><th>Method</th><th>Return Type</th><th>Request Params</th><th>Request Body</th><th>Response</th></tr>
+<tr><td>GetAsync</td><td>object</td><td> - </td><td> - </td><td>complete list of that entity</td></tr>
+<tr><td>GetById</td><td>Entity_Name</td><td>Id of that entity which you want to get</td><td> - </td><td>Single entity based on the id</td></tr>
+<tr><td>AddValidation</td><td>string</td><td>entity object</td><td> - </td><td>Added Validation</td></tr>
+<tr><td>UpdateValidation</td><td>string</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>AddAsync</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>UpdateAsync</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>DeleteValidation</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>DeleteAsync</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+</table>
 
 # Example
 ```js

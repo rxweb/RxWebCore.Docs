@@ -1,7 +1,7 @@
 ---
 title: Generating Models
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 POCO model classes define the properties of the data that is stored in the database. These classes will be used for working with Entity Framework(ORM).   

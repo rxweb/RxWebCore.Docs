@@ -1,7 +1,7 @@
 ---
 title: Search Lookup Controller
 author: rxcontributortwo
-category: api
+category: rxwebcore
 ---
 
 When you want to perform a search operation in a lookup data( for example: dropdown ), in that case `SearchLookup Controller` is made. In SearchLookup Controller, parameters are passed in `querystring` in the form of `Dictionary<string, string>` object. Lookup type need to be passed to the controller which is.
@@ -42,7 +42,7 @@ There are mainly 6 methods used for the SearchLookup Controller which needs to b
 
 Here is an example of a searchLookup controller.
 
-```js
+```
 
     [ApiController]
 	[Route("api/[controller]")]

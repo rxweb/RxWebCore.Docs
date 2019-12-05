@@ -1,7 +1,7 @@
 ---
 title: IpSafelist 
 author: rxcontributorone
-category: rxwebcore 
+category: newrxwebcore 
 ---
 
 IpSafelist means to create a list of trusted Ip addresses. It is used for validating access to limited and trusted IPs.

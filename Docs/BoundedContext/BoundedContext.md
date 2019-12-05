@@ -1,7 +1,7 @@
 ---
 title: Bounded Context
 author: rxcontributortwo
-category: boundedContext
+category: rxwebcore
 ---
 
 There are some scenarios when you have to deal with too many tables, then it becomes difficult to manage those tables. For such problems `Bounded context design pattern` or `Domain-Driven Design` can be a solution.
@@ -67,8 +67,8 @@ This will add reference of the respective tables in their specific context.
 
 Here is the complete example of the OrderContext we have created:
 
-```js
-    public class OrderContext : BaseBoundedDbContext, IOrderContext
+```
+public class OrderContext : BaseBoundedDbContext, IOrderContext
     {
         public OrderContext(MainSqlDbContext sqlDbContext,  IOptions<DatabaseConfig> databaseConfig, IHttpContextAccessor contextAccessor): base(sqlDbContext, databaseConfig.Value, contextAccessor){ }
 

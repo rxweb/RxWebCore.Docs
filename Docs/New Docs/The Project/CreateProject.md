@@ -1,7 +1,7 @@
 ---
 title: Create Project
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore
 ---
 
 ### Create a project

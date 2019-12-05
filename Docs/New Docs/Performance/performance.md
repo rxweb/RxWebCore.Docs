@@ -1,7 +1,7 @@
 ---
 title: performance
 author: rxcontributorone
-category: rxwebcore
+category: newrxwebcore
 ---
 
 ASP.NET core provides in-memory cache, distributed cache and response compression which are  used to improve durability and performance of 
@@ -16,10 +16,8 @@ Static cache is added using annotation of `[Cachable]` above the controller. In 
     [Route("api/[controller]")]
 	
 	public class CandidatesController : BaseController<Candidate,Candidate,Candidate>
-
     {
         public CandidatesController(IResourceUow uow):base(uow) {}
-
     }
 ```
 

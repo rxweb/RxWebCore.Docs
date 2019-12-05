@@ -1,7 +1,7 @@
 ---
 title: LookupController
 author: rxcontributorone
-category: api
+category: rxwebcore
 ---
 
 Large modules have entities which need to be bind as a dropdown, In such cases a lookup controller is made for the module which accesses Uow to manipulate data based upon the entity and display the data of module entities in a dropdown.  
@@ -29,18 +29,11 @@ Lets consider a scenario where you want to create a `OrderLookupsController` in 
 <tr><td>Where</td><td>list</td><td>predicate</td><td> - </td><td>list</td></tr>
 </table>
 
-| Method | Return Type | Request Params | Request Body | Response|
-| ----------- | ----------- | ----------- | ----------- | ----------- | 
-| AllAsync | complete list of that entity | - | - | complete list of that entity |
-| OrderBy | list | predicate | - | list |
-| Where | list | predicate | - | list |
-
 # Example
 
-```js
+```
     [ApiController]
     [Route("api/[controller]")]
-	
 	public class OrderLookUpsController : BaseLookupController
     {
         public OrderLookUpsController(IOrderLookUpUow uow):base(uow) {}

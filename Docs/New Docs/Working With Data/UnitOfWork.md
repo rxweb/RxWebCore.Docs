@@ -1,7 +1,7 @@
 ---
 title: UnitOfWork
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 The UnitOfWork pattern is vast and we can use in multiple areas, To know more about the UnitOfWork pattern, Please refer the Martin Fowler Article, This is awesome. 
