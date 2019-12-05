@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Bounded Context",
+        "href": "/bounded-context",
+        "childrens": [
+            {
+                "title": "Overview",
+                "href": "/bounded-context#overview"
+            },
+            {
+                "title": "Scenario",
+                "href": "/bounded-context#scenario"
+            },
+            {
+                "title": "Create Bounded Context",
+                "href": "/bounded-context#createboundedcontext"
+            },
+            {
+                "title": "Add Database Entities",
+                "href": "/bounded-context#adddatabaseentities"
+            }
+        ]
+    },
+    {
+        "title": "Generating Data Models",
+        "href": "/generating-data-models"
+    },
+    {
+        "title": "Advance"
+    },
+    {
+        "title": "Data Operations"
+    },
+    {
+        "title": "Database Approach"
+    },
+    {
+        "title": "Database Transactions"
+    },
+    {
+        "title": "Multitenancy"
+    }
+]

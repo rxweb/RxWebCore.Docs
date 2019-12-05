@@ -1,0 +1,28 @@
+[{
+    "title":"Project Brief",
+    "href":"/project-brief"
+},
+{
+    "title":"Prerequisites",
+    "href":"/project-creation#prerequisites"
+},
+{
+    "title":"Installation",
+    "href":"/project-creation#installation"
+},
+{
+    "title":"Project Creation",
+    "href":"/project-creation#projectcreation"
+},
+{
+    "title":"Project Structure",
+    "href":"/project-structure"
+},
+{
+    "title":"Database Information",
+    "href":"/database-information"
+},
+{
+    "title":"Run The Project",
+    "href":"/run-the-project"
+}]

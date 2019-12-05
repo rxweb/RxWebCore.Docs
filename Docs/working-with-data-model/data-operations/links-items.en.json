@@ -1,0 +1,20 @@
+[{
+    "title":"Brief",
+    "href":"/brief"
+},
+{
+    "title":"Create",
+    "href":"/create"
+},
+{
+    "title":"Read",
+    "href":"/read"
+},
+{
+    "title":"Update",
+    "href":"/update"
+},
+{
+    "title":"Delete",
+    "href":"/delete"
+}]
