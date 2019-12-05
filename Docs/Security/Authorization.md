@@ -1,7 +1,7 @@
 ---
 title: Authorization
 author: rxcontributorone
-category: rxwebcore
+category: security
 ---
 
 `Authorization` is a method of adjudging which user is able to do what. It uses `authentication` for identifying the user, It is done using role based authorization mechanism through which the access modules of the user is determined based upon role where rules are maintained in the database.
@@ -11,18 +11,18 @@ Role based authorization is a mechanism through which we determine that which us
 
 Roles Table:
 
-<table>
+<table class="table table-bordered">
 <tr><th>RoleId</th><th>RoleName</th></tr>
 <tr><td>1</td><td>Admin</td></tr>
-<tr><td>2</td><td>Customer</td></tr>
+<tr><td>2</td><td>HR</td></tr>
 </table>
 
 RolePermissions Table:
 
-<table>
-<tr><th>RolePermissionId</th><th>RoleId</th><th>ApplicationModuleId</th><th>CanView</th><th>CanAdd</th><th>CanEdit</th><th>CanDelete</th></tr>
-<tr><td>1</td><td>1</td><td>1</td><td>True</td><td>True</td><td>True</td><td>True</td></tr>
-<tr><td>2</td><td>2</td><td>1</td><td>True</td><td>False</td><td>False</td><td>False</td></tr>
+<table class="table table-bordered">
+<tr><th>RolePermissionId</th><th>RoleId</th><th>RoleId</th><th>RoleId</th><th>RoleId</th></tr>
+<tr><td>1</td><td>1</td><td>True</td><td>True</td><td>True</td><td>True</td></tr>
+<tr><td>2</td><td>2</td><td>True</td><td>False</td><td>False</td><td>False</td></tr>
 </table>
 
 Based upon the RoleId and ApplicationModuleId it will retrieve the information about which user has how much access of which module based upon the role defined in Roles Table. 
@@ -30,7 +30,7 @@ The application module in `RolePermissions` table is a FK reference from `Applic
 
 ApplicationModules Table:
 
-<table>
+<table class="table table-bordered">
 <tr><th>ApplicationModuleId</th><th>ModuleMasterId</th><th>ParentApplicationModuleId</th></tr>
 <tr><td>1</td><td>1</td><td>1</td></tr>
 </table>
@@ -39,33 +39,29 @@ The Module is defined in `ModuleMasters` Table
 
 ModuleMasters Table: 
 
-<table>
+<table class="table table-bordered">
 <tr><th>ModuleMasterId</th><th>ModuleMasterName</th><th>StatusId</th></tr>
-<tr><td>1</td><td>Registration</td><td>1</td></tr>
+<tr><td>1</td><td>Resource</td><td>1</td></tr>
 </table>
 
 ## Access
 It is done using `Access` in which id of the application module is passed. Through which it will execute authorization based upon which the user rights are determined.
 
-```
+```js
     [ApiController]
     [Route("api/[controller]")]
 	[Access(1)]
-	public class CustomerController : BaseController<Customer,vCustomer,vCustomerRecord>
+	public class UsersController : BaseController<User,vUsers,vUserRecords>
     {
-        public CustomerController(IOrderUow uow):base(uow) {}
+        public UsersController(IUserUow uow):base(uow) {}
     }
 ```        
 
 To add authorization in the controller using access, the following command is used:
 
-> -- rxwebcore --controller --basic --main Customer --uow --Order --access 1
+> -- rxwebcore --controller --basic --main Users --uow --User --access 1
 
-In this command `Customer` is the controller name, `Order` is the module and 1 is the application module Id retrieved from the database. 
-
-The user can check whether which controller are having authorization and which are by-pass.
-
-> --rxwebcore security
+In this command `Users` is the controller name, `User` is the module and 1 is the application module Id retrieved from the database. 
 
 ## AllowAnonymous
 
@@ -73,12 +69,12 @@ When you want to by-pass the controller without any authorization when you want 
 
 As per the below scenario it will allow any user to access this `Post` method and allow new user to register.  
 
-```
+```js
     [ApiController]
     [Route("api/[controller]")]
 	[AllowAnonymous]
 	public class UserController : BaseController<User,vUser,vUserRecord>
     {
-        public UserController(IRegisterUow uow):base(uow) {}
+        public UserController(IUserUow uow):base(uow) {}
     }
 ```

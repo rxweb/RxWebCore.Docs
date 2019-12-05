@@ -1,0 +1,39 @@
+[{
+    "title":"Api",
+    "href":"/api",
+    "childrens": [
+        {
+            "title": "Brief",
+            "href": "/api#brief"
+        },
+        {
+            "title": "Types",
+            "href": "/api#types"
+        },
+        {
+            "title": "Best Practices",
+            "href": "/api#bestpractices"
+        }
+    ]
+},
+{
+    "title":"Basic Controller",
+    "href":"/basic-controller"
+},
+{
+    "title":"Domain Controller",
+    "href":"/domain-controller"
+},
+{
+    "title":"Lookup Controller",
+    "href":"/lookup-controller"
+},
+{
+    "title":"Search Controller",
+    "href":"/search-controller"
+},
+{
+    "title":"Shared Controller",
+    "href":"/shared-controller"
+}
+]
