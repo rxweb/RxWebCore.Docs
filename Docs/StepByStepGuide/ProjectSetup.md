@@ -1,7 +1,7 @@
 ---
 title: Project Setup
 author: rxcontributortwo
-category: stepByStep
+category: rxwebcore
 ---
 
 # Prerequisites
@@ -73,7 +73,7 @@ After the project is created, you need to initially set connection string in `ap
 
 > If you haven't created any database, you can create a blank database for now and set its connection string here.
 
-```js
+```
     "ConnectionString" : {
         "<Database_Name>": "<Connection_String>"
     }
@@ -81,7 +81,7 @@ After the project is created, you need to initially set connection string in `ap
  
 For example: If you want to set connection string of `SampleDb` for SampleProject, then you will write:
 
-```js
+```
     "ConnectionString" : {
         "SampleDb": "data source=yourServerAddress;initial catalog=SampleDb;persist security info=True;User Id=yourUsername;Password=yourPassword;Integrated Security=true;MultipleActiveResultSets=True;App=EntityFramework;"
     }
@@ -106,35 +106,3 @@ For generating their models in the application, open the `Package Manager Consol
 > **rxwebcore --models --main**
 
 This will generate models for all the tables and views in the `Models` folder inside the `Models` section of the project.
-
-# Project Definition
-
-## Api
-
-`Api` project is a `.Net Core 3` based Web API which has a target framework of `.Net Framework 4.6.1`. It includes controllers, views and other configuration files related to your project.
-
-## Domain
-
-`Domain` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It consist of your complex business logic based on your project modules.
-
-## Bounded Context
-
-`Bounded Context` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It consist of some default context files as well as your custom bounded context files for the project's main modules.
-
-## UOW
-
-`UnitOfWork` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It consists of some default uow as well as your custom uow files which sets the context repositories for the respective context files.
-
-## Infrastructure
-
-`Infrastructure` is a `Class Library` which has a target framework of `.Net Framework 4.6.1`. It includes all the default and custom filters required in your project as well as other authorization, cryptography and other security token provider files used in the project.
-
-## Models
-
-`Models` folder is also a class library based on same target framework of `.Net Framework 4.6.1`. It consists various subfolders like `DbEntities`, `Models` and `ViewModels`. 
-
-<ul>
-    <li>DbEntities folder contains the database table models</li>
-    <li>Models folder contains the custom models which are not present in the database table models but is required as per the project.</li>
-    <li>ViewModels folder contains all the `views` which you made in your database(including lookup view and record view)</li>
-</ul>

@@ -1,7 +1,7 @@
 ---
 title: MultiTenancy
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 MultiTenancy is used for the purpose of developing software that runs for different group of users. It is important to select the strategy of implementing multitenancy based upon the number of users of strength of the organization.     
@@ -20,19 +20,21 @@ There are two tables in the database Client and Candidate.
 
 Here is the Clients table
 
-| ClientId | ClientName |
-| ----------- | ----------- |
-| 1 | ABC Corp |
-| 2 | Xyz Infotech |
+<table class="table table-bordered">
+<tr><th>ClientId</th><th>ClientName</th></tr>
+<tr><td>1</td><td>IBM</td></tr>
+<tr><td>2</td><td>Oracle</td></tr>
+</table>
 
 Here is the Customers table.
 
-| CustomerId | ClientId | CustomerName |
-| ----------- | ----------- | ----------- |
-| 1 | 1 | John |
-| 2 | 1 | Maria |
-| 3 | 2 | Tony |
-| 4 | 2 | Steve |
+<table class="table table-bordered">
+<tr><th>CustomerId</th><th>ClientId</th><th>CustomerName</th></tr>
+<tr><td>1</td><td>1</td><td>John</td></tr>
+<tr><td>2</td><td>1</td><td>Maria</td></tr>
+<tr><td>3</td><td>2</td><td>Tony</td></tr>
+<tr><td>4</td><td>2</td><td>Steve</td></tr>
+</table>
 
 Coming to the project, the `ClientId` is to be configured in the `appsettings.json` where `TenantColumnName` is the key Name and `ClientId` is the value.
 
@@ -50,9 +52,10 @@ Multitenancy with multiple databases means keeping seperate database each tenant
 ## Step 1 : 
 Create a database named `HRManagementAdminDb` and create a table named `MultiTenants`
 
-| MultiTenantId | HostUri | ConnectionName | ConnectionString |
-| ----------- | ----------- | ----------- | --------------- |
-| 1 | localhost:44395 | Main | Your connection string |
+<table class="table table-bordered">
+<tr><th>MultiTenantId</th><th>HostUri</th><th>ConnectionName</th><th>ConnectionString</th></tr>
+<tr><td>1</td><td>localhost:44395</td><td>Main</td><td>Your connection string</td></tr>
+</table>
 
 ## Step 2 : 
 Run cli command   

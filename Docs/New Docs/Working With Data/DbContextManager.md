@@ -1,7 +1,7 @@
 ---
 title: DbContextManager
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 The database operations are done with the help of Uow methods, but when complex data operations are involved it is managed using `DbContextManager`. It seperates the query execution of stored procedure and the begin transaction, commit process.
@@ -27,17 +27,19 @@ Insertion of Candidate can be maintained by `RegisterNewAsync` method of Uow but
 
 Candidate Table:
 
-| CandidateId | FirstName | EmailId | Designation | Experience |  
-| ----------- | ----------- | ----------- | ----- | ------- | 
-| 1 | John  | johnd@gmail.com | Software Engineering | 2 |
-| 2 | Bharat | bharatp@gmail.com | Software Engineering | 2 |
+<table class="table table-bordered">
+<tr><th>CandidateId</th><th>FirstName</th><th>EmailId</th><th>Designation</th><th>Experience</th></tr>
+<tr><td>1</td><td>John</td><td>johnd@gmail.com</td><td>Software Engineering</td><td>2</td></tr>
+<tr><td>2</td><td>Bharat</td><td>bharatp@gmail.com</td><td>Software Engineering</td><td>2</td></tr>
+</table>
 
 CandidateAvailabilities Table:
 
-| CandidateAvailabilityId | AvailableDate | FromTime | ToTime | CandidateId |
-| ----------- | ----------- | ----------- | -------- | ------ | 
-| 1 | 2019-05-01 00:00:00.000  | 10:15:00 | 10:30:00 | 1 |
-| 2 | 2019-04-01 00:00:00.000 | 10:30:00 | 10:40:00 | 2 |    
+<table class="table table-bordered">
+<tr><th>CandidateAvailabilityId</th><th>AvailableDate</th><th>FromTime</th><th>ToTime</th><th>CandidateId</th></tr>
+<tr><td>1</td><td>2019-05-01 00:00:00.000</td><td>10:15:00</td><td>10:30:00</td><td>1</td></tr>
+<tr><td>1</td><td>2019-04-01 00:00:00.000</td><td>10:30:00</td><td>10:40:00</td><td>2</td></tr>
+</table>
 
 ## Step 1 : 
 Add the Candidate's details using `RegisterNewAsync` method of Uow. Perform `CommitAsync` on it.

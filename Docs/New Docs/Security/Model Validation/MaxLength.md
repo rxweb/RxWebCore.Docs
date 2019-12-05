@@ -1,7 +1,7 @@
 ---
 title: MaxLength
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 `MaxLength` annotation is used when you want to limit maximum length of a model property. 

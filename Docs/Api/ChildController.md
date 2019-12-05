@@ -1,7 +1,7 @@
 ---
 title: Child Controller
 author: rxcontributortwo
-category: api
+category: rxwebcore
 ---
 
 When in case there is any reliancy of a parent controller while performing data operations, child controller is made. Parent and child controller are related to each other by a shared key 
@@ -42,7 +42,7 @@ There are mainly 6 methods used for the Child Controller which needs to be there
 
 Here is an example of child controller:
 
-```js
+```
     
     [ApiController]
     [Route("api/Customer/{CustomerId}/[controller]")]	

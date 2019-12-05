@@ -1,7 +1,7 @@
 ---
 title: write
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 # Write

@@ -1,7 +1,7 @@
 ---
 title: Bounded Context
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 This will be helpful in those cases where we are building a large enterprise application. All features are segregated into the modules. So we take the advantage of bounded context and create the context modules wise based upon the Application needs. This gives us a comfort to add/remove the entity into the specific context without hindering to other modules(in terms of context).
@@ -16,11 +16,12 @@ rxwebcore --context --main <Context_Name>
 
 Parameters of creating a context 
 
-| Parameter | Description |
-| ----------- | ----------- |
-| --context | For generating BoundedContext |
-| --main | key of the database connectionString mentioned in `appsettings.json` | 
-| <Context_Name> | Name of the context |
+<table class="table table-bordered table-striped">
+<tr><th>Parameter</th><th>Description</th></tr>
+<tr><td>--context</td><td>For generating BoundedContext</td></tr>
+<tr><td>--main</td><td>key of the database connectionString mentioned in `appsettings.json`</td></tr>
+<tr><td><Context_Name></td><td>Name of the context</td></tr>
+</table>
 
 Now lets create Resource Management, Candidate Module and User Modules. we will start with Resource Management Module and add Database models into it.
 

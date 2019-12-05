@@ -1,7 +1,7 @@
 ---
 title: SearchController
 author: rxcontributorone
-category: api
+category: rxwebcore
 ---
 
 Displaying list of the data tuples in the user interface requires a `search` operation when there is large number of records retrieved.
@@ -35,7 +35,7 @@ Lets consider a scenario where you want to create a `ProductsSearchController` i
 In this example  `MainSqlDbContext` is the context of `OrdersModule` which contains the `spSearchProducts`
 which is executing while fetching the search result which are retrieved by passing searchParams as dictionary object in the post method.
 
-```js
+```
     [ApiController]
 	[Route("api/[controller]")]
     public class ProductsSearchController : ControllerBase

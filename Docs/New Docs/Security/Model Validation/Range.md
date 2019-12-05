@@ -1,7 +1,7 @@
 ---
 title: Range
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 

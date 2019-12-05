@@ -1,7 +1,7 @@
 ---
 title: Database Tables
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 # Database Tables
@@ -18,54 +18,56 @@ Some objects need to be stored in the database which are often used in applicati
 
 Contains information about application's master modules.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ModuleMasterId</td><td>int</td><td>PK</td></tr>
 <tr><td>ModuleMasterName</td><td>varchar(100)</td><td>Name of the application module master.</td></tr> 
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
-
-| ModuleMasterId | ModuleMasterName | StatusId |
-| ----------- | ----------- | -------- | 
-| 1 | User Management | 1 |
+<table class="table table-bordered">
+<tr><th>ModuleMasterId</th><th>ModuleMasterName</th><th>StatusId</th></tr>
+<tr><td>1</td><td>Management</td><td>1</td></tr>
+</table>
 
 2. ApplicationModules
 
 Contains information about all the modules used in the application.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ApplicationModuleId</td><td>int</td><td>PK</td></tr>
 <tr><td>ModuleMasterId</td><td>int</td><td>FK(ModuleMasters).</td></tr> 
 <tr><td>ParentApplicationModuleId</td><td>int</td><td>Id of parent application module in case of entering a child module</td></tr>
 </table>
 
-| ApplicationModuleId | ModuleMasterId   | ParentApplicationModuleId |
-| ----------- | ----------- | -------- | 
-| 1 | 1 | NULL |
+<table class="table table-bordered">
+<tr><th>ApplicationModuleId</th><th>ModuleMasterId</th><th>ParentApplicationModuleId</th></tr>
+<tr><td>1</td><td>1</td><td>NULL</td></tr>
+</table>
 
 3. ApplicationObjectTypes
 
 Contains type of Application Objects like status, gender etc.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ApplicationObjectTypeId</td><td>int</td><td>PK</td></tr>
 <tr><td>ApplicationObjectTypeName</td><td>varchar(100)</td><td>Name of the application Object Type.</td></tr> 
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
-| ApplicationObjectTypeId | ApplicationObjectTypeName | StatusId |
-| ----------- | ----------- | -------- | 
-| 1 | Status | 1 |
-| 2 | Country | 1 |
+<table class="table table-bordered">
+<tr><th>ApplicationObjectTypeId</th><th>ApplicationObjectTypeName</th><th>StatusId</th></tr>
+<tr><td>1</td><td>Status</td><td>1</td></tr>
+<tr><td>2</td><td>Country</td><td>1</td></tr>
+</table>
 
 4. ApplicationObjects
 
 Contains application objects based upon its type.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ApplicationObjectId</td><td>int</td><td>PK</td></tr>
 <tr><td>ApplicationObjectTypeId</td><td>int</td><td>FK(ApplicationObjectTypes)</td></tr>
@@ -73,11 +75,12 @@ Contains application objects based upon its type.
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
-| ApplicationObjectId | ApplicationObjectTypeId | ApplicationObjectName | StatusId |
-| ----------- | ----------- | ----------- | -------- | 
-| 1 | 1 | Active | 1 |
-| 2 | 2 | India  | 1 |
-| 3 | 2 | U.S | 1 |
+<table class="table table-bordered">
+<tr><th>ApplicationObjectId</th><th>ApplicationObjectTypeId</th><th>ApplicationObjectName</th><th>StatusId</th></tr>
+<tr><td>1</td><td>1</td><td>Active</td><td>1</td></tr>
+<tr><td>2</td><td>1</td><td>India</td><td>1</td></tr>
+<tr><td>3</td><td>2</td><td>U.S</td><td>1</td></tr>
+</table>
 
 ## Localization and Globalization
 For an application to efficiently work in different regions, it is necessary to maintain its timezones and locales used. A multilingual application includes returning server validation messages, change the whole UI based upon the selected language and bind the dropdowns based upon it.  
@@ -86,7 +89,7 @@ For an application to efficiently work in different regions, it is necessary to 
 
 It has details of different timezones of the world. For more detail about timezones Please refer [IANA](https://www.iana.org/time-zones).
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ApplicationTimeZoneId</td><td>int</td><td>PK</td></tr>
 <tr><td>ApplicationTimeZoneName</td><td>nvarchar(100)</td><td>Name of the Application TimeZone</td></tr>
@@ -94,15 +97,16 @@ It has details of different timezones of the world. For more detail about timezo
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
-| ApplicationTimeZoneId | ApplicationTimeZoneName | Comment | StatusId |
-| ----------- | ----------- | ----------- | -------- | 
-| 1 | America/Mexico_city | Central Time | 1 |
+<table class="table table-bordered">
+<tr><th>ApplicationTimeZoneId</th><th>ApplicationTimeZoneName</th><th>Comment</th><th>StatusId</th></tr>
+<tr><td>1</td><td>America/Mexico_city</td><td>Central Time</td><td>1</td></tr>
+</table>
 
 6. ApplicationLocales 
 
 It has details of standard locales used in the world.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ApplicationLocaleId</td><td>int</td><td>PK</td></tr>
 <tr><td>LocaleCode</td><td>varchar(50)</td><td>Code of the locale</td></tr>
@@ -110,30 +114,32 @@ It has details of standard locales used in the world.
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
-| ApplicationLocaleId | LocaleCode | LocaleName | StatusId |
-| ----------- | ----------- | ----------- | -------- | 
-| 241 | en-US | English(United States) | 1 |
+<table class="table table-bordered">
+<tr><th>ApplicationLocaleId</th><th>LocaleCode</th><th>LocaleName</th><th>StatusId</th></tr>
+<tr><td>241</td><td>en-US</td><td>English(United States)</td><td>1</td></tr>
+</table>
 
 7. LanguageContentKeys
 
 Stores language content key based upon which the multilingual data is entered. e.g:exceptionMessage
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>LanguageContentKeyId</td><td>int</td><td>PK</td></tr>
 <tr><td>KeyName</td><td>varchar(50)</td><td>Key/type of the language content</td></tr>
 <tr><td>IsComponent</td><td>bit(300)</td><td>1 if the key is a component</td></tr> 
 </table>
 
-| LanguageContentKeyId | KeyName | IsComponent 
-| ----------- | ----------- | ----------- | 
-| 1 | exceptionMessage | 0 | 
+<table class="table table-bordered">
+<tr><th>LanguageContentKeyId</th><th>KeyName</th><th>IsComponent</th></tr>
+<tr><td>241</td><td>exceptionMessage</td><td>0</td></tr>
+</table>
 
 8. LanguageContents
 
 Stores language contents of different languages which are required in your application based upon the key.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>LanguageContentId</td><td>int</td><td>PK</td></tr>
 <tr><td>LanguageContentKeyId</td><td>int</td><td>FK(LanguageContentKeys)</td></tr>
@@ -142,15 +148,16 @@ Stores language contents of different languages which are required in your appli
 <tr><td>Fr</td><td>varchar(max)</td><td>French value of the content</td></tr> 
 </table>
 
-| LanguageContentId | LanguageContentKeyId | ContentType | En | Fr |
-| ----------- | ----------- | ----------- | -------- | ---- | 
-| 1 | 1 | g | Invalid Credentails | NULL |  
+<table class="table table-bordered">
+<tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
+<tr><td>1</td><td>1</td><td>g</td><td>Invalid Credentails</td><td>NULL</td></tr>
+</table>
 
 9. ComponentLanguageContents
 
 Stores multilingual language content component wise.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ComponentLanguageContentId</td><td>int</td><td>PK</td></tr>
 <tr><td>ComponentKeyId</td><td>int</td><td>FK(LanguageContentKeys)</td></tr>
@@ -159,19 +166,20 @@ Stores multilingual language content component wise.
 <tr><td>Fr</td><td>varchar(max)</td><td>French value of the content</td></tr> 
 </table>
 
-| ComponentLanguageContentId | ComponentKeyId | LanguageContentId | En | Fr |
-| ----------- | ----------- | ----------- | -------- | ---- | 
-| 1 | 1 | 1 | Invalid Credentails | NULL |  
-
+<table class="table table-bordered">
+<tr><th>ComponentLanguageContentId</th><th>ComponentKeyId</th><th>LanguageContentId</th><th>En</th><th>Fr</th></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>Invalid Credentails</td><td>NULL</td></tr>
+</table>
 
 ## Authorization and Authentication
+
 Information of JWT web token, users and its roles for performing authorization and authentication. Whenever a new request is made at the time of login the jwt web token is stored and authorization will require information which will be retrieved from the database.
 
 10. ApplicationUsersToken 
 
 Stores information of web token which are generated when any request is made on login method.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>ApplicationUsersTokenId</td><td>int</td><td>PK</td></tr>
 <tr><td>UserId</td><td>int</td><td>FK(Users)</td></tr>
@@ -181,16 +189,16 @@ Stores information of web token which are generated when any request is made on 
 <tr><td>CreatedDateTime</td><td>datetimeoffset(50)</td><td>created date and time of the web token</td></tr> 
 </table>
 
-| ApplicationUsersTokenId | UserId | SecurityKey | JwtToken | AudienceType | CreatedDateTime |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 1 | 1 | 0x2271A2EDF169C5B75291C06D9FC66A6.... | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ.. | MobileUser | 2019-06-28 06:13:52.327 | 
-
+<table class="table table-bordered">
+<tr><th>ApplicationUsersTokenId</th><th>UserId</th><th>SecurityKey</th><th>JwtToken</th><th>AudienceType</th><th>CreatedDateTime</th></tr>
+<tr><td>1</td><td>1</td><td>0x2271A2EDF169C5B75291C06D9FC66A6....</td><td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ..</td><td>NULL</td><td>2019-06-28 06:13:52.327</td></tr>
+</table>
 
 11. Users
 
 Stores information about users of the application.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>UserId</td><td>int</td><td>PK</td></tr>
 <tr><td>ApplicationLocaleId</td><td>int</td><td>FK(ApplicationLocales)</td></tr>
@@ -203,31 +211,32 @@ Stores information about users of the application.
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr> 
 </table>
 
-| UserId | ApplicationLocaleId | ApplicationTimeZoneId | LanguageCode | UserName | Password | Salt | LoginBlocked | StatusId |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | ------------ | -----------|
-| 1 | 1 | 1 | en | admin | 0x01A508148A63F34.. |  0x454353354200... | 0 | 1 |
+<table class="table table-bordered">
+<tr><th>UserId</th><th>ApplicationLocaleId</th><th>ApplicationTimeZoneId</th><th>LanguageCode</th><th>UserName</th><th>Password</th><th>Salt</th><th>LoginBlocked</th><th>StatusId</th></tr>
+<tr><td>1</td><td>1</td><td>en</td><td>admin</td><td>0x01A508148A63F34..</td><td>0x454353354200...</td><td>0</td><td>1</td></tr>
+</table>
 
 12. Roles
 
 Stores different roles used in the application
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>RoleId</td><td>int</td><td>PK</td></tr>
 <tr><td>RoleName</td><td>varchar(50)</td><td>Name of the role</td></tr>
 <tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
 </table>
 
-| RoleId | RoleName |
-| ----------- | ----------- |
-| 1 | Admin |
-| 2 | Customer |
+<table class="table table-bordered">
+<tr><th>RoleId</th><th>RoleName</th></tr>
+<tr><td>1</td><td>Admin</td></tr>
+</table>
 
 13. RolePermissions
 
 Stores access and rights based upon the role to the application modules.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>RolePermissionId</td><td>int</td><td>PK</td></tr>
 <tr><td>RoleId</td><td>int</td><td>FK(Roles)</td></tr>
@@ -238,24 +247,24 @@ Stores access and rights based upon the role to the application modules.
 <tr><td>CanDelete</td><td>bit</td><td>Rights to delete</td></tr>
 </table>
 
-| RolePermissionId | RoleId | ApplicationModuleId | CanView | CanAdd | CanEdit | CanDelete |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 1 | 1 | 1 | True | True | True | True |
-| 2 | 2 | 1 | True | False | False | False |
+<table class="table table-bordered">
+<tr><th>RolePermissionId</th><th>RoleId</th><th>ApplicationModuleId</th><th>CanView</th><th>CanAdd</th><th>CanEdit</th><th>CanDelete</th></tr>
+<tr><td>1</td><td>1</td><td><td>1</td></td><td>True</td><td>True</td><td>True</td><td>True</td></tr>
+<tr><td>2</td><td>2</td><td><td>1</td></td><td>True</td><td>False</td><td>False</td><td>False</td></tr>
+</table>
 
 14. UserRoles
 
 Stores users and their respective roles.
 
-<table>
+<table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
 <tr><td>UserRoleId</td><td>int</td><td>PK</td></tr>
 <tr><td>UserId</td><td>int</td><td>FK(Users)</td></tr>
 <tr><td>RoleId</td><td>int</td><td>FK(Roles)</td></tr>
 </table>
 
-
-| UserRoleId | UserId | RoleId |
-| ----------- | ----------- | -------- | 
-| 1 | 5 | 1 |
-
+<table class="table table-bordered">
+<tr><th>UserRoleId</th><th>UserId</th><th>RoleId</th></tr>
+<tr><td>1</td><td>5</td><td>1</td></tr>
+</table>

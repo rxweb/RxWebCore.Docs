@@ -1,7 +1,7 @@
 ---
 title: Delete
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 # Delete

@@ -1,5 +1,5 @@
 ---
-title: DesignPatterns
+title: Design Patterns
 author: rxcontributorone
 category: rxwebcore
 ---
@@ -29,6 +29,7 @@ The dependency inversion principle helps the application to be more testable and
 This pattern includes loading data from the cache ensuring that consistency is maintained between the data in the cache and the data storage
 
 # CQRS  
+.....
 
 # Index Table
 This pattern can improve query performance by allowing applications to more quickly locate the data to retrieve from a data store by creating Indexes over the fields in data stores which are frequently referenced by the queries(https://docs.microsoft.com/en-us/azure/architecture/patterns/index-table)

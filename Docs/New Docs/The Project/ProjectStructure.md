@@ -1,7 +1,7 @@
 ---
 title: Project Structure
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 # Solution Structure

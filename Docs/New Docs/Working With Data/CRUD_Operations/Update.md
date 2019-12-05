@@ -1,7 +1,7 @@
 ---
 title: Update
 author: rxcontributorone
-category: rxwebcore  
+category: newrxwebcore  
 ---
 
 # Update

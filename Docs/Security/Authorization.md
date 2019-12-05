@@ -1,7 +1,7 @@
 ---
 title: Authorization
 author: rxcontributorone
-category: security
+category: rxwebcore
 ---
 
 `Authorization` is a method of adjudging which user is able to do what. It uses `authentication` for identifying the user, It is done using role based authorization mechanism through which the access modules of the user is determined based upon role where rules are maintained in the database.
@@ -47,7 +47,7 @@ ModuleMasters Table:
 ## Access
 It is done using `Access` in which id of the application module is passed. Through which it will execute authorization based upon which the user rights are determined.
 
-```js
+```
     [ApiController]
     [Route("api/[controller]")]
 	[Access(1)]
@@ -73,7 +73,7 @@ When you want to by-pass the controller without any authorization when you want 
 
 As per the below scenario it will allow any user to access this `Post` method and allow new user to register.  
 
-```js
+```
     [ApiController]
     [Route("api/[controller]")]
 	[AllowAnonymous]

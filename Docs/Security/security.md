@@ -1,7 +1,7 @@
 ---
 title: Security
 author: rxcontributorone
-category: security
+category: rxwebcore
 ---
 
 Security measures right from the initial stage of developement are much necessary in web development for maintaining a level of confidentiality and preventing the resources and corporate data from attacks like XSS(Cross-site scripting) and SQl injection, providing better access control using authentication and authorization in the application for identifying the user and give access accordingly.
