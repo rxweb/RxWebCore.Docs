@@ -2,7 +2,7 @@
 title: Timezone Conversion
 author: rxcontributorone
 category: working-with-data-model
-sub-category: advance
+subCategory: advance
 ---
 
 # TimeZone Conversion

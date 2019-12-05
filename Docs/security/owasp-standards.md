@@ -6,7 +6,7 @@ category: security
 
 Security measures right from the initial stage of developement are much necessary in web development for maintaining a level of confidentiality and preventing the resources and corporate data from attacks like XSS(Cross-site scripting) and SQl injection, providing better access control using authentication and authorization in the application for identifying the user and give access accordingly.
 
-rxwebcore follows top OWASP security standards. [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html)(Open Web Application Security Project) is an organization with focuses on software security.
+rxwebcore follows top OWASP security standards. <a href="https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html">OWASP</a>(Open Web Application Security Project) is an organization with focuses on software security.
 
 According to it, there are application security verification standards which provide a basis of testing web application technical security controls and also provides list of requirements for secure development. Some of them are listed below:
 

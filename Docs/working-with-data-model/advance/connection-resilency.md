@@ -2,7 +2,7 @@
 title: Connection Resilency
 author: rxcontributorone
 category: working-with-data-model
-sub-category: advance
+subCategory: advance
 ---
 
 ConnectionResilency refers to retrying the database commands whenever connection failures occurs. It is beneficial when more network connections are involved. For example LoadBalancer. It retries to execute the failing commands such as save changes and BeginTransaction which are failed whenever connection is lost. It ensapsulates the logic required to detect failures.

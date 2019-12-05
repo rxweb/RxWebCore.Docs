@@ -2,7 +2,7 @@
 title: Value Conversion
 author: rxcontributorone
 category: working-with-data-model
-sub-category: advance
+subCategory: advance
 ---
 
 # Value Conversion
