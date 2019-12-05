@@ -1,7 +1,7 @@
 ---
 title: performance
 author: rxcontributorone
-category: newrxwebcore
+category: performance
 ---
 
 ASP.NET core provides in-memory cache, distributed cache and response compression which are  used to improve durability and performance of 

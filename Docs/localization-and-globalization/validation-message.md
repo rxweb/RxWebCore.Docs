@@ -1,7 +1,7 @@
 ---
 title: Validation Message
 author: rxcontributorone
-category: newrxwebcore
+category: localization-and-globalization
 ---
 
 For applications having big range of audiences, there is a possibility of having users acessing it from different regions. In such cases it is important that your application renders the whole Ui in the user specific language, other than this the validation messages should also be shown in the user sepcific language and dropdown should also bind respectively.

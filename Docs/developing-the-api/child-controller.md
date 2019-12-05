@@ -1,7 +1,7 @@
 ---
 title: Child Controller
 author: rxcontributortwo
-category: newrxwebcore
+category: developing-the-api
 ---
 
 While working with entities which are depending on a larger entity. It becomes important to manage the data using a shared key. It is managed using parent and child controller.
