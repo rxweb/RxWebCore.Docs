@@ -20,8 +20,7 @@ Create a database named `HumanResourceApplicationAdminDb` and create a table nam
 Run cli command   
 
 ```js
-rxwebcore --add-feature --multitenant
-
+rxwebcore --add-feature --multi-tenant database
 ```
 
 ## Step 3 : 

@@ -1,12 +1,13 @@
 ---
-title: Validation Message
+title: Global Content 
 author: rxcontributorone
 category: localization-and-globalization
----
+--- 
 
 For applications having big range of audiences, there is a possibility of having users acessing it from different regions. In such cases it is important that your application renders the whole Ui in the user specific language, other than this the validation messages should also be shown in the user sepcific language and dropdown should also bind respectively.
 
 For showing validation messages in different languages, the first step is to add the validation messages in different languages. 
+The columns of the languages can be added as per the requirement.
 
 ## LanguageContentKeys Table
 
@@ -25,9 +26,30 @@ For showing validation messages in different languages, the first step is to add
 The second step is to run the command : 
 
 ```js
-rxwebcore --localization
+rxwebcore --localization --main 
 ```
 
-This will create `.json` file with en and fr json in wwwroot folder of the languagecontents.
+This will create `.json` file with en and fr json in localization folder of wwwroot folder of the languagecontents.
+
+**global-en.json**
+
+```js
+{
+  "maxLength": "The allowed max length is {0}",
+  "range": "You can enter {0} to {1} length",
+  "required": "The {0} field is required",
+  "unique": "The {0} Field Should be unique"
+}
+```
+
+**global-fr.json**
+
+```js
+{
+  "maxLength": "The allowed max length is {0}",
+  "range": "You can enter {0} to {1} length",
+  "required": "The {0} field is required",
+  "unique": "The {0} Field Should be unique"
+}
 
 > The users language will be stored in the Users table as a foreign key(LanguageCode)
