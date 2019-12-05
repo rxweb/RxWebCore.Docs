@@ -3,7 +3,7 @@ title: Component Contents
 author: rxcontributorone
 category: localization-and-globalization
 --- 
-
+For component wise data like label, textbox of the particular component. It is configured as follows.
 ## LanguageContentKeys Table
 
 <table class="table table-bordered">
@@ -17,7 +17,6 @@ category: localization-and-globalization
 <tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
 <tr><td>1</td><td>1</td><td>g</td><td>This field is required</td><td>{0} is required</td></tr>
 </table>
-
 
 ## ComponentLanguageContents
 

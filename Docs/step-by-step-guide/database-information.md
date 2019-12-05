@@ -96,7 +96,8 @@ For an application to efficiently work in different regions, it is necessary to 
 
 **5. ApplicationTimeZones**
 
-It has inserted values of different timezones of the world from the IANA Database. Please refer [IANA](https://www.iana.org/time-zones).
+It has inserted values of different timezones of the world from the IANA Database. Please refer 
+<a href="https://www.iana.org/time-zones">IANA</a>.
 
 <table class="table table-bordered table-striped">
 <tr><th>Column</th><th>DataType</th><th>Description</th></tr>
