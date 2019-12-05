@@ -1,5 +1,6 @@
 ---
 title: Global Filter
 author: rxcontributorone
-category: advance
+category: working-with-data-model
+sub-category: advance
 ---

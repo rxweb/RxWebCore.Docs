@@ -1,7 +1,8 @@
 ---
 title: Stored Procedures
 author: rxcontributorone
-category: database-approach
+category: working-with-data-model
+sub-category: database-approach
 ---
 
 # Stored Procedures

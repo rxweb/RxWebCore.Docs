@@ -1,7 +1,8 @@
 ---
 title: Timezone Conversion
 author: rxcontributorone
-category: advance 
+category: working-with-data-model
+sub-category: advance
 ---
 
 # TimeZone Conversion

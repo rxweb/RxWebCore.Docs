@@ -1,7 +1,8 @@
 ---
 title: Multiple Database
 author: rxcontributorone
-category: multitenancy  
+category: working-with-data-model
+sub-category: multitenancy
 ---
 
 # Multiple Database

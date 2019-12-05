@@ -1,7 +1,8 @@
 ---
 title: Read
 author: rxcontributorone
-category: data-operations   
+category: working-with-data-model
+sub-category: data-operations 
 ---
 
 # Read

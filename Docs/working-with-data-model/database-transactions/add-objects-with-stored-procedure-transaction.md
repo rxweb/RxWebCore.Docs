@@ -1,6 +1,7 @@
 ---
 title: Adding Objects With Store Procedure Transaction
 author: rxcontributorone
+category: working-with-data-model
 category: database-transactions
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: Materialized View
 author: rxcontributorone
-category: database-approach 
+category: working-with-data-model
+sub-category: database-approach
 ---
 
 # Materialized View

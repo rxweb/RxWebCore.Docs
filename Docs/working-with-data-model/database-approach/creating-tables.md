@@ -1,7 +1,8 @@
 ---
 title: Creating Tables
 author: rxcontributorone
-category: database-approach
+category: working-with-data-model
+sub-category: database-approach
 ---
 
 The core part of any software application is the `database designing`. It is a process of organizing data in a proper structural way. Before working on the business logic part in the application, we must decide what data is to be stored and which elements will be interrelated to each other. With all these information, you can start creating the database and its entities with respect to that application.

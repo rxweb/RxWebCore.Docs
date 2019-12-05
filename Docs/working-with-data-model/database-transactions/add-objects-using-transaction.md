@@ -1,6 +1,7 @@
 ---
 title: Add Objects Using Transaction
 author: rxcontributorone
+category: working-with-data-model
 category: database-transactions
 ---
 
