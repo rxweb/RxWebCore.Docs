@@ -17,7 +17,7 @@ The prerequisites which are required before creating new project using `rxwebcor
 The first step towards creating an application is to install the <a href="https://www.nuget.org/packages/RxWebCore/">`rxwebcore`</a> tool globally using below command in command prompt.
 
 ```js
- `dotnet install tool -g rxwebcore`
+ dotnet tool install --global RxWebCore
 ```
 
 This will install `rxwebcore` tool globally which will be used for cli commands. 
@@ -25,7 +25,9 @@ This will install `rxwebcore` tool globally which will be used for cli commands.
 # Project Creation
 `rxwebcore` creates a project solution using cli command and also provides command for scaffolding things.
 
-Let's consider a scenario where you want to create a HumanResourceApplication using the below CLI command. Before firing the below command there must be Database server having two blank databases(main and log). 
+Let's consider a scenario where you want to create a HumanResourceApplication using the below CLI command. 
+
+> Before firing the below command there must be Database server having two blanl databases. First is the main database which contains all the defaults tables of applications and log database which is used for logging(exception logging, data entity logging and request logging).
 
 ```js
 rxwebcore --add-project <Project_Name>
@@ -40,8 +42,8 @@ rxwebcore --add-project HumanResourceApplication
 By running this command. It will ask for :
 
 1. Would you like to create a angular project for your UI development : If you want to create write Y or N
-2. Enter your main database connection string : Database connection string of main database for default application tables.
-3. Enter your log database connection string : Database connection string of log database for logging(expection logging, data entity logging, requests logging)
+2. Enter your main database connection string : Database connection string of main database
+3. Enter your log database connection string : Database connection string of log database
 
 This will create a create a project of name HumanResourceApplication with the following folder structure:
 

@@ -5,7 +5,6 @@ category: working-with-data-model
 sub-category: data-operations 
 ---
 
-# Read
 The repository methods works on single responsibilty principle that states that objects should have only one responsibilty. In our case the Repository methods are mainly used for performing read operations which allows us to seperate the load of read and write operations which results into high speed and performance.
 
 It contains methods which are used to fetch the records depending upon many scenarios such as All,Include, FindByInclude, FindByKey, Single,SingleOrDefault etc which are much similar to LINQ methods of c#.

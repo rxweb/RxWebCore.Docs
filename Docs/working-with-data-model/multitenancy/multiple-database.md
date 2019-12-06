@@ -5,7 +5,6 @@ category: working-with-data-model
 sub-category: multitenancy
 ---
 
-# Multiple Database
 Multitenancy with multiple databases means keeping seperate database each tenant wise, A seperate database is made for each organization for storing its data. It is useful for organizations having large number of employees.   
 
 ## Step 1 : 

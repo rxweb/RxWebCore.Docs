@@ -10,10 +10,8 @@ category: step-by-step-guide
 
 The main database contains all the default tables which are necessary for fulfuling the basic functionalties like authorization and authentication, application objects, localization and globalization etc.. 
 
-## Application Modules and Objects
+## Application Modules 
 To effectively manage functionalities of a large enterprise application, we need to break it into seperate units/modules and assign a particular task to each of them. As we have made a human resource enterprise application we take into consideration, three main modules of the application which are Resource Management, Candidate Module and User Module.
-
-Some objects need to be stored in the database which are often used in application and its value is limited upto some number based upon the entity. For example, the HRManagementSystem is going to work in regions where the organization has its branch, if it works in two countries(For example : India and US), their values will be stored in ApplicationObjects as below and making a seperate table for storing the values of countries is not preferable in this case.  
 
 **1. ModuleMasters**
 
@@ -51,6 +49,9 @@ Inserted data of ApplicationModules:
 <tr><td>1</td><td>1</td><td>NULL</td></tr>
 </table>
 
+# Application Objects
+Some objects need to be stored in the database which are often used in application and its value is limited upto some number based upon the entity their values will be stored in ApplicationObjects as below and making a seperate table for storing the values of countries is not preferable in this case.Example : Status
+
 **3. ApplicationObjectTypes**
 
 Contains type of Application Objects like status, gender etc.
@@ -67,7 +68,6 @@ Inserted data of ApplicationObjectTypes:
 <table class="table table-bordered">
 <tr><th>ApplicationObjectTypeId</th><th>ApplicationObjectTypeName</th><th>StatusId</th></tr>
 <tr><td>1</td><td>Status</td><td>1</td></tr>
-<tr><td>2</td><td>Country</td><td>1</td></tr>
 </table>
 
 **4. ApplicationObjects**
@@ -87,8 +87,8 @@ Inserted data of ApplicationObjects:
 <table class="table table-bordered">
 <tr><th>ApplicationObjectId</th><th>ApplicationObjectTypeId</th><th>ApplicationObjectName</th><th>StatusId</th></tr>
 <tr><td>1</td><td>1</td><td>Active</td><td>1</td></tr>
-<tr><td>2</td><td>1</td><td>India</td><td>1</td></tr>
-<tr><td>3</td><td>2</td><td>U.S</td><td>1</td></tr>
+<tr><td>2</td><td>1</td><td>InActive</td><td>1</td></tr>
+<tr><td>3</td><td>1</td><td>Blocked</td><td>1</td></tr>
 </table>
 
 ## Localization and Globalization
@@ -191,7 +191,7 @@ Inserted data of ComponentLanguageContents:
 <tr><td>1</td><td>1</td><td>1</td><td>Invalid Credentails</td><td>NULL</td></tr>
 </table>
 
-## Authorization and Authentication
+## Authentication and Authorization
 
 Information of JWT web token, users and its roles for performing authorization and authentication. Whenever a new request is made at the time of login the jwt web token is stored and authorization will require information which will be retrieved from the database.
 

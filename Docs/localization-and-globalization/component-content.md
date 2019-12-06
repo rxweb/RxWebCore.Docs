@@ -3,30 +3,30 @@ title: Component Contents
 author: rxcontributorone
 category: localization-and-globalization
 --- 
-For component wise data like label, textbox of the particular component. It is configured as follows.
+
+On the user interface, when multiple components are involved, each of them requires component specific multilingual data based upon which text of placeholder, label etc are displayed. Considering a scenario where the Country entity has three components : List, Add and Edit and they required different component contents. Here is an example of how CountryAdd component data will be formed.
+
 ## LanguageContentKeys Table
 
 <table class="table table-bordered">
 <tr><th>LanguageContentKeyId</th><th>KeyName</th><th>IsComponent</th></tr>
-<tr><td>1</td><td>RequiredMessage</td><td>0</td></tr>
+<tr><td>1</td><td>CountryAddComponent</td><td>1</td></tr>
 </table>
 
 ## LangaugeContents Table 
 
 <table class="table table-bordered">
 <tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
-<tr><td>1</td><td>1</td><td>g</td><td>This field is required</td><td>{0} is required</td></tr>
+<tr><td>1</td><td>1</td><td>t</td><td>Allows Registration</td><td>Allows Registration</td></tr>
 </table>
+
+> Here contentType will denote the type of the content, here `t` means text. For placeholder and label(p and l) respectively
 
 ## ComponentLanguageContents
 
-<table class="table table-bordered table-striped">
-<tr><th>Column</th><th>DataType</th><th>Description</th></tr>
-<tr><td>ComponentLanguageContentId</td><td>int</td><td>PK</td></tr>
-<tr><td>ComponentKeyId</td><td>int</td><td>FK(LanguageContentKeys)</td></tr>
-<tr><td>LanguageContentId</td><td>int</td><td>FK(LangaugeContents)</td></tr> 
-<tr><td>En</td><td>varchar(max)</td><td>English value of the content</td></tr> 
-<tr><td>Fr</td><td>varchar(max)</td><td>French value of the content</td></tr> 
+<table class="table table-bordered">
+<tr><th>ComponentLanguageContentId</th><th>ComponentKeyId</th><th>LanguageContentId</th><th>En</th><th>Fr</th></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>Allows Registration</td><td>NULL</td></tr>
 </table>
 
 The second step is to run the command : 
@@ -37,4 +37,16 @@ rxwebcore --localization --main
 
 This will create `.json` file with en and fr json in wwwroot folder of the languagecontents.
 
-> The users language will be stored in the Users table as a foreign key(LanguageCode)
+**AddCountryComponent-en.json** 
+
+```js
+{"AddCountryComponent_t":"Allows Registration"}
+```
+
+**AddCountryComponent-fr.json** 
+
+```js
+{"AddCountryComponent_t":"Allows Registration"}
+```
+
+> The users language will be stored in the Users table as a LanguageCode

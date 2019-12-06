@@ -5,7 +5,7 @@ category: step-by-step-guide
 ---
 
 # Solution Structure
-As per our clean architecture/Onion architecture, The project structure is divided into several layers of Models, domain services, Application core and API which are done based upon the thought of seperating the concerns for simpification and maintainance of code which is achieved with the help of breaking individual parts of the web application which are User interface, business logic, data access and infrastructure.
+As per our clean architecture/Onion architecture, The project structure is divided into several layers of Models, domain services, Application core and API which are following the practices of seperation of concerns for simplification and maintanable code 
 
 The project solution contains six projects. They are : 
 
@@ -17,7 +17,7 @@ The project solution contains six projects. They are :
 6. Api
 
 ## Models
-The models projects works as a `data access` layer of the application. It contains DbEntities, ViewModels, enums, constants and extensions.
+It contains DbEntities, ViewModels, enums, constants and extensions.
 DbEntities are `POCO Models` which are transformed from the database tables, ViewModels are the custom models which are used to access some properties for performing a specific task, enums are `ApplicationObjects` which are generated based upon its type mentioned in the database.
 constants are used for declaring global constants of application. extensions are helper functions used for accessing data used at multiple places.        
 
@@ -34,7 +34,7 @@ This project contains `Uow` class for its respective BoundedContext to follow re
 ## Infrastructure
 This project covers methods of necessary actions and implementation which are used application wide like determining user access and access permission, email and sms provider, authorize token etc  
 
-It provides implementations which include:
+It contains default generated files which include:
 
 * Proving application token using `ApplicationTokenProvider`.
 * Get UserClaim of logged user with `AccessPermissionHandler`.
@@ -46,5 +46,9 @@ The Api project is the .Net core based web application which is the start of the
 
 * `app.settings.json` is the json configuration of the application in which database `connection string`, connection resilency configuration, MultiTenant details, security and other details are stored.
 * `Controllers` folder contains rest APIs.
+  It has `Core` folder having 
+  1) `Authentication` Controller : Used for login(Verifying user), token generation.
+  2) `Authorize` Controller : Used for get access modules(acess permissions, logout and refresh token)  
+
 * Bootstrap contains implementations of `ConfigurationOptions`, `Performance`, `Security`, `Validations` etc 
 

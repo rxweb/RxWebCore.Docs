@@ -27,15 +27,15 @@ In the above command by writing --domain indicates its complexity high, Users is
 # Methods   
 
 <table class="table table-bordered">
-<tr><th>Method</th><th>Return Type</th><th>Request Params</th><th>Request Body</th><th>Response</th></tr>
-<tr><td>GetAsync</td><td>object</td><td> - </td><td> - </td><td>complete list of that entity</td></tr>
-<tr><td>GetById</td><td>Entity_Name</td><td>Id of that entity which you want to get</td><td> - </td><td>Single entity based on the id</td></tr>
-<tr><td>AddValidation</td><td>string</td><td>entity object</td><td> - </td><td>Added Validation</td></tr>
-<tr><td>UpdateValidation</td><td>string</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
-<tr><td>AddAsync</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
-<tr><td>UpdateAsync</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
-<tr><td>DeleteValidation</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
-<tr><td>DeleteAsync</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><th>Method</th><th>Description</th><th>Return Type</th><th>Request Params</th><th>Request Body</th><th>Response</th></tr>
+<tr><td>GetAsync</td><td>Get all the objects of the entity</td><td>object</td><td> - </td><td> - </td><td>complete list of that entity</td></tr>
+<tr><td>GetById</td><td>Get Object By Id</td><td>Entity_Name</td><td>Id of that entity which you want to get</td><td> - </td><td>Single entity based on the id</td></tr>
+<tr><td>AddValidation</td><td>Adds validation for the particular entity</td><td>string</td><td>entity object</td><td> - </td><td>Added Validation</td></tr>
+<tr><td>UpdateValidation</td><td>Updates validation for the particular entity</td><td>string</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>AddAsync</td><td>Adding objects of the particular entity</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>UpdateAsync</td><td>Updating objects of the particular entity</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>DeleteValidation</td><td>Deletes validations for the particular entity</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
+<tr><td>DeleteAsync</td><td>deletes a particular entity</td><td>void</td><td>entity object</td><td> - </td><td>NoContent()</td></tr>
 </table>
 
 # Example

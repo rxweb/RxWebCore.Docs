@@ -15,11 +15,11 @@ The controller will have a predefined route which include the controller name. F
 
 To create a lookup controller, open the `Package Manager Console` and run the following command.
 
-> rxwebcore --controller --search --main <Controller_Name> --uow <Module_Name>
+> rxwebcore --controller --search --main <Controller_Name> --uow <Module_Name> --spname <Name_of_stored_procedure>
 
 Lets consider a scenario where you want to create a `UsersSearchController` in the `OrdersModule`, you have to write:
 
-> rxwebcore --controller --search --main UsersSearch --uow User
+> rxwebcore --controller --search --main UsersSearch --uow User --spname", "spSearchUsers"
 
 `UsersSearch` is the controller name and `User` is the module name. It will create a controller `UsersSearchController` in search folder of api in the project
 
@@ -31,16 +31,16 @@ Lets consider a scenario where you want to create a `UsersSearchController` in t
 </table>
 
 # Example
-In this example  `MainSqlDbContext` is the context of `OrdersModule` which contains the `spSearchProducts`
+In this example  `MainSqlDbContext` is the context of `OrdersModule` which contains the `spSearchUsers`
 which is executing while fetching the search result which are retrieved by passing searchParams as dictionary object in the post method.
 
 ```js
     [ApiController]
 	[Route("api/[controller]")]
-    public class ProductsSearchController : ControllerBase
+    public class UsersSearchController : ControllerBase
     {
         private IDbContextManager<MainSqlDbContext> DbContextManager { get; set; }
-        public ProductsSearchController(IDbContextManager<MainSqlDbContext> dbContextManager) {
+        public UsersSearchController(IDbContextManager<MainSqlDbContext> dbContextManager) {
             DbContextManager = dbContextManager;
         }
 
@@ -50,7 +50,7 @@ which is executing while fetching the search result which are retrieved by passi
             var spParameters = new object[2];
             spParameters[0] = new SqlParameter() { ParameterName = "Query", Value = searchParams["query"] };
             spParameters[1] = new SqlParameter() { ParameterName = "UserId", Value = UserClaim.UserId };
-            var result = await DbContextManager.SqlQueryAsync<StoreProcResult>("EXEC [dbo].spSearchProducts @Query, @UserId", spParameters);
+            var result = await DbContextManager.SqlQueryAsync<StoreProcResult>("EXEC [dbo].spSearchUsers @Query, @UserId", spParameters);
             return Ok(result.SingleOrDefault()?.Result);
         }
     }
