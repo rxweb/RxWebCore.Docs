@@ -1,17 +1,17 @@
 [{
     "title":"Connection Resilency",
-    "href":"/connection-resilency"
+    "href":"connection-resilency"
 },
 {
     "title":"Global Filter",
-    "href":"/global-filter"
+    "href":"global-filter"
 },
 {
     "title":"Timezone Conversion",
-    "href":"/timezone-conversion"
+    "href":"timezone-conversion"
 },
 {
     "title":"Value Conversion",
-    "href":"/value-conversion"
+    "href":"value-conversion"
 }
 ]

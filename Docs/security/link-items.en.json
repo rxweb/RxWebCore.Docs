@@ -1,22 +1,22 @@
 [{
     "title":"Authentication",
-    "href":"/authentication"
+    "href":"authentication"
 },
 {
     "title":"Authorization",
-    "href":"/authorization"
+    "href":"authorization"
 },
 {
     "title":"Exception Handling And Logging",
-    "href":"/exception-handling-and-logging"
+    "href":"exception-handling-and-logging"
 },
 {
     "title":"IpSafelist",
-    "href":"/ip-safelist"
+    "href":"ip-safelist"
 },
 {
     "title":"OWASP Standards",
-    "href":"/owasp-standards",
+    "href":"owasp-standards",
     "childrens": [
         {
             "title": "Open Redirect Attacks",
@@ -34,9 +34,9 @@
 },
 {
     "title":"Request Logging",
-    "href":"/request-logging"
+    "href":"request-logging"
 },
 {
     "title":"Two Factor Authentication",
-    "href":"/two-factor-authentication"
+    "href":"two-factor-authentication"
 }]

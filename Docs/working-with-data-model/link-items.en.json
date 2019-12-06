@@ -9,7 +9,7 @@
     },
     {
         "title": "Bounded Context",
-        "href": "bounded-context",
+        "path": "bounded-context",
         "childrens": [
             {
                 "title": "Overview",

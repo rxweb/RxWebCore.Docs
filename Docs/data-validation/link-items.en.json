@@ -1,17 +1,17 @@
 [{
     "title":"MaxLength",
-    "href":"/max-length"
+    "href":"max-length"
 },
 {
     "title":"Range",
-    "href":"/range"
+    "href":"range"
 },
 {
     "title":"Required",
-    "href":"/required"
+    "href":"required"
 },
 {
     "title":"Unique",
-    "href":"/unique"
+    "href":"unique"
 }
 ]

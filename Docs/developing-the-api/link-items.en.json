@@ -1,6 +1,6 @@
 [{
     "title":"Api",
-    "href":"/api",
+    "href":"api",
     "childrens": [
         {
             "title": "Brief",
@@ -18,22 +18,22 @@
 },
 {
     "title":"Basic Controller",
-    "href":"/basic-controller"
+    "href":"basic-controller"
 },
 {
     "title":"Domain Controller",
-    "href":"/domain-controller"
+    "href":"domain-controller"
 },
 {
     "title":"Lookup Controller",
-    "href":"/lookup-controller"
+    "href":"lookup-controller"
 },
 {
     "title":"Search Controller",
-    "href":"/search-controller"
+    "href":"search-controller"
 },
 {
     "title":"Shared Controller",
-    "href":"/shared-controller"
+    "href":"shared-controller"
 }
 ]
