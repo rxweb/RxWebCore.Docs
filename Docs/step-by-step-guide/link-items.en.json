@@ -1,28 +1,28 @@
 [{
     "title":"Project Brief",
-    "href":"/project-brief"
+    "href":"project-brief"
 },
 {
     "title":"Prerequisites",
-    "href":"/project-creation#prerequisites"
+    "href":"project-creation#prerequisites"
 },
 {
     "title":"Installation",
-    "href":"/project-creation#installation"
+    "href":"project-creation#installation"
 },
 {
     "title":"Project Creation",
-    "href":"/project-creation#projectcreation"
+    "href":"project-creation#projectcreation"
 },
 {
     "title":"Project Structure",
-    "href":"/project-structure"
+    "href":"project-structure"
 },
 {
     "title":"Database Information",
-    "href":"/database-information"
+    "href":"database-information"
 },
 {
     "title":"Run The Project",
-    "href":"/run-the-project"
+    "href":"run-the-project"
 }]
