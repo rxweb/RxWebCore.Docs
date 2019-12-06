@@ -43,7 +43,7 @@ Organizations working in different countries/regions may have users who have dif
 
 Later on if the application needs to be made serverless as well as following microservices, it can be done at any point of time without changing a lot of code or the project structure. 
 
-Based upon the above described scenario and aspects, Let's start making a new [project] using `rxwebcore`
+Based upon the above described scenario and aspects, Let's start making a new project using `rxwebcore`
 
 
 

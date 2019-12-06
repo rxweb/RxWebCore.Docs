@@ -17,13 +17,13 @@ For Eg : https://localhost:<Your_generated_port_number>/api/Authentication
 
 > These are the login credentails of the default user inserted in the `Users` table while creation of the database.
 
-![Login Request](login-request.PNG)
+![Login Request](Images/login-request.PNG)
 
 3) Click on Send Button
 
 This will hit the `PostLogin` method of Authentication controller which will generate a `JWT web token` which will be further used to make requests to the APIs which are created with HTTpStatus Code 200.  
 
-![Login Result](login-result.PNG)
+![Login Result](Images/login-result.PNG)
 
 For creating API and accessing it, <a href="\developing-the-api\basic-controller.html">Accessing The Api</a>.  
 
