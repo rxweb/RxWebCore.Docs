@@ -1,41 +1,37 @@
 [
     {
+        "path":"database-approach",
+        "title": "Database Approach"
+    },
+    {
+        "title": "Generating Data Models",
+        "href": "generating-data-models"
+    },
+    {
         "title": "Bounded Context",
-        "href": "/bounded-context",
+        "href": "bounded-context",
         "childrens": [
             {
                 "title": "Overview",
-                "href": "/bounded-context#overview"
+                "href": "bounded-context#overview"
             },
             {
                 "title": "Scenario",
-                "href": "/bounded-context#scenario"
+                "href": "bounded-context#scenario"
             },
             {
                 "title": "Create Bounded Context",
-                "href": "/bounded-context#createboundedcontext"
+                "href": "bounded-context#createboundedcontext"
             },
             {
                 "title": "Add Database Entities",
-                "href": "/bounded-context#adddatabaseentities"
+                "href": "bounded-context#adddatabaseentities"
             }
         ]
     },
     {
-        "title": "Generating Data Models",
-        "href": "/generating-data-models"
-    },
-    {
-        "path":"advance",
-        "title": "Advance"
-    },
-    {
         "path":"data-operations",
         "title": "Data Operations"
-    },
-    {
-        "path":"database-approach",
-        "title": "Database Approach"
     },
     {
         "path":"database-transactions",
@@ -44,5 +40,9 @@
     {
         "path":"multitenancy",
         "title": "Multitenancy"
+    },
+    {
+        "path":"advance",
+        "title": "Advance"
     }
 ]
