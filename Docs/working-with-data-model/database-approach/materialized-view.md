@@ -5,8 +5,6 @@ category: working-with-data-model
 sub-category: database-approach
 ---
 
-# Materialized View
-
 To perform effective quering becomes much necessary when we want to recieve our desired resultset which depends upon many factors that is the size of the data, integrity of the data. For scenarios where you want to `display a list of records` where the resultset includes more than one table and generating a query is difficult. Generating a view saves execution time in compared to complex queries. It requires less maintenance. Besides this the data in the views get high availability and resilency benefits.
 
 > It is preferable to create a view if the number of records are limited upto 500. If it exceeds it is preferable to create a [stored procedure] for it.

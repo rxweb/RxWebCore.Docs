@@ -5,7 +5,6 @@ category: working-with-data-model
 sub-category: data-operations 
 ---
 
-# Create
 Used during post request for creating new object/objects of entity.
 
 ## Adding Single Object

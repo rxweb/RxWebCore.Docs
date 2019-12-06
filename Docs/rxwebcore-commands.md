@@ -84,6 +84,14 @@ This command creates a controller for binding data in dropdown
 
 Eg : rxwebcore --controller --lookup --main MasterLookUps --uow MasterLookUp 
 
+**Add lookups in lookup controller** 
+Adding lookups in the controller:
+
+> rxwebcore --controller --lookup --main <Country_Name> --uow <Module_Name> --add-lookups <Lookup>
+
+As per this controller : 
+
+> rxwebcore --controller --lookup --main CountryLookups --uow CountryLookup --add-lookups vCountryLookups
 **Child Controller**
 
 1) Basic Controller :

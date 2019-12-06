@@ -4,11 +4,10 @@ author: rxcontributorone
 category: performance
 ---
 
-ASP.NET core provides in-memory cache, distributed cache and response compression which are  used to improve durability and performance of 
-the application. 
-
 # Static Cache
-Static cache is added using annotation of `[Cachable]` above the controller. In this tag, the amount of time also needs to be mentioned(in milliseconds)
+Static cache is added using annotation of `[Cachable]` above the controller. In this tag, the amount of time also needs to be mentioned(in milliseconds). 
+
+Considering the below scenario in the candidate's controller, taking an example of get method, Once called the data will be cached and whenever the Api is called, It will retrieve the cached data till the time which is mentioned in the parameter.
 
 ```js
     [Cachable(2)]
@@ -22,7 +21,10 @@ Static cache is added using annotation of `[Cachable]` above the controller. In 
 ```
 
 # Entity Tag
-It is done using `[CacheETag]` annotation above the controller 
+It is done using `[CacheETag]` annotation above the controller. Once the Api is called the entity tag will be cached and making request again to the same Api will retrieve data from the cache until any other request is made to the server. 
+
+For example, if get request is called in the CandidateControllers which is mentioned below the entity data will be cached and whenever the get request is made after that it will retrieve the cached data as result. It will not make a call to the database server until post event takes place.
+
 Example :
 
 ```js
@@ -31,44 +33,12 @@ Example :
     [Route("api/[controller]")]
 	
 	public class CandidatesController : BaseController<Candidate,Candidate,Candidate>
-
     {
         public CandidatesController(IResourceUow uow):base(uow) {}
 
     }
 ```
 
-# In-Memory Caching
-In-memory caching is done using `AddMemoryCache` method which adds a non-distributed in memory implemtation of IMemoryCache to the services.
-This is added in the `performance.cs` file in the bootstrap folder of the Api project. IMemoryCache represents a local in-memory cache whose values are not serialized.
-
-```js
-serviceCollection.AddMemoryCache();
-```
-
-# Distributed Cache
-It is cache which are shared by multiple app servers which are maintained as an external service to the app servers that access it. It improves the performance of an .net core application when it is hosted on cloud.
-
-```js
-services.AddDistributedMemoryCache();
-```
-
 # Response Compression
 Reducing size of files can reduce the payload and increase the application performance. Natively compressed assets such as images(PNG) and files having much smaller size(less than 150-1000 bytes) should not be compressed.     
 
-```js
-    serviceCollection.AddResponseCompression(options =>
-    {
-        options.Providers.Add<GzipCompressionProvider>();
-        options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "image/svg+xml" });
-    });
-```
-
-and to use this response compression :
-
-```js
-    public static void UsePerformance(this IApplicationBuilder applicationBuilder)
-    {
-        applicationBuilder.UseResponseCompression();
-    }
-```

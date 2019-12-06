@@ -4,7 +4,6 @@ author: rxcontributorone
 category: data-validation
 ---
 
-
 `Range` annotation is used when you want a property value in a specific range. 
 
 Let's consider a scenario where there is a model class `Candidate.cs` which has properties of  CandidateId, CandidateName and Age.

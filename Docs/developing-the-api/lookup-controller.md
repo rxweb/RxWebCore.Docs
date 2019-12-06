@@ -20,6 +20,15 @@ Lets consider a scenario where you want to create a `CountryLookupsController` i
 
 `CountryLookups` is the controller name and `User` is the module name. It will create a controller `CountryLookupsController` in lookup folder of api in the project
 
+# Add lookups 
+Adding lookups in the controller:
+
+> rxwebcore --controller --lookup --main <Country_Name> --uow <Module_Name> --add-lookups <Lookup>
+
+As per this controller : 
+
+> rxwebcore --controller --lookup --main CountryLookups --uow CountryLookup --add-lookups vCountryLookups
+
 # Methods
 
 <table class="table table-bordered">
@@ -35,18 +44,13 @@ Lets consider a scenario where you want to create a `CountryLookupsController` i
     [ApiController]
     [Route("api/[controller]")]
 	
-	public class OrderLookUpsController : BaseLookupController
+	public class ResourceLookUpsController : BaseLookupController
     {
-        public OrderLookUpsController(IOrderLookUpUow uow):base(uow) {}
+        public ResourceLookUpsController(IResourceLookUpUow uow):base(uow) {}
 
         #region Lookups
-        		[HttpGet("Countries")]
-		public IQueryable<vCountry> GetCountries()
-		{
-			return Uow.Repository<vCountry>().Queryable();
-		}
-            #endregion Lookups
-
+        #endregion Lookups
     }
+}
 
 ```

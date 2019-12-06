@@ -52,4 +52,4 @@ This will create `.json` file with en and fr json in localization folder of wwwr
   "unique": "The {0} Field Should be unique"
 }
 
-> The users language will be stored in the Users table as a foreign key(LanguageCode)
+> The users language will be stored in the Users table as a LanguageCode

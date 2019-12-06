@@ -28,7 +28,6 @@ When you want to return a resultResult based upon your search stored procedure f
 ## Child Controller:
 Whenever there is a parent controller involved in the data interaction of the required controller, It is made as a child controller.
 
-## Search Lookup Controller:
-While accessing dropdowns on client side whenever search operation is done on the source, a search lookup controller is required.
-
 # Best Practices
+Rxwebcore follows REST practices while working with Web Api. Please refer <a href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design">Best Practices</a>
+

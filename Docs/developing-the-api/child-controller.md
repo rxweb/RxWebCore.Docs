@@ -54,3 +54,7 @@ Here is an example of child controller:
     }
 
 ```
+
+# Accessing the Child Controller API
+
+![Child Controller](child-controller.gif)

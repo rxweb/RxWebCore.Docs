@@ -5,7 +5,6 @@ category: working-with-data-model
 category: database-transactions
 ---
 
-# Add Objects Using Transaction
 Used for adding objects using BeginTransaction, Here the `DbContextManager` is resolved using Dependency injection in the controller.  
 
 ```js

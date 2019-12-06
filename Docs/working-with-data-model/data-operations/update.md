@@ -5,7 +5,6 @@ category: working-with-data-model
 sub-category: data-operations 
 ---
 
-# Update
 Used during put request for updating object/objects of entity.
 
 ## Updating Single Object

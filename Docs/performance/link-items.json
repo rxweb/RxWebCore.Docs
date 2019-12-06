@@ -1,0 +1,12 @@
+[{
+    "title":"Static Cache",
+    "href":"/performance#static-cache"
+},
+{
+    "title":"Entity Tag Cache",
+    "href":"/performance#entitytag"
+},
+{
+    "title":"Response Compression",
+    "href":"/performance#responsecompression"
+}]

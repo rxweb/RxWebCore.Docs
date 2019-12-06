@@ -5,7 +5,6 @@ category: working-with-data-model
 sub-category: data-operations 
 ---
 
-# Delete
 Used for delete operation to be done on entity.
 
 ```js

@@ -5,8 +5,6 @@ category: working-with-data-model
 category: database-transactions
 ---
 
-# Adding Objects With Store Procedure Transaction
-
 The database operations are done with the help of Uow methods, but when complex data operations are involved it is managed using `DbContextManager`. It seperates the query execution of stored procedure and the begin transaction, commit process.
 
 It provides methods which are used to begin transaction, rollback transaction, commit transaction and executing sql query. It works on the principle of CQRS(command query responsibility segregation) which works on the basis of CommandQuerySeperation which states that Queries are used to retrieve a result set and command are used to change the state of the object but does not return anything.
