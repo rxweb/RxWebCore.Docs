@@ -1,20 +1,20 @@
 [{
     "title":"Brief",
-    "href":"/brief"
+    "href":"brief"
 },
 {
     "title":"Create",
-    "href":"/create"
+    "href":"create"
 },
 {
     "title":"Read",
-    "href":"/read"
+    "href":"read"
 },
 {
     "title":"Update",
-    "href":"/update"
+    "href":"update"
 },
 {
     "title":"Delete",
-    "href":"/delete"
+    "href":"delete"
 }]
