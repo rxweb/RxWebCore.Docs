@@ -5,15 +5,15 @@ category: step-by-step-guide
 ---
 
 # Solution Structure
-As per our clean architecture/Onion architecture, The project structure is divided into several layers of Models, domain services, Application core and API which are following the practices of seperation of concerns for simplification and maintanable code 
+As RxWeb follows the practices of `Clean Architecture`, Based upon this the project structure is divided into several layers of Models, domain services, Application core and API which adds the practices of seperation of concerns for simplification and maintanable code. 
 
 The project solution contains six projects. They are : 
 
 1. Models
 2. BoundedContext 
-3. Domain
-4. UnitOfWork
-5. Infrastructure
+3. UnitOfWork
+4. Infrastructure
+5. Domain
 6. Api
 
 ## Models
@@ -24,9 +24,6 @@ constants are used for declaring global constants of application. extensions are
 ## BoundedContext
 This project contains BoundedContexts which are made based upon the defined modules. Each context can work independently based upon its 
 concept. It has `MainSqlDbContext` which is used to resolve the database connection based upon the configuration of the app setting through the  GetConnection method of `BaseDbContext`. For performing multitenancy and connection resilency `BaseBoundedDbContext` is used. The Bounded context will inherit from `BaseBoundedDbContext` for resolving database configurations.
-
-## Domain
-Domain project contains Domain services which are made whenever `high complexity` APIs are made. This means that whenever a domain controller is made, it will make a domain class  for adding custom `business logic` of the domain which will be generated in the Domain project under its module's folder and its reference will be given in the controller.
 
 ## Unit Of Work
 This project contains `Uow` class for its respective BoundedContext to follow repository pattern which provides methods through which the data can be manipulated. It has `BaseUow` which uses the `IRepositoryProvider` and the `IDbContext` to provide the `CoreUnitOfWork` methods to the particular domain. Each domain contains a folder having Uow classes which are used in the controllers.   
@@ -40,6 +37,9 @@ It contains default generated files which include:
 * Get UserClaim of logged user with `AccessPermissionHandler`.
 * Authorizing token using `TokenAuthorizer`.
 * Module wise access of a user using `UserAccessConfigInfo`.
+
+## Domain
+Domain project contains Domain services which are made whenever `high complexity` APIs are made. This means that whenever a domain controller is made, it will make a domain class  for adding custom `business logic` of the domain which will be generated in the Domain project under its module's folder and its reference will be given in the controller.
 
 ## Api
 The Api project is the .Net core based web application which is the start of the project. It contains application settings, Controllers, necessery injected services like security, performance etc.
