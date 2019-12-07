@@ -27,7 +27,7 @@ This will install `rxwebcore` tool globally which will be used for cli commands.
 
 Let's consider a scenario where you want to create a `HumanResourceApplication` using the below CLI command. 
 
-> Before firing the below command there must be Database server having two blank databases. First is the `Main` database and `Log` database. The `Main` is used for your application specific data and `Log` database is used for Logging related information like `Request Log` , `Exception Log` and `Entity Log`. You don't have to create the logging tables the `rxwebcore` cli will create the respective tables based upon the provided `Log` database connection string. Some of the tables will be created in `Main` database as well through `rxwebcore`. How many tables will be created and use of those tables we will discuss on `Database Information` page.
+> Before firing the below command there must be Database server having two blank databases. the `Main` database and `Log` database. The `Main` is used for your application specific data operations and `Log` database is used for Logging related information like `Request Log` , `Exception Log` and `Entity Log`. You don't have to create the logging tables the `rxwebcore` cli will create the respective tables based upon the provided `Log` database connection string. Some of the tables will be created in `Main` database as well through `rxwebcore`. How many tables will be created and use of those tables we will discuss on `Database Information` page.
 
 ```js
 rxwebcore --add-project &lt Project_Name &gt
