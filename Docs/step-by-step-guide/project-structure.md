@@ -17,10 +17,50 @@ The project solution contains six projects. They are :
 6. Api
 
 ## Models
-It contains DbEntities, ViewModels, enums, constants and extensions.
-DbEntities are `POCO Models` which are transformed from the database tables, ViewModels are the custom models which are used to access some properties for performing a specific task, enums are `ApplicationObjects` which are generated based upon its type mentioned in the database.
-constants are used for declaring global constants of application. extensions are helper functions used for accessing data used at multiple places.        
-
+The primary purpose of this project is to define POCO models/Enums/Interfaces which can be used in application wide. Some of the files/folders are already defined. Some of these folders and files are defined when you create the project. Let's see how many folders/files are available initially.
+<table>
+  <tr>
+    <th>
+      Folder Name
+    </th>
+    <th>
+      Description
+    </th>
+  </tr>
+  <tbody>
+    <tr>
+      <td>
+        DbEntities
+      </td>
+      <td>
+        All Database tables are transformed into the POCO models.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ExtendedModels
+      </td>
+      <td>
+        You can extend your POCO models, for example : `User` model contains the property of `Password`, but you want compare password property as well. The `ComparePassword` property you can define in the extended model of `User' with the `[NotMapped]` annotation otherwise entity framework core throws an error as the `ComparePassword` property is not in the table of `User`. 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ViewModels
+      </td>
+      <td>
+        In this folder you can define your custom model, which you want to use that model application wide.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Enums
+      </td>
+      <td>
+        You can define enums based upon your need and some of the enums are automatically generated which are defined in the table of `ApplicationObjectTypes` and the respective respective reference values are stored in the `ApplicationObjects`. for more information about these table you can refer the 'Database Information' page.
+      </td>
+    </tr>
+       
 ## BoundedContext
 This project contains BoundedContexts which are made based upon the defined modules. Each context can work independently based upon its 
 concept. It has `MainSqlDbContext` which is used to resolve the database connection based upon the configuration of the app setting through the  GetConnection method of `BaseDbContext`. For performing multitenancy and connection resilency `BaseBoundedDbContext` is used. The Bounded context will inherit from `BaseBoundedDbContext` for resolving database configurations.
