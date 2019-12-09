@@ -30,11 +30,6 @@
     "disabled":true 
 },
 {
-    "title":"AlphaNumeric",
-    "href":"alpha-numeric",
-    "disabled":true 
-},
-{
     "title":"Ascii",
     "href":"ascii",
     "disabled":true 
