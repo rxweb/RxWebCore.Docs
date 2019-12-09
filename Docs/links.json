@@ -8,6 +8,39 @@
         "title": "Working with Data Model"
     },
     {
+        "path": "fundamentals",
+        "title": "Fundamentals",
+        "disabled": true,
+        "childrens": [
+            {
+                "title": "The Startup Class",
+                "href": "the-startup-class",
+                "disabled": true
+            },
+            {
+                "title": "Dependency Injection",
+                "disabled": true,
+                "childrens": [
+                    {
+                        "title": "Register Application Configuration Information",
+                        "href": "register-application-configuration-information",
+                        "disabled": true
+                    },
+                    {
+                        "title": "Register Scoped Services",
+                        "href": "register-scoped-services",
+                        "disabled": true
+                    },
+                    {
+                        "title": "Register Singleton Services",
+                        "href": "register-singleton-services",
+                        "disabled": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "path": "data-validation",
         "title": "Data Validation"
     },
@@ -28,11 +61,11 @@
         "title": "Performance"
     },
     {
-        "path":"localization-and-globalization",
-        "title":"Localization and Globalization"
+        "path": "localization-and-globalization",
+        "title": "Localization and Globalization"
     },
     {
-        "title":"CLI",
+        "title": "CLI",
         "path": "rxwebcore-commands",
         "childrens": [
             {
@@ -94,6 +127,74 @@
             {
                 "title": "Devops",
                 "href": "rxwebcore-commands#devops"
+            }
+        ]
+    },
+    {
+        "path": "tutorials",
+        "title": "Tutorials",
+        "disabled": true,
+        "childrens": [
+            {
+                "title": "Tours Of Ecommerce Application",
+                "href": "register-application-configuration-information",
+                "disabled": true,
+                "childrens": [
+                    {
+                        "title": "RESTful API",
+                        "href": "restful-api",
+                        "disabled": true,
+                        "childrens": [
+                            {
+                                "title": "Introduction",
+                                "href": "introduction",
+                                "disabled": true
+                            },
+                            {
+                                "title": "Database Design",
+                                "href": "database-design",
+                                "disabled": true
+                            },
+                            {
+                                "title": "Authentication/Authorization",
+                                "href": "authentication",
+                                "disabled": true
+                            },
+                            {
+                                "title": "Create Product API",
+                                "href": "authentication",
+                                "disabled": true,
+                                "childrens": [
+                                    {
+                                        "title": "Data Sanitization",
+                                        "href": "data-sanitization",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "title": "Model State Validation",
+                                        "href": "model-state-validation",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "title": "Unique validation",
+                                        "href": "unique-validation",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "title": "Localize Validation Messages",
+                                        "href": "localize-validation-messages",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "title": "Business Rules Implementation",
+                                        "href": "business-rules-implementation",
+                                        "disabled": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
