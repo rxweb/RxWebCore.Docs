@@ -43,10 +43,12 @@
     },
     {
         "path":"entity-data-auditing",
-        "title": "EntityDataAuditing"
+        "title": "EntityDataAuditing",
+        "disabled":true
     },
     {
         "path":"handle-concurrency-conflicts",
-        "title": "Handle Concurrency Conflicts"
+        "title": "Handle Concurrency Conflicts",
+        "disabled":true
     }
 ]
