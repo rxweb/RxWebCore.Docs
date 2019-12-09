@@ -1,5 +1,5 @@
 ---
-title: Step-By-Step
+title: Step By Step Guide
 author: rxcontributortwo
 category: step-by-step-guide
 ---

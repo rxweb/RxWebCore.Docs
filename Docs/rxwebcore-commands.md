@@ -19,7 +19,7 @@ To create a new project using rxwebcore CLI. Run this command
 
 > rxwebcore --add-project <Project_Name>
 
-For more information on creating a project. Please refer <a class="redirect-link" href="/step-by-step-guide/project-creation.html">Project Creation</a>
+For more information on creating a project. Please refer <a class="redirect-link" href="\AspNetCore\step-by-step-guide\project-creation.html">Project Creation</a>
 
 ### Generating Models
 This command will generate POCO model classes having database objects as properties. In this command --models denote generation of models, --<ConnectionStringName> is the name of the connection which is configured in `appsettings.json` as mentioned below. 
@@ -115,9 +115,9 @@ This command creates a search controller with the following stored procedure.
 Eg : rxwebcore --controller --search --main Persons --spname spPersons
 
 ### Add authorization to controller
-This will add `[access]` annotation above the controller with the rights in respect to the application module. For more information about <a class="redirect-link" href="/security/authorization.html">Authorization</a>
+This will add `[access]` annotation above the controller with the rights in respect to the application module. For more information about <a class="redirect-link" href="\AspNetCore\security\authorization.html">Authorization</a>
 
-> rxwebcore --controller --<Controller_Type> --main <Controller_Name> --uow <Module_Name> --access <a class="redirect-link"pplicationModuleId>
+> rxwebcore --controller --<Controller_Type> --main <Controller_Name> --uow <Module_Name> --access <ApplicationModuleId>
 
 Eg :  rxwebcore --controller --basic --main Candidates --uow Master --access 1
 
