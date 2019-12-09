@@ -4,15 +4,15 @@
     "childrens": [
         {
             "title": "Brief",
-            "href": "api.html#brief"
+            "href": "developing-the-api/api.html#brief"
         },
         {
             "title": "Types",
-            "href": "api#types"
+            "href": "developing-the-api/api.html#types"
         },
         {
             "title": "Best Practices",
-            "href": "api#bestpractices"
+            "href": "developing-the-api/api.html#bestpractices"
         }
     ]
 },

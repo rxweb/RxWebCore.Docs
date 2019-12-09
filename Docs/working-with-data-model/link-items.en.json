@@ -13,19 +13,19 @@
         "childrens": [
             {
                 "title": "Overview",
-                "href": "bounded-context.html#overview"
+                "href": "working-with-data-model/bounded-context.html#overview"
             },
             {
                 "title": "Scenario",
-                "href": "bounded-context.html#scenario"
+                "href": "working-with-data-model/bounded-context.html#scenario"
             },
             {
                 "title": "Create Bounded Context",
-                "href": "bounded-context.html#createboundedcontext"
+                "href": "working-with-data-model/bounded-context.html#createboundedcontext"
             },
             {
                 "title": "Add Database Entities",
-                "href": "bounded-context.html#adddatabaseentities"
+                "href": "working-with-data-model/bounded-context.html#adddatabaseentities"
             }
         ]
     },

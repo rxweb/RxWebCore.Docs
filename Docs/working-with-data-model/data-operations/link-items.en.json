@@ -13,91 +13,91 @@
         "childrens": [
             {
                 "title": "All",
-                "href": "read#all"
+                "href": "working-with-data-model/data-operations/read.html#all"
             },
             {
                 "title": "AllAsync",
-                "href": "read#allasync"
+                "href": "working-with-data-model/data-operations/read.html#allasync"
             },
             {
                 "title": "AllInclude",
-                "href": "read#allinclude"
+                "href": "working-with-data-model/data-operations/read.html#allinclude"
             },
             {
                 "title": "AllIncludeAsync",
-                "href": "read#allincludeasync"
+                "href": "working-with-data-model/data-operations/read.html#allincludeasync"
             },
             {
                 "title": "Count",
-                "href": "read#count"
+                "href": "working-with-data-model/data-operations/read.html#count"
             },
             {
                 "title": "FindBy",
-                "href": "read#findyby"
+                "href": "working-with-data-model/data-operations/read.html#findyby"
             },
             {
                 "title": "FindByAsync",
-                "href": "read#findbyasync"
+                "href": "working-with-data-model/data-operations/read.html#findbyasync"
             },
             {
                 "title": "FindByInclude",
-                "href": "read#findbyinclude"
+                "href": "working-with-data-model/data-operations/read.html#findbyinclude"
             },
             {
                 "title": "FindByKey",
-                "href": "read#findbykey"
+                "href": "working-with-data-model/data-operations/read.html#findbykey"
             },
             {
                 "title": "FindByKeyAsync",
-                "href": "read#findbykeyasync"
+                "href": "working-with-data-model/data-operations/read.html#findbykeyasync"
             },
             {
                 "title": "FirstAsync",
-                "href": "read#firstasync"
+                "href": "working-with-data-model/data-operations/read.html#firstasync"
             },
             {
                 "title": "FirstOrDefault",
-                "href": "read#firstordefault"
+                "href": "working-with-data-model/data-operations/read.html#firstordefault"
             },
             {
                 "title": "FirstOrDefaultAsync",
-                "href": "read#firstordefaultasync"
+                "href": "working-with-data-model/data-operations/read.html#firstordefaultasync"
             },
             {
                 "title": "Last",
-                "href": "read#last"
+                "href": "working-with-data-model/data-operations/read.html#last"
             },
             {
                 "title": "LastAsync",
-                "href": "read#lastasync"
+                "href": "working-with-data-model/data-operations/read.html#lastasync"
             },
             {
                 "title": "LastOrDefault",
-                "href": "read#lastordefault"
+                "href": "working-with-data-model/data-operations/read.html#lastordefault"
             },
             {
                 "title": "LastOrDefaultAsync",
-                "href": "read#lastordefaultasync"
+                "href": "working-with-data-model/data-operations/read.html#lastordefaultasync"
             },
             {
                 "title": "Queryable",
-                "href": "read#querable"
+                "href": "working-with-data-model/data-operations/read.html#querable"
             },
             {
                 "title": "Single",
-                "href": "read#single"
+                "href": "working-with-data-model/data-operations/read.html#single"
             },
             {
                 "title": "SingleAsync",
-                "href": "read#singleasync"
+                "href": "working-with-data-model/data-operations/read.html#singleasync"
             },
             {
                 "title": "SingleOrDefault",
-                "href": "read#singleordefault"
+                "href": "working-with-data-model/data-operations/read.html#singleordefault"
             },
             {
                 "title": "SingleOrDefaultAsync",
-                "href": "read#singleordefaultasync"
+                "href": "working-with-data-model/data-operations/read.html#singleordefaultasync"
             }
         ]
     },

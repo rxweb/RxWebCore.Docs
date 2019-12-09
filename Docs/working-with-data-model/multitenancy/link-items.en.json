@@ -5,11 +5,11 @@
         "childrens": [
             {
                 "title": "Tenant Based",
-                "href": "shared-database#tenant-based"
+                "href": "working-with-data-model/multitenancy/shared-database.html#tenant-based"
             },
             {
                 "title": "Schema Based",
-                "href": "shared-database#schema-based",
+                "href": "working-with-data-model/multitenancy/shared-database.html#schema-based",
                 "disabled":true
             }
         ]
