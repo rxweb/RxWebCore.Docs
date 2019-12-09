@@ -20,7 +20,7 @@ The columns of the languages can be added as per the requirement.
 
 <table class="table table-bordered">
 <tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
-<tr><td>1</td><td>1</td><td>g</td><td>This field is required</td><td>{0} is required</td></tr>
+<tr><td>1</td><td>1</td><td>g</td><td>This field is required</td><td>Ce champ est requis</td></tr>
 </table>
 
 The second step is to run the command : 
@@ -37,7 +37,7 @@ This will create `.json` file with en and fr json in localization folder of wwwr
 {
   "maxLength": "The allowed max length is {0}",
   "range": "You can enter {0} to {1} length",
-  "required": "The {0} field is required",
+  "required": "This field is required",
   "unique": "The {0} Field Should be unique"
 }
 ```
@@ -46,10 +46,11 @@ This will create `.json` file with en and fr json in localization folder of wwwr
 
 ```js
 {
-  "maxLength": "The allowed max length is {0}",
-  "range": "You can enter {0} to {1} length",
-  "required": "The {0} field is required",
-  "unique": "The {0} Field Should be unique"
+  "maxLength": "La longueur maximale autorisée est {0}",
+  "range": "Vous pouvez saisir une longueur de {0} à {1}",
+  "required": "Ce champ est requis",
+  "unique": "Le champ {0} doit être unique"
 }
+```
 
 > The users language will be stored in the Users table as a LanguageCode
