@@ -32,15 +32,35 @@ This will generate POCO models for all the tables and views in the `DbEntities` 
 Here is an example of the generated model:
 
 ```
-    public partial class Document
+    [Table("Clients",Schema="dbo")]
+    public partial class Client
     {
-        [NotMapped]
-        public string FileName { get; set; }
-        [NotMapped]
-        public string FileExtention { get; set; }
-        [NotMapped]
-        public string FileData { get; set; }
-        [NotMapped]
-        public string FileType { get; set; }
-    }
+		#region ClientId Annotations
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [System.ComponentModel.DataAnnotations.Key]
+		#endregion ClientId Annotations
+
+        public int ClientId { get; set; }
+
+		#region ClientName Annotations
+
+        [MaxLength(10)]
+		#endregion ClientName Annotations
+
+        public string ClientName { get; set; }
+
+		#region Candidates Annotations
+
+        [InverseProperty("Client")]
+		#endregion Candidates Annotations
+
+        public virtual ICollection<Candidate> Candidates { get; set; }
+
+
+        public Client()
+        {
+			Candidates = new HashSet<Candidate>();
+        }
+	}
 ```
