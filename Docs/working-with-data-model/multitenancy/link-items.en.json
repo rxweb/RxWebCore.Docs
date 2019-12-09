@@ -1,15 +1,15 @@
 [
     {
         "title": "Shared Database",
-        "path": "shared-database",
+        "path": "",
         "childrens": [
             {
                 "title": "Tenant Based",
-                "href": "tenant-based"
+                "href": "shared-database#tenant-based"
             },
             {
                 "title": "Schema Based",
-                "href": "schema-based",
+                "href": "shared-database#schema-based",
                 "disabled":true
             }
         ]

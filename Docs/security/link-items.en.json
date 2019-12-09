@@ -20,7 +20,7 @@
 },
 {
     "title":"OWASP Standards",
-    "path":"owasp-standards",
+    "path":"",
     "childrens": [
         {
             "title": "Open Redirect Attacks",

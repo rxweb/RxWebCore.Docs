@@ -15,7 +15,7 @@ Let's consider a scenario of making a human resource enterprise application whic
 
 This required a lots of real world cases. The core requirement of the application framework should be flexible to adopt the change request easily with the minimal line of code. On the top level note Client wants some of the extensive features in the application, which are listed below:
 
-### Security :
+**Security** :
 
 It plays a very important and unavoidable role in any application as it may contain private and sensitive data of the association which needs to be prevented from attacks. There are various notes to be followed which are listed below : 
 
@@ -24,7 +24,7 @@ It plays a very important and unavoidable role in any application as it may cont
 * `OWASP` security standards should be followed.
 * Data should be validated for its consistency 
 
-### Performance :
+**Performance** :
 
 For an application to respond fast and maintain perfomance is necessary while multiple users access it. 
 
@@ -32,7 +32,7 @@ For an application to respond fast and maintain perfomance is necessary while mu
 * All the static data should be cached.
 * Performance management while manipulating large data. 
 
-### Localization and Globalization :
+**Localization and Globalization** :
 
 Organizations working in different countries/regions may have users who have different timezones, locale etc.
 

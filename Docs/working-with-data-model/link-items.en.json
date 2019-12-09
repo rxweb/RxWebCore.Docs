@@ -9,23 +9,23 @@
     },
     {
         "title": "Bounded Context",
-        "path": "bounded-context",
+        "path": "",
         "childrens": [
             {
                 "title": "Overview",
-                "href": "bounded-context#overview"
+                "href": "bounded-context.html#overview"
             },
             {
                 "title": "Scenario",
-                "href": "bounded-context#scenario"
+                "href": "bounded-context.html#scenario"
             },
             {
                 "title": "Create Bounded Context",
-                "href": "bounded-context#createboundedcontext"
+                "href": "bounded-context.html#createboundedcontext"
             },
             {
                 "title": "Add Database Entities",
-                "href": "bounded-context#adddatabaseentities"
+                "href": "bounded-context.html#adddatabaseentities"
             }
         ]
     },
