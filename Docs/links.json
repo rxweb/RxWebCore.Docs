@@ -19,6 +19,7 @@
             },
             {
                 "title": "Dependency Injection",
+                "path":"dependency-injection",
                 "disabled": true,
                 "childrens": [
                     {
@@ -137,12 +138,12 @@
         "childrens": [
             {
                 "title": "Tours Of Ecommerce Application",
-                "href": "register-application-configuration-information",
+                "path": "register-application-configuration-information",
                 "disabled": true,
                 "childrens": [
                     {
                         "title": "RESTful API",
-                        "href": "restful-api",
+                        "path": "restful-api",
                         "disabled": true,
                         "childrens": [
                             {
@@ -162,7 +163,7 @@
                             },
                             {
                                 "title": "Create Product API",
-                                "href": "authentication",
+                                "path": "authentication",
                                 "disabled": true,
                                 "childrens": [
                                     {
