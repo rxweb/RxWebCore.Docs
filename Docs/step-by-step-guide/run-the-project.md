@@ -11,7 +11,7 @@ After the project solution is successfully generated as per the mentioned projec
 
 1) Open postman >  new request >  select request type as post > pass the url having route `api/Authentication`
 
-For Eg : https://localhost:<Your_generated_port_number>/api/Authentication 
+For Eg : https://localhost:**Your_generated_port_number**/api/Authentication 
 
 2) In body pass data in the form of `raw` of type JSON(application/json) > pass UserName and Password as json object as shown below: 
 

@@ -29,14 +29,32 @@ The Unique validation function will be made in the main folder of the ExtendedMo
             return uniqueQueries;
         }
 ```
-
-| Property | Description | Syntax |
-| ----------- | ----------- | ----------- |
-| messageKey | You can set the messageKey based on localization with the help of `messageKey` | [Unique(typeof(IMainDatabaseFacade),`messageKey`:"UniqueMessageKey")] |
-| conditionalExpressionName | If you want to apply unique validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of Unique validation. | [Unique(`typeof`(IMainConnection),`conditionalExpressionName`:nameof(`Person.PersonNameConditionalExpression`))] |
-| dynamicConfigExpressionName | If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used. | [Unique(`typeof`(IMainConnection),`dynamicConfigExpressionName`:nameof(`PersonNameDynamicExpression`))] |
+<table class="table table bordered">
+<tr><th>Property</th><th>Description</th><th>Syntax</th></tr>
+<tr>
+<td>maxLength</td>
+<td>Enter value which you want to restrict the limit upto.</td>
+<td>[(10)]</td>
+</tr>
+<tr>
+<td>messageKey</td>
+<td>You can set the messageKey based on localization with the help of `messageKey`</td>
+<td>[Unique(typeof(IMainDatabaseFacade),`messageKey`:"UniqueMessageKey")]</td>
+</tr>
+<tr>
+<td>conditionalExpressionName</td>
+<td>If you want to apply unique validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of Unique validation. </td>
+<td>[Unique(`typeof`(IMainConnection),`conditionalExpressionName`:nameof(`Person.PersonNameConditionalExpression`))]</td>
+</tr>
+<tr>
+<td>dynamicConfigExpressionName</td>
+<td>If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used.</td>
+<td> [Unique(`typeof`(IMainConnection),`dynamicConfigExpressionName`:nameof(`PersonNameDynamicExpression`))]</td>
+</tr>
+</table>
 
 ## ConditionalExpressionName
+
 Type : string
 
 When you want the validation to be fired based upon some custom validation function. It is passed in the `ConditionalExpressionName` property.
@@ -97,15 +115,17 @@ When you want to show a custom validation message based upon the entity. Message
 
 **LanguageContentKeys Table**
 
-| LanguageContentKeyId | KeyName | IsComponent 
-| ----------- | ----------- | ----------- | 
-| 1 | UniqueMessageKey | 0 | 
+<table class="table table-bordered">
+<tr><th>LanguageContentKeyId</th><th>KeyName</th><th>IsComponent</th></tr>
+<tr><td>1</td><td>UniqueMessageKey</td><td>0</td>
+</table>
 
 **LanguageContents Table**
 
-| LanguageContentId | LanguageContentKeyId | ContentType | En | Fr |
-| ----------- | ----------- | ----------- | -------- | ---- | 
-| 1 | 1 | g | This candidate data should be unique | NULL |  
+<table class="table table-bordered">
+<tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
+<tr><td>1</td><td>1</td><td>g</td><td>This candidate data should be unique</td><td>NULL</td></tr>
+</table>
 
 In the DbEntity class : 
 

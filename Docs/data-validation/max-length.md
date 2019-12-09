@@ -14,13 +14,13 @@ Let's consider a scenario where there is a model class `Candidate.cs` which has 
     [MaxLength(10)]
     public string ContactNumber { get; set; }
 ```
-
-| Property | Description | Syntax |
-| ----------- | ----------- | ----------- |
-| maxLength | Enter value which you want to restrict the limit upto. | [MaxLength(10)] |
-| messageKey | You can set the messageKey based on localization with the help of `messageKey` | [MaxLength(`messageKey`: "maxLengthMessageKey" )] |
-| conditionalExpressionName | If you want to apply maxLength validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of MaxLength validation. | [MaxLength(`conditionalExpressionName`:nameof(`User.ContactConditionalExpression`))] |
-| dynamicConfigExpressionName | If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used. | [MaxLength(`dynamicConfigExpressionName`:nameof(`AdressDynamicExpression`))] |
+<table class="table table-bordered">
+<tr><th>Property</th><th>Description</th><th>Syntax</th></tr>
+<tr><td>maxLength</td><td>Enter value which you want to restrict the limit upto.</td><td> [MaxLength(10)] </td></tr>
+<tr><td>messageKey</td><td>You can set the messageKey based on localization with the help of `messageKey`</td><td> [MaxLength(`messageKey`: "maxLengthMessageKey" )]</td></tr>
+<tr><td>conditionalExpressionName</td><td>If you want to apply maxLength validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of MaxLength validation.</td><td>  [MaxLength(`conditionalExpressionName`:nameof(`User.ContactConditionalExpression`))] </td></tr>
+<tr><td>dynamicConfigExpressionName</td><td>If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used.</td><td>[MaxLength(`dynamicConfigExpressionName`:nameof(`AdressDynamicExpression`))]</td></tr>
+</table>
 
 ## allowMaximumLength
 Type : int
@@ -97,15 +97,17 @@ When you want to show a custom validation message based upon the entity. Message
 
 **LanguageContentKeys Table**
 
-| LanguageContentKeyId | KeyName | IsComponent 
-| ----------- | ----------- | ----------- | 
-| 1 | MaxLengthMessageKey | 0 | 
+<table class="table table-bordered">
+<tr><th>LanguageContentKeyId</th><th>KeyName</th><th>IsComponent</th></tr>
+<tr><td>1</td><td>MaxLengthMessageKey</td><td>0</td>
+</table>
 
 **LanguageContents Table**
 
-| LanguageContentId | LanguageContentKeyId | ContentType | En | Fr |
-| ----------- | ----------- | ----------- | -------- | ---- | 
-| 1 | 1 | g | This candidate data exceeds the maxLength | NULL |  
+<table class="table table-bordered">
+<tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
+<tr><td>1</td><td>1</td><td>g</td><td>This candidate data exceeds the maxLength</td><td>NULL</td></tr>
+</table>
 
 In the DbEntity class : 
 

@@ -2,7 +2,7 @@
 title: Shared Database
 author: rxcontributorone
 category: working-with-data-model
-sub-category: multitenancy
+subcategory: multitenancy
 ---
 
 Multitenancy means multiple organization or client can use a single software. `Multi Tenant` application means a software application which serves multiple clients from the same server. Here `tenent` word represent the client. Tenant can be a single client or an organization. Each tenant’s data is isolated and is not accessible to each other. Multi-tenancy is used while developing software that runs for different organizations.

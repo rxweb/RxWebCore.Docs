@@ -1,7 +1,7 @@
 ---
 title: Generating Data Models
 author: rxcontributorone
-category: rxwebcore  
+category: working-with-data-model  
 ---
 
 # Generate POCO Model

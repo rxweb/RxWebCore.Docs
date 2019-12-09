@@ -45,7 +45,7 @@ This command generates a bounded context where --context denotes making of a con
 
 Eg : rxwebcore --context --main Client
 
-### Adding Single Model
+### Adding Single Model In Context
    
 > rxwebcore --context --main <Context_Name> --add-models <Model_Name> 
 
