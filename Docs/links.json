@@ -33,6 +33,68 @@
     },
     {
         "title":"CLI",
-        "href": "rxwebcore-commands"
+        "path": "rxwebcore-commands",
+        "childrens": [
+            {
+                "title": "Installation",
+                "href": "rxwebcore-commands#installation"
+            },
+            {
+                "title": "Project Creation",
+                "href": "rxwebcore-commands#projectcreation"
+            },
+            {
+                "title": "Generating Models",
+                "href": "rxwebcore-commands#generatingmodels"
+            },
+            {
+                "title": "Generating Context",
+                "href": "rxwebcore-commands#generatingcontext"
+            },
+            {
+                "title": "Adding Single Model",
+                "href": "rxwebcore-commands#addingsinglemodel"
+            },
+            {
+                "title": "Adding Multiple Tables In Context",
+                "href": "rxwebcore-commands#addingmultipletablesincontext"
+            },
+            {
+                "title": "Basic Controller",
+                "href": "rxwebcore-commands#basiccontroller"
+            },
+            {
+                "title": "Domain Controller",
+                "href": "rxwebcore-commands#domaincontroller"
+            },
+            {
+                "title": "Lookup Controller",
+                "href": "rxwebcore-commands#lookupcontroller"
+            },
+            {
+                "title": "Add lookups in lookup controller",
+                "href": "rxwebcore-commands#addlookupsinlookupcontroller"
+            },
+            {
+                "title": "Child Controller",
+                "href": "rxwebcore-commands#childcontroller"
+            },
+            {
+                "title": "Search Controller",
+                "href": "rxwebcore-commands#searchcontroller"
+            },
+            {
+                "title": "add authorization to controller",
+                "href": "rxwebcore-commands#addauthorizationtocontroller"
+            },
+            {
+                "title": "adding localization",
+                "href": "rxwebcore-commands#addinglocalization"
+            },
+            {
+                "title": "Devops",
+                "href": "rxwebcore-commands#devops"
+            }
+        ]
     }
 ]
