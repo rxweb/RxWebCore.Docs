@@ -2,7 +2,7 @@
 title: Update
 author: rxcontributorone
 category: working-with-data-model
-sub-category: data-operations 
+subcategory: data-operations 
 ---
 
 Used during put request for updating object/objects of entity.

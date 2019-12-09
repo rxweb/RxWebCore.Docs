@@ -2,7 +2,7 @@
 title: Delete
 author: rxcontributorone
 category: working-with-data-model
-sub-category: data-operations 
+subcategory: data-operations 
 ---
 
 Used for delete operation to be done on entity.

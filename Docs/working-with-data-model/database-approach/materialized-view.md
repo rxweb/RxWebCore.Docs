@@ -2,7 +2,7 @@
 title: Materialized View
 author: rxcontributorone
 category: working-with-data-model
-sub-category: database-approach
+subcategory: database-approach
 ---
 
 To perform effective quering becomes much necessary when we want to recieve our desired resultset which depends upon many factors that is the size of the data, integrity of the data. For scenarios where you want to `display a list of records` where the resultset includes more than one table and generating a query is difficult. Generating a view saves execution time in compared to complex queries. It requires less maintenance. Besides this the data in the views get high availability and resilency benefits.

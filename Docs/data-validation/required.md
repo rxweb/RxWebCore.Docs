@@ -17,12 +17,29 @@ public string CandidateName { get; set; }
 
 Using required annotation before the property, this is not allow null value to be entered in CandidateName. There are several additional properties of the annotations which can be used to validate the property which are listed below:
 
-| Property | Description | Syntax |
-| ----------- | ----------- | ----------- |
-| allowWhiteSpace | You can also allow whitespace in that property, if you want to allow space in the property. | [Required(allowWhiteSpace: true)] |
-| messageKey | You can set the messageKey based on localization with the help of `messageKey` | [Required(messageKey: "requiredMessageKey" )] |
-| conditionalExpressionName | If you want to apply required validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of Required validation. | [Required(conditionalExpressionName:nameof(User.EmailConditionalExpression))] |
-| dynamicConfigExpressionName | If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used. | [Required(dynamicConfigExpressionName:nameof(EmailDynamicExpression))] |
+<table class="table table bordered">
+<tr><th>Property</th><th>Description</th><th>Syntax</th></tr>
+<tr>
+<td>allowWhiteSpace</td>
+<td>You can also allow whitespace in that property, if you want to allow space in the property.</td>
+<td>[Required(allowWhiteSpace: true)]</td>
+</tr>
+<tr>
+<td>messageKey</td>
+<td>You can set the messageKey based on localization with the help of `messageKey`</td>
+<td>[Required(messageKey: "requiredMessageKey" )]</td>
+</tr>
+<tr>
+<td>conditionalExpressionName</td>
+<td>If you want to apply required validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of Required validation. </td>
+<td>| [Required(conditionalExpressionName:nameof(User.EmailConditionalExpression))] </td>
+</tr>
+<tr>
+<td>dynamicConfigExpressionName</td>
+<td>If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used.</td>
+<td> [Required(dynamicConfigExpressionName:nameof(EmailDynamicExpression))] </td>
+</tr>
+</table>
 
 ## allowWhiteSpace
 Type : boolean
@@ -94,15 +111,17 @@ When you want to show a custom validation message based upon the entity. Message
 
 **LanguageContentKeys Table**
 
-| LanguageContentKeyId | KeyName | IsComponent 
-| ----------- | ----------- | ----------- | 
-| 1 | RequiredMessageKey | 0 | 
+<table class="table table-bordered">
+<tr><th>LanguageContentKeyId</th><th>KeyName</th><th>IsComponent</th></tr>
+<tr><td>1</td><td>RequiredMessageKey</td><td>0</td>
+</table>
 
 **LanguageContents Table**
 
-| LanguageContentId | LanguageContentKeyId | ContentType | En | Fr |
-| ----------- | ----------- | ----------- | -------- | ---- | 
-| 1 | 1 | g | This candidate data is required | NULL |  
+<table class="table table-bordered">
+<tr><th>LanguageContentId</th><th>LanguageContentKeyId</th><th>ContentType</th><th>En</th><th>Fr</th></tr>
+<tr><td>1</td><td>1</td><td>g</td><td>This candidate data is required</td><td>NULL</td></tr>
+</table>
 
 In the DbEntity class : 
 

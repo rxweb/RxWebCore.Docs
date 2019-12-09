@@ -2,7 +2,7 @@
 title: Create
 author: rxcontributorone
 category: working-with-data-model
-sub-category: data-operations 
+subcategory: data-operations 
 ---
 
 Used during post request for creating new object/objects of entity.
