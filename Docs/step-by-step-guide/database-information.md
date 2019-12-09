@@ -10,49 +10,10 @@ category: step-by-step-guide
 
 The main database contains all the default tables which are necessary for fulfuling the basic functionalties like authorization and authentication, application objects, localization and globalization etc.. 
 
-## Application Modules 
-To effectively manage functionalities of a large enterprise application, we need to break it into seperate units/modules and assign a particular task to each of them. As we have made a human resource enterprise application we take into consideration, three main modules of the application which are Resource Management, Candidate Module and User Module.
-
-**1. ModuleMasters**
-
-Contains information about application's master modules.
-
-<table class="table table-bordered table-striped">
-<tr><th>Column</th><th>DataType</th><th>Description</th></tr>
-<tr><td>ModuleMasterId</td><td>int</td><td>PK</td></tr>
-<tr><td>ModuleMasterName</td><td>varchar(100)</td><td>Name of the application module master.</td></tr> 
-<tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
-</table>
-
-Inserted data of ModuleMasters: 
-
-<table class="table table-bordered">
-<tr><th>ModuleMasterId</th><th>ModuleMasterName</th><th>StatusId</th></tr>
-<tr><td>1</td><td>Management</td><td>1</td></tr>
-</table>
-
-**2. ApplicationModules**
-
-Contains information about all the modules used in the application.
-
-<table class="table table-bordered table-striped">
-<tr><th>Column</th><th>DataType</th><th>Description</th></tr>
-<tr><td>ApplicationModuleId</td><td>int</td><td>PK</td></tr>
-<tr><td>ModuleMasterId</td><td>int</td><td>FK(ModuleMasters).</td></tr> 
-<tr><td>ParentApplicationModuleId</td><td>int</td><td>Id of parent application module in case of entering a child module</td></tr>
-</table>
-
-Inserted data of ApplicationModules: 
-
-<table class="table table-bordered">
-<tr><th>ApplicationModuleId</th><th>ModuleMasterId</th><th>ParentApplicationModuleId</th></tr>
-<tr><td>1</td><td>1</td><td>NULL</td></tr>
-</table>
-
 # Application Objects
 Some objects need to be stored in the database which are often used in application and its value is limited upto some number based upon the entity their values will be stored in ApplicationObjects as below and making a seperate table for storing the values of countries is not preferable in this case.Example : Status
 
-**3. ApplicationObjectTypes**
+**1. ApplicationObjectTypes**
 
 Contains type of Application Objects like status, gender etc.
 
@@ -70,7 +31,7 @@ Inserted data of ApplicationObjectTypes:
 <tr><td>1</td><td>Status</td><td>1</td></tr>
 </table>
 
-**4. ApplicationObjects**
+**2. ApplicationObjects**
 
 Contains application objects based upon its type.
 
@@ -89,6 +50,46 @@ Inserted data of ApplicationObjects:
 <tr><td>1</td><td>1</td><td>Active</td><td>1</td></tr>
 <tr><td>2</td><td>1</td><td>InActive</td><td>1</td></tr>
 <tr><td>3</td><td>1</td><td>Blocked</td><td>1</td></tr>
+</table>
+
+
+## Application Modules 
+To effectively manage functionalities of a large enterprise application, we need to break it into seperate units/modules and assign a particular task to each of them. As we have made a human resource enterprise application we take into consideration, three main modules of the application which are Resource Management, Candidate Module and User Module.
+
+**3. ModuleMasters**
+
+Contains information about application's master modules.
+
+<table class="table table-bordered table-striped">
+<tr><th>Column</th><th>DataType</th><th>Description</th></tr>
+<tr><td>ModuleMasterId</td><td>int</td><td>PK</td></tr>
+<tr><td>ModuleMasterName</td><td>varchar(100)</td><td>Name of the application module master.</td></tr> 
+<tr><td>StatusId</td><td>int</td><td>FK(ApplicationObjects)</td></tr>
+</table>
+
+Inserted data of ModuleMasters: 
+
+<table class="table table-bordered">
+<tr><th>ModuleMasterId</th><th>ModuleMasterName</th><th>StatusId</th></tr>
+<tr><td>1</td><td>Management</td><td>1</td></tr>
+</table>
+
+**4. ApplicationModules**
+
+Contains information about all the modules used in the application.
+
+<table class="table table-bordered table-striped">
+<tr><th>Column</th><th>DataType</th><th>Description</th></tr>
+<tr><td>ApplicationModuleId</td><td>int</td><td>PK</td></tr>
+<tr><td>ModuleMasterId</td><td>int</td><td>FK(ModuleMasters).</td></tr> 
+<tr><td>ParentApplicationModuleId</td><td>int</td><td>Id of parent application module in case of entering a child module</td></tr>
+</table>
+
+Inserted data of ApplicationModules: 
+
+<table class="table table-bordered">
+<tr><th>ApplicationModuleId</th><th>ModuleMasterId</th><th>ParentApplicationModuleId</th></tr>
+<tr><td>1</td><td>1</td><td>NULL</td></tr>
 </table>
 
 ## Localization and Globalization

@@ -4,7 +4,6 @@ author: rxcontributorone
 category: step-by-step-guide  
 ---
 
-# Solution Structure
 As RxWeb follows the practices of `Clean Architecture`, Based upon this the project structure is divided into several layers of Models, domain services, Application core and API which adds the practices of seperation of concerns for simplification and maintanable code. 
 
 The project solution contains six projects. They are : 
@@ -18,6 +17,7 @@ The project solution contains six projects. They are :
 
 ## Models
 The primary purpose of this project is to define POCO models/Enums/Interfaces which can be used in application wide. Some of the files/folders are already defined. Some of these folders and files are defined when you create the project. Let's see how many folders/files are available initially.
+
 <table>
   <tr>
     <th>
@@ -60,7 +60,8 @@ The primary purpose of this project is to define POCO models/Enums/Interfaces wh
         You can define enums based upon your need and some of the enums are automatically generated which are defined in the table of `ApplicationObjectTypes` and the respective respective reference values are stored in the `ApplicationObjects`. for more information about these table you can refer the 'Database Information' page.
       </td>
     </tr>
-       
+</table>
+
 ## BoundedContext
 This project contains BoundedContexts which are made based upon the defined modules. Each context can work independently based upon its 
 concept. It has `MainSqlDbContext` which is used to resolve the database connection based upon the configuration of the app setting through the  GetConnection method of `BaseDbContext`. For performing multitenancy and connection resilency `BaseBoundedDbContext` is used. The Bounded context will inherit from `BaseBoundedDbContext` for resolving database configurations.

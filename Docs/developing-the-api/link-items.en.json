@@ -33,7 +33,8 @@
     "href":"search-controller"
 },
 {
-    "title":"Shared Controller",
-    "href":"shared-controller"
+    "title":"File Controller",
+    "href":"file-controller",
+    "disabled":true
 }
 ]

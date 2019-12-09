@@ -1,8 +1,10 @@
-[{
-    "title":"Component Content",
-    "href":"/component-content"
-},
-{
-    "title":"Global Content",
-    "href":"/global-content"
-}]
+[
+    {
+        "title": "Global Content",
+        "href": "/global-content"
+    },
+    {
+        "title": "Component Content",
+        "href": "/component-content"
+    }
+]

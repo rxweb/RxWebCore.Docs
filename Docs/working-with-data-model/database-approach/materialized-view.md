@@ -39,6 +39,6 @@ In some of the areas where we have to bind the department names in the dropdown,
 CREATE VIEW [dbo].[vDepartmentLookups]
 AS
 SELECT       DepartmentId, DepartmentName
-FROM            dbo.Persons
+FROM            dbo.Departments
 GO
 ```

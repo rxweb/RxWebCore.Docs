@@ -7,6 +7,10 @@
     "href":"authorization"
 },
 {
+    "title":"User Claims",
+    "href":"user-claims"
+},
+{
     "title":"Exception Handling And Logging",
     "href":"exception-handling-and-logging"
 },

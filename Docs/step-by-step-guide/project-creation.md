@@ -1,5 +1,5 @@
 ---
-title: Project Setup
+title: Step-By-Step
 author: rxcontributortwo
 category: step-by-step-guide
 ---
@@ -13,7 +13,7 @@ The prerequisites which are required before creating new project using `rxwebcor
     <li>.Net Core 3.0 or later SDK</li>
 </ul>
 
-# Install rxweb tool
+# Install rxwebcore tool
 The first step towards creating an application is to install the <a href="https://www.nuget.org/packages/RxWebCore/">`rxwebcore`</a> tool globally using below command in command prompt.
 
 ```js
