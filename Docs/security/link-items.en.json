@@ -24,15 +24,15 @@
     "childrens": [
         {
             "title": "Open Redirect Attacks",
-            "href": "owasp-standards#openredirectattacks"
+            "href": "owasp-standards.html#openredirectattacks"
         },
         {
             "title": "Cross Site Scripting Attack",
-            "href": "owasp-standards#crosssitescriptingattack"
+            "href": "owasp-standards.html#crosssitescriptingattack"
         },
         {
             "title": "Enable Cross-Origin Requests ",
-            "href": "owasp-standards#enablecrossoriginrequests "
+            "href": "owasp-standards.html#enablecrossoriginrequests "
         }
     ]
 },
