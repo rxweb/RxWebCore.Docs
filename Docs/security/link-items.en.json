@@ -11,8 +11,8 @@
     "href":"user-claims"
 },
 {
-    "title":"Exception Handling And Logging",
-    "href":"exception-handling-and-logging"
+    "title":"Exception Handling",
+    "href":"exception-handling"
 },
 {
     "title":"IpSafelist",
@@ -20,7 +20,7 @@
 },
 {
     "title":"OWASP Standards",
-    "href":"owasp-standards",
+    "path":"owasp-standards",
     "childrens": [
         {
             "title": "Open Redirect Attacks",

@@ -42,7 +42,11 @@
         "title": "Multitenancy"
     },
     {
-        "path":"advance",
-        "title": "Advance"
+        "path":"entity-data-auditing",
+        "title": "EntityDataAuditing"
+    },
+    {
+        "path":"handle-concurrency-conflicts",
+        "title": "Handle Concurrency Conflicts"
     }
 ]
