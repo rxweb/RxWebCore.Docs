@@ -18,7 +18,7 @@ Create a extended model in main folder of Models project named `ActiveFilter.cs`
 
 ```
 
-Status is defined in ApplicationObjects. for more information please refer <a href="step-by-step-guide/database-information.html#applicationobjects">ApplicationObjects</a>
+Status is defined in ApplicationObjects. for more information please refer <a class="redirect-link" href="step-by-step-guide/database-information.html#applicationobjects">ApplicationObjects</a>
 
 **Step 2:**
 Add `GlobalQueryFilter` annotation above the model class`Country.cs`

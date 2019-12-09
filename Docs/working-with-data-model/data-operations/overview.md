@@ -5,7 +5,7 @@ category: working-with-data-model
 subcategory: data-operations 
 ---
 
-The UnitOfWork pattern is vast and we can use in multiple areas, To know more about the UnitOfWork pattern, Please refer the Martin Fowler Article, This is awesome.<a href="https://martinfowler.com/eaaCatalog/unitOfWork.html">Unit of work</a> 
+The UnitOfWork pattern is vast and we can use in multiple areas, To know more about the UnitOfWork pattern, Please refer the Martin Fowler Article, This is awesome.<a class="redirect-link" href="https://martinfowler.com/eaaCatalog/unitOfWork.html">Unit of work</a> 
 
 In our case, This mainly focuses on handling the database operations on data objects. As you know the framework is using the ORM of EntityFramework Core, this also follows the same practice through the DbContext class. Internally we are using the same DbContext object to performing the database opertation To handle the database operations and on top of it this manages some additional things like Entity Audit Logging which keeps a trace of every change that has been made to the entity.
 

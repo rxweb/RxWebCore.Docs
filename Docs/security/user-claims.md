@@ -10,7 +10,7 @@ Claims are known as key components used while implementing web based authenticat
 The Jwt web token is generated with the help of the claims which are issued. It is generated using the WriteToken method of `IJwtTokenProvider` of RxWeb.Core.Security namespace. Based upon the claims passed the web token will be generated and based upon them the Web API will be accessed.
 
 ## Claim Types   
-`System.Security.Claims` provides a wide range of claims that return claim of a specific type. For detailed information about the UserClaims Please visit <a href="https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.claims.claimtypes?view=netframework-4.8">ClaimTypes</a>. Some of them are listed below:
+`System.Security.Claims` provides a wide range of claims that return claim of a specific type. For detailed information about the UserClaims Please visit <a class="redirect-link" href="https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.claims.claimtypes?view=netframework-4.8">ClaimTypes</a>. Some of them are listed below:
 
 ### Name Identifier
 It is used to set claim which retrives the name of the entity based upon the required URL. 

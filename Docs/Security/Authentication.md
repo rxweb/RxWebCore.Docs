@@ -3,7 +3,7 @@ title: Authentication
 author: rxcontributorone
 category: security
 ---
-Developing any enterprise application, authentication is the primary criteria, like we are developing RESTfull API which requires some sort of authentication mechanism. We will implement it using Token based authentication through JSON Web Token. For more information about JWT Token, Please refer this <a href="https://tools.ietf.org/html/rfc7519">docs</a>.
+Developing any enterprise application, authentication is the primary criteria, like we are developing RESTfull API which requires some sort of authentication mechanism. We will implement it using Token based authentication through JSON Web Token. For more information about JWT Token, Please refer this <a class="redirect-link" href="https://tools.ietf.org/html/rfc7519">docs</a>.
 Now a days this is very popular and more reliable. 
 
 Basically We need to create a token and pass it to the client. Further more whenever the user request to the server with the token at that time the server parse the token and get the identity information of claimed user.
@@ -44,7 +44,7 @@ As per the above code the `WriteToken` method will be used by resolving the serv
 ### Parameters
 1)claims :
 
-The token will be generated based upon the proived <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimtypes?view=netframework-4.8">ClaimTypes</a>, As a standard practice we store user related information in the respective claim types
+The token will be generated based upon the proived <a class="redirect-link" href="https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimtypes?view=netframework-4.8">ClaimTypes</a>, As a standard practice we store user related information in the respective claim types
 
 2)Issuer :
 
