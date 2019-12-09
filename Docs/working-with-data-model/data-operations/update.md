@@ -22,7 +22,7 @@ Used during put request for updating object/objects of entity.
 Updating Multiple Objects using `RegisterDirtyAsync` 
 
 ```js
-   public async Task UpdateAsyncList([FromBody]IEnumerable<Candidate> candidates)
+   public async Task UpdateAsyncList([FromBody]IList<Candidate> candidates)
     {     
      await Uow.RegisterNewAsync(candidate);
      await Uow.CommitAsync();
