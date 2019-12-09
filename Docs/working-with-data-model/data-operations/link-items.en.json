@@ -8,6 +8,7 @@
 },
 {
     "title":"Read",
+    "path":"read",
     "childrens":[
         {
         "title":"All",
