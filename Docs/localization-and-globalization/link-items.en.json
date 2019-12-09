@@ -1,10 +1,10 @@
 [
     {
         "title": "Global Content",
-        "href": "/global-content"
+        "href": "global-content"
     },
     {
         "title": "Component Content",
-        "href": "/component-content"
+        "href": "component-content"
     }
 ]

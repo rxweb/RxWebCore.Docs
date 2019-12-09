@@ -1,10 +1,10 @@
 [{
     "title":"Api",
-    "path":"api",
+    "path":"",
     "childrens": [
         {
             "title": "Brief",
-            "href": "api#brief"
+            "href": "api.html#brief"
         },
         {
             "title": "Types",

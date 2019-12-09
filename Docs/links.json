@@ -67,67 +67,67 @@
     },
     {
         "title": "CLI",
-        "path": "rxwebcore-commands",
+        "path": "",
         "childrens": [
             {
                 "title": "Installation",
-                "href": "rxwebcore-commands#installation"
+                "href": "rxwebcore-commands.html#installation"
             },
             {
                 "title": "Project Creation",
-                "href": "rxwebcore-commands#projectcreation"
+                "href": "rxwebcore-commands.html#projectcreation"
             },
             {
                 "title": "Generating Models",
-                "href": "rxwebcore-commands#generatingmodels"
+                "href": "rxwebcore-commands.html#generatingmodels"
             },
             {
                 "title": "Generating Context",
-                "href": "rxwebcore-commands#generatingcontext"
+                "href": "rxwebcore-commands.html#generatingcontext"
             },
             {
                 "title": "Adding Single Model",
-                "href": "rxwebcore-commands#addingsinglemodel"
+                "href": "rxwebcore-commands.html#addingsinglemodel"
             },
             {
                 "title": "Adding Multiple Tables In Context",
-                "href": "rxwebcore-commands#addingmultipletablesincontext"
+                "href": "rxwebcore-commands.html#addingmultipletablesincontext"
             },
             {
                 "title": "Basic Controller",
-                "href": "rxwebcore-commands#basiccontroller"
+                "href": "rxwebcore-commands.html#basiccontroller"
             },
             {
                 "title": "Domain Controller",
-                "href": "rxwebcore-commands#domaincontroller"
+                "href": "rxwebcore-commands.html#domaincontroller"
             },
             {
                 "title": "Lookup Controller",
-                "href": "rxwebcore-commands#lookupcontroller"
+                "href": "rxwebcore-commands.html#lookupcontroller"
             },
             {
                 "title": "Add lookups in lookup controller",
-                "href": "rxwebcore-commands#addlookupsinlookupcontroller"
+                "href": "rxwebcore-commands.html#addlookupsinlookupcontroller"
             },
             {
                 "title": "Child Controller",
-                "href": "rxwebcore-commands#childcontroller"
+                "href": "rxwebcore-commands.html#childcontroller"
             },
             {
                 "title": "Search Controller",
-                "href": "rxwebcore-commands#searchcontroller"
+                "href": "rxwebcore-commands.html#searchcontroller"
             },
             {
                 "title": "add authorization to controller",
-                "href": "rxwebcore-commands#addauthorizationtocontroller"
+                "href": "rxwebcore-commands.html#addauthorizationtocontroller"
             },
             {
                 "title": "adding localization",
-                "href": "rxwebcore-commands#addinglocalization"
+                "href": "rxwebcore-commands.html#addinglocalization"
             },
             {
                 "title": "Devops",
-                "href": "rxwebcore-commands#devops"
+                "href": "rxwebcore-commands.html#devops"
             }
         ]
     },
