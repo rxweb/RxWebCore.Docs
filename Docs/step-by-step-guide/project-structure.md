@@ -18,7 +18,7 @@ The project solution contains six projects. They are :
 ## Models
 The primary purpose of this project is to define POCO models/Enums/Interfaces which can be used in application wide. Some of the files/folders are already defined. Some of these folders and files are defined when you create the project. Let's see how many folders/files are available initially.
 
-<table>
+<table class="table table-bordered">
   <tr>
     <th>
       Folder Name
