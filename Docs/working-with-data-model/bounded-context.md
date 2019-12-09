@@ -27,7 +27,7 @@ Parameters of creating a context
 <tr><th>Parameter</th><th>Description</th></tr>
 <tr><td>--context</td><td>For generating BoundedContext</td></tr>
 <tr><td>--main</td><td>key of the database connectionString mentioned in `appsettings.json`</td></tr>
-<tr><td><Context_Name></td><td>Name of the context</td></tr>
+<tr><td>Context_Name</td><td>Name of the context</td></tr>
 </table>
 
 # Create Bounded Context

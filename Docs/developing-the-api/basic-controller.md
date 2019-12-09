@@ -61,4 +61,4 @@ For accessing the created Api, you must pass key and value of JWT token which is
 
 > The key is passed as `x-request` and value is passed as `Authorization`.
 
-![PostMan Requests](postman_request.gif)
+![PostMan Requests](Images/postman_request.gif)
