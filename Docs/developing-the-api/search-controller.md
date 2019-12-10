@@ -31,7 +31,7 @@ Lets consider a scenario where you want to create a `UsersSearchController` in t
 </table>
 
 # Example
-In this example  `MainSqlDbContext` is the context of `OrdersModule` which contains the `spSearchUsers`
+In this example  `MainSqlDbContext` is the context of `UsersModule` which contains the `spSearchUsers`
 which is executing while fetching the search result which are retrieved by passing searchParams as dictionary object in the post method.
 
 ```js
