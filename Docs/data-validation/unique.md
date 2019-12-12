@@ -6,35 +6,53 @@ category: data-validation
 
 `Unique` validation annotation lets you enter unique value in an array based model property. 
 
-let's consider a scenario where there is a model class `Person.cs` which has properties of PersonId, PersonName.
+let's consider a scenario where data insertion operation is to be done on candidate entity. The candidate contains various fields like candidateName, EmailId, country etc.. The EmailId field should be entered in such a way that if the emailId already exists in the database the insertion should not take place. This is done using `[Unique]` annotation.  
 
 ## Basic Unique Validation  
+For performing a basic unique validation on the candidate entity.
+
+**Step 1 :**
+Create an extended model folder in the main folder and into that create a partial class of Candidate 
 
 ```js
-    [Unique(connection: typeof(IMainDatabaseFacade), uniqueQueryMethod:nameof(Person.UniqueQueryMethod))]
+    [Unique(connection: typeof(IMainDatabaseFacade), uniqueQueryMethod:nameof(Candidate.UniqueEmailId))]
 ```
 
 The Unique validation function will be made in the main folder of the ExtendedModels folder. 
 
 ```js
-        private List<UniqueQuery> UniqueQueryMethod()
-        {
-            var uniqueQueries = new List<UniqueQuery> {
-            new UniqueQuery{
-            ColumnName = "IsActive",
-            QueryOperator= RxWeb.Core.Annotations.Enums.SqlQueryOperator.NotEqual,
-            Value = false
-            }
-            };
-            return uniqueQueries;
+    public partial class Candidate {
+
+        public bool UniqueEmailId(object Email = null) {
+            if(!Candidates.any(x=>x.EmailId == Email))
+            return false
         }
+    }
 ```
+
+**Step 2:**
+Add annotation validation above the model class
+
 <table class="table table bordered">
 <tr><th>Property</th><th>Description</th><th>Syntax</th></tr>
 <tr>
-<td>maxLength</td>
-<td>Enter value which you want to restrict the limit upto.</td>
-<td>[(10)]</td>
+<td>connection</td>
+<td>The Type of connection used.</td>
+<td>typeof(IMainDatabaseFacade)</td>
+</tr>
+<tr>
+<td>uniqueQueryMethod</td>
+<td>the query method used for applying unique validation.</td>
+<td>uniqueQueryMethod:nameof(Candidate.UniqueEmailId)</td>
+</tr>
+<td>conditionalExpressionName</td>
+<td>If you want to apply unique validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of Unique validation. </td>
+<td>[Unique(`typeof`(IMainDatabaseFacade),`conditionalExpressionName`:nameof(`Unique.CandidateEmailConditionalExpression`))]</td>
+</tr>
+<tr>
+<td>dynamicConfigExpressionName</td>
+<td>If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used.</td>
+<td> [Unique(`typeof`(IMainDatabaseFacade),`dynamicConfigExpressionName`:nameof(`CandidateEmailDynamicExpression`))]</td>
 </tr>
 <tr>
 <td>messageKey</td>
@@ -42,15 +60,6 @@ The Unique validation function will be made in the main folder of the ExtendedMo
 <td>[Unique(typeof(IMainDatabaseFacade),`messageKey`:"UniqueMessageKey")]</td>
 </tr>
 <tr>
-<td>conditionalExpressionName</td>
-<td>If you want to apply unique validation based on a custom condition, pass that custom validation function's name in `conditionalExpressionName` property of Unique validation. </td>
-<td>[Unique(`typeof`(IMainConnection),`conditionalExpressionName`:nameof(`Person.PersonNameConditionalExpression`))]</td>
-</tr>
-<tr>
-<td>dynamicConfigExpressionName</td>
-<td>If you want to set any validation property at runtime, then `dynamicConfigExpressionName` can be used.</td>
-<td> [Unique(`typeof`(IMainConnection),`dynamicConfigExpressionName`:nameof(`PersonNameDynamicExpression`))]</td>
-</tr>
 </table>
 
 ## ConditionalExpressionName
@@ -61,14 +70,15 @@ When you want the validation to be fired based upon some custom validation funct
 The custom validation function is made in ExtendedModels folder of Main, In which a partial class of the model will be made.
 
 In the ExtendedModel class
-Person.cs :
+Candidate.cs :
 
 ```js
-    public partial class Person {
+    public partial class Candidate {
 
-        public bool PersonConditionalExpression(object parentEntity = null) {
-            var t = this;
-            return false;
+        public bool UniqueEmailId(object Email = null) {
+
+            if(!Candidates.any(x=>x.EmailId == Email))
+            return false
         }
     }
 ```
@@ -89,9 +99,9 @@ When you want to set validation property of validation at runtime(on the fly) va
 In the ExtendedModel class
 
 ```js
-    public partial class Person {
+    public partial class CandidateEmail {
 
-        public Dictionary<string, object> PersonNameDynamicExpression(object parentEntity = null) {
+        public Dictionary<string, object> CandidateEmailDynamicExpression(object parentEntity = null) {
             return new Dictionary<string, object>()
             {
                 { "CustomMessageKey","CustomUniqueKey" }
@@ -104,8 +114,8 @@ In the ExtendedModel class
 In the DbEntities class
 
 ```js
-    [Unique(dynamicConfigExpressionName: nameof(PersonNameDynamicExpression))]
-    public string PersonName { get; set; }
+    [Unique(dynamicConfigExpressionName: nameof(CandidateEmailDynamicExpression))]
+    public string EmailId { get; set; }
 ```
 
 ## MessageKey
@@ -131,5 +141,5 @@ In the DbEntity class :
 
 ```js
     [Unique(messageKey:"UniqueMessageKey")]
-     public string PersonName { get; set; }
+     public string EmailId { get; set; }
 ```

@@ -55,7 +55,7 @@ public string CandidateName { get; set; }
 Type : string
     
 When you want the validation to be fired based upon some custom validation function. It is passed in the `ConditionalExpressionName` property.
-The custom validation function is made in ExtendedModels folder of Main, In which a partial class of the model will be made.
+The validation function is made in ExtendedModels folder of Main, In which a partial class of the model will be made.
 
 In the ExtendedModel class
 Candidate.cs :
